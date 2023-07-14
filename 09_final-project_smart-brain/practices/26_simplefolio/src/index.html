@@ -1,0 +1,393 @@
+<!--
+  Hello!
+  -
+  Simplefolio is a clean and responsive portfolio template for Developers!
+  Created by Jacobo Martinez.
+  -
+  Github Repo: https://github.com/cobiwave/simplefolio/
+  Readme: https://github.com/cobiwave/simplefolio/README.md
+  -
+  For business & inquires, contact me -> jacobojavier98@gmail.com
+-->
+<!DOCTYPE html>
+<html lang="en" class="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <title>Laureline Paris| JS Developer</title>
+    <meta name="keywords" content="[Laureline], [Laureline Paris], JavaScript, React, Mongodb, Node, CSS, HTML, Sass,... " />
+    <meta name="description" content="[Laureline Paris] | Developer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+      <link rel="stylesheet" href="styles.scss" />
+      
+  </head>
+
+  <body>
+    <main>
+
+      <div id="top"></div>
+  
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                              HERO SECTION                               -->
+      <!-- ----------------------------------------------------------------------- -->
+      <section id="hero" class="jumbotron">
+        <div class="container">
+          <h1 class="hero-title load-hidden">
+            <span class="text-color-main">Aloha,<br>my name is Laureline Paris,</span>
+            <br />
+            <span class="text-color-main">A JavaScript Developer.</span>
+          </h1>
+          <p class="hero-cta load-hidden">
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">
+              Know more
+            </a>
+          </p>
+        </div>
+      </section>
+  
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                              ABOUT SECTION                              -->
+      <!-- ----------------------------------------------------------------------- -->
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title load-hidden">About me</h2>
+          <div class="row about-wrapper">
+            <!-- ---------------------------- profile image ---------------------------- -->
+            <div class="col-md-6 col-sm-12">
+              <div class="about-wrapper__image load-hidden">
+                <img
+                  id = about_profile-image
+                  alt="Profile Image"
+                  class="img-fluid"
+                  height="auto"
+                  src="./assets/hey.gif"
+                  alt="Profile Image"
+                />
+              </div>
+            </div>
+
+            <!-- ------------------------- profite description ------------------------- -->
+            <div class="col-md-6 col-sm-12">
+              <div class="about-wrapper__info load-hidden">
+                <p class="about-wrapper__info-text">
+                  A developer binding creativity to code, curious and polyvalent: I
+                  aspire to learn more continuously to connect the dots and have a
+                  better overview of code.
+                </p>
+
+                <hr>
+
+                <p class="about-wrapper__info-text">
+                  Some hobbies: Digital drawing / painting and creating animations / motions, that benefits my everyday work.
+                </p>
+                <hr>
+                <p class="about-wrapper__info-text">Side interests:
+                  <br>- others programming interest ( python, SQL, Databases, ... )
+                  <br>- continuous learning of various topics
+                  <br>- mentoring on a e-learning platform,
+                   <br>&nbsp;&nbsp; documenting and helping students through their programming journey.
+                </p>
+<br>
+                <!-- ---------------------------- RESUME LINKS ----------------------------- -->
+                <div id="resume-links">
+                  <span class="d-flex mt-3">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      class="cta-btn cta-btn--resume"
+                      href="https://www.linkedin.com/in/laurelineparis"
+                    >
+                      LinkedIn
+                    </a>
+                  </span>
+                  <span class="d-flex mt-3">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      class="cta-btn cta-btn--resume"
+                      href="assets/resume.pdf"
+                    >
+                      View Resume
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                            PROJECT SECTIONS                             -->
+      <!-- ----------------------------------------------------------------------- -->
+  
+      <!-- **** Projects Section **** -->
+      <section id="projects">
+        <div class="container">
+          <div class="project-wrapper">
+            <h2 class="section-title dark-blue-text">Side Practices</h2>
+  
+            <!-- --------------------------- AVATAR PROFILE ---------------------------- -->
+            <!-- Notice: each .row is a project -->
+            <div id = "AvatarProfile" class="row">
+              <div class="col-lg-5 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">Avatar Profile</h3>
+                  <div>
+                    <p class="mb-4">
+                      A representative personal avatar for my online presence.
+                      <br>The challenge was to create a graphical representation sticking to the bear
+                       minimum (without JS); using mainly CSS (Sass) with a bear HTML Structure
+                    </p>
+                  </div>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--hero"
+                    href="https://laurelinep.github.io/AvatarProfile/"
+                  >
+                    See Live
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn text-color-main"
+                    href="https://github.com/LaurelineP/AvatarProfile"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div id="AvatarProfile__image-container" class="col-lg-7 col-sm-12">
+                <div 
+                  class="project-wrapper__image load-hidden" >
+                  <a rel="noreferrer" href="https://laurelinep.github.io/AvatarProfile/" target="_blank">
+                    <div
+                      data-tilt
+                      data-tilt-max="4"
+                      data-tilt-glare="true"
+                      data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt"
+                    >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      title="Preview AvatarProfile"
+                      src="./assets/avatar.gif"
+                    />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- --------------------------- Quotes Machine ---------------------------- -->
+            <div class="row">
+              <div class="col-lg-5 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">Quotes Machine</h3>
+                  <div>
+                    <p class="mb-4">
+                      Quotes Machine, playful quotes machine
+                    </p>
+                  </div>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--hero"
+                    href="https://laurelinep.github.io/Quote-Machine/"
+                  >
+                    See Live
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn text-color-main"
+                    href="https://github.com/LaurelineP/Quote-Machine"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-7 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <a rel="noreferrer" href="#!" target="_blank">
+                    <div
+                      data-tilt
+                      data-tilt-max="4"
+                      data-tilt-glare="true"
+                      data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt"
+                    >
+                      <img
+                        alt="Preview Quote Machine"
+                        class="img-fluid"
+                        src="./assets/quotes-machine.png"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- ------------------------------- SHIFUMI ------------------------------- -->
+            <div class="row">
+              <div class="col-lg-5 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">Shifumi</h3>
+                  <div>
+                    <p class="mb-4">
+                     A kids game
+                    </p>
+                  </div>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--hero"
+                    href="https://laurelinep.github.io/Shifumi"
+                  >
+                    See Live
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn text-color-main"
+                    href="https://github.com/LaurelineP/Shifumi"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-7 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <a rel="noreferrer" href="https://laurelinep.github.io/Shifumi" target="_blank">
+                    <div
+                      data-tilt
+                      data-tilt-max="4"
+                      data-tilt-glare="true"
+                      data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt"
+                    >
+                      <img
+                        alt="Project Image"
+                        class="img-fluid"
+                        src="https://github.com/LaurelineP/Shifumi/blob/master/project-preview.jpg?raw=true"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- ------------------------ BACKGROUND GENERATOR ------------------------- -->
+            <div class="row">
+              <div class="col-lg-5 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">Background Generator</h3>
+                  <div>
+                    <p class="mb-4">
+                     Background Generator:
+                     <br>useful to generate linear and gradient colors.
+                    </p>
+                  </div>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--hero"
+                    href="https://laurelinep.github.io/ztm-complete-web-dev_doc-along/06_developer-environment/practices/14_background-generator"
+                  >
+                    See Live
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn text-color-main"
+                    href="https://github.com/LaurelineP/ztm-complete-web-dev_doc-along"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-7 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <a rel="noreferrer" href="https://laurelinep.github.io/ztm-complete-web-dev_doc-along/06_developer-environment/practices/14_background-generator" target="_blank">
+                    <div
+                      data-tilt
+                      data-tilt-max="4"
+                      data-tilt-glare="true"
+                      data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt"
+                    >
+                      <img
+                        alt="Project Image"
+                        class="img-fluid"
+                        src="./assets/background-generator.png"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+     <!-- ----------------------------------------------------------------------- -->
+     <!--                                 CONTACT                                 -->
+     <!-- ----------------------------------------------------------------------- -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-wrapper load-hidden">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="cta-btn cta-btn--resume"
+              href="mailto:#"
+              >Send an email</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- /END Contact Section -->
+    </main>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 FOOTER                                  -->
+    <!-- ----------------------------------------------------------------------- -->
+    <footer class="footer navbar-static-bottom">
+      <div class="container">
+        <a rel="noreferrer" href="#top" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a rel="noreferrer" href="https://www.linkedin.com/in/laurelineparis" target="_blank">
+            <i class="fa fa-linkedin fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="https://github.com/LaurelineP" target="_blank">
+            <i class="fa fa-github fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="https://twitter.com/LowlaPalooza" target="_blank">
+            <i class="fa fa-twitter fa-inverse"></i>
+          </a>
+        </div>
+
+        <hr />
+
+        <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
+        <p class="footer__text">
+          © 2021 - Template developed by
+          <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank"
+            >Jacobo Martínez</a
+          >
+        </p>
+
+    <script defer type="module" src="index.js"></script>
+  </body>
+</html>

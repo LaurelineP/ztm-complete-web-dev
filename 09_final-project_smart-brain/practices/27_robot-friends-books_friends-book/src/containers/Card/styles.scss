@@ -1,0 +1,128 @@
+
+
+.Card {
+	width: 120px;
+	height: 200px;
+	max-height: 200px;
+	display			: flex;
+	border-radius	: 3px;
+	background-color: #fff;
+	perspective		: 500px;
+	margin			: 5px;
+	box-shadow		: 0 0 10px 1px #CCC6;
+	height			: 200px;
+
+
+	// Card_container
+	&_container {
+		h1 { margin: 5px; font-size: 1.2rem; }
+		&_details span {
+			display: block;
+		}
+		width: 100%;
+		display: flex;
+		background-color: inherit;
+		p {
+			margin: 0;
+		}
+	}
+	
+	// Card_left
+	&_left {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		max-width: 120px;
+		img {
+			width			: 70%;
+			border-radius	: 5% 50%;
+			width			: 120px;
+			height			: 120px;
+		}
+	}
+
+	// Card_right
+	&_right {
+		width: 0;
+		color: transparent;
+		margin-left: 20px;
+
+		img {
+			height: 18px;
+			width: 18px;
+			margin-bottom: -3px;
+			margin-right: 8px;
+			opacity: 0;
+		}
+
+		.icon-email {
+			scale: 1.4;
+			line-height: 0;
+			margin-top: 2px;
+		}
+
+		& > span {
+			width: 100%;
+			display: flex;
+		}
+
+	
+	}
+
+	// Card:hover
+	&:hover {
+		cursor: pointer;
+		flex: 1;
+		scale: 1.1;
+		z-index: 1;
+		transition: all ease .5s;
+
+	
+		.Card_right {
+			display: inline-flex;
+			margin: 15px;
+			flex-direction: column;
+			justify-content: center;
+			flex-wrap: nowrap;
+			width: 100%;
+		}
+
+		.Card_right img {
+			opacity: 1;
+			transition: opacity 500ms;
+		}	
+	}
+}
+
+
+// Hover on one card - make all other cards disappear with a blurry effect then opacity
+[id^=row]:has(.Card:hover) {
+	.Card:not(:hover){
+		pointer-events: none;
+		width: 9%;
+		filter: blur(4px);
+		overflow: hidden;
+		transition: width ease 500ms;
+		img {
+			size: auto;
+		}
+		transform-origin: 10%;
+		}
+}
+
+
+// rows spacing gap
+[id^=row] + [id^=row] {
+	margin-top: 30px;
+}
+
+
+// when a card is hover > blur all sibling rows
+.List:has([id^=row] .Card:hover) [id^=row]:not(hover) > .Card:not(:hover) {
+	filter: blur(2px) opacity(.3);
+}
+
+.Card:hover  .Card_right {
+	color: inherit;
+	transition: color 500ms linear 300ms;
+}

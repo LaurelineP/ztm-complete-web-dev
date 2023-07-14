@@ -1,0 +1,908 @@
+:root {
+	--main: #6cc;
+	--main_darker: #6aa;
+}
+
+* {
+	scroll-margin-top: 7rem;
+}
+
+@keyframes expandHeight {
+	from {
+		height: 0;
+		/* opacity: 0; */
+	}
+	to {
+		height: 200px;
+	}
+	
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                       COMMON STYLE FOR ALL HTML PAGES                      */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ ROOT ELEMENTS ----------------------------- */
+
+/* Resets default behavior and set base */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+	font-family: "Avenir", sans-serif, Arial;
+	font-size: 16px;
+	color: #444;
+	overflow-x: hidden;
+	background: linear-gradient(-120deg, #ffffff 75%, #cdebff),
+		radial-gradient( #ffffff 75%, #cdebff)
+
+}
+
+header {
+	z-index: 1;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	background-color: #fff;
+	box-shadow: 0 2px 10px 0 #eef;
+}
+
+hr {
+	border-style: solid;
+	border: none;
+	height: 1px;
+	background-color: #999;
+}
+
+details > div {
+	margin: 20px;
+	padding: 10px;
+}
+/* ------------------------------ LAYOUT STYLE ------------------------------ */
+/* LAYOUT: container */
+#layout_page {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+
+/* Header with nav (iframe) */
+#layout_header {
+	margin: 0;
+}
+
+/** LAYOUT: parent of 2 children */
+main.layout_content_container {
+	margin-top: 100px;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	z-index: 0;
+}
+
+/** LAYOUT: parent of 1 child */
+.layout_content_container_self {
+	margin-top: 100px;
+	height: 100%;
+	width: 50%;
+	padding: 10px;
+}
+
+
+
+/** LAYOUT: first child */
+.layout_content_aside {
+	padding: 20px;
+	position: relative;
+	width: 30%;
+	max-width: 250px;
+	min-width: 250px;
+}
+
+.layout_content_aside > #aside-content {
+	position: fixed;
+	width: 100%;
+	max-width: inherit;
+}
+
+.layout_content_aside > #aside-content > ul {
+	max-height: 55vh;
+	overflow: auto;
+	text-transform: capitalize;
+} 
+
+
+
+/** LAYOUT: second child */
+.layout_content {
+	justify-self: center;
+	width: 75%;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	translate: 50px
+}
+
+#background {
+	background-color: #fff;
+	box-shadow: 0px 50px 50px 3px #eef;
+	height: 150vh;
+	width: 80vw;
+	display: flex;
+	justify-self: center;
+	mix-blend-mode: multiply;
+	position: fixed;
+	transform: rotate(-10deg) translateY(20%) translateX(5%);
+	opacity: 0.7;
+}
+
+#layout_footer > * {
+	display: grid;
+	width: 100%;
+}
+
+
+iframe { border: none }
+
+
+
+.legend {
+	color: #b3b3b3;
+	font-size: .9rem;
+}
+
+/* ------------------------------ PAGE CONTENTS ----------------------------- */
+
+.layout_header iframe {
+	margin: 0;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+
+aside ul {
+	padding-inline-start: 30px;
+	padding-block-end: 20px;
+}
+
+aside ul li {
+	max-width: 85%;
+}
+
+
+section + hr {
+	margin: 30px 50px;
+}
+
+section {
+	padding: 30px 50px;
+}
+
+
+.card {
+	flex-direction: inherit;
+	background-color: #fff;
+	height: auto;
+	box-shadow: 0 1px 8px 2px #dde;
+	padding: 2rem 5rem;
+	border-radius: 3px;
+	margin: 1rem;
+}
+
+.card table {
+	display: unset !important;
+}
+
+#back-to-top {
+	height: 1rem;
+	width: 1rem;
+	transform: rotate(45deg);
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-top-left-radius: 3px;
+	justify-self: flex-end;
+	margin: 50px;
+	background-color: #fff;
+}
+
+#back-to-top::before {
+	content: "";
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	transform: translate(-20px, -20px);
+	border-radius: 50px;
+	box-shadow: inset 0 0 10px 3px transparent;
+}
+
+#back-to-top:hover {
+	cursor: pointer;
+	transition: all 1s ease;
+}
+
+#back-to-top:hover::before {
+	box-shadow: 0 0 8px 1px #ccd;
+}
+
+/* ----------------------------- DETAILS STYLE  ---------------------------- */
+details, section { 
+	width: 100%;
+}
+
+details {
+	padding: 20px 0;
+}
+
+summary {
+	border-radius: 4px;
+}
+
+summary:hover {
+	cursor: pointer;
+	box-shadow: inset 0 0 20px 0 #eef;
+}
+summary > h3 {
+	margin: 0;
+	display: initial;
+}
+
+/* ------------------------------ TABLE STYLE  ----------------------------- */
+table {
+	/* prevents table to display all cell border and display one border instead */
+	border-collapse: collapse;
+	/* max-width: min-content; */
+}
+
+table td,
+table th {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+/* .row-section: table's  stronger cells border line  */
+table tbody .row-section {
+	border-top: 2px solid;
+}
+tbody > ul {
+	padding: 0 0 0 20px;
+}
+
+tbody li.pipe {
+	list-style-type: "|";
+	list-style-position: inside;
+}
+
+/* ---------------------------- IFRAME/NAV STYLE ---------------------------- */
+iframe#navigation {
+	width: 100%;
+	height: 80px;
+}
+
+main > h1,
+main > section > h1 {
+	text-align: center;
+}
+
+h1, h2 {
+	font-size: xx-large;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: 400;
+}
+
+a {
+	transition: 100ms ease;
+}
+/* `a` display: removed default link decoration */
+a,
+a:link,
+a:visited,
+a:active {
+	color: unset;
+}
+
+ul > li {
+	padding: 4px 0;
+	width: 100%;
+}
+ul > li > a:hover {
+	color: var(--main_darker);
+}
+
+.li-root {
+	text-transform: uppercase;
+	text-decoration:underline ;
+	font-weight: 500;
+}
+
+/* ------------------------------- CODE STYLE ------------------------------ */
+code:not(:empty) {
+	background-color: #daeaf275;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: #333;
+	display: inline-block;
+	margin: 1px;
+	overflow-wrap: break-word;
+}
+
+code > .code-comment {
+	color: #595;
+}
+
+code > .code-error {
+	color: #f66;
+}
+
+
+/* ------------------------- INPUT AND BUTTON STYLE ------------------------- */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+	cursor: pointer;
+	background-color: #fff;
+	box-shadow: 0 1px 5px 1px #ddd;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #333;
+	transition: color 300ms ease-in;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+	box-shadow: 0 1px 7px 1px #ddd;
+	color: #06f;
+}
+
+input[type="button"]:active,
+input[type="button"]:active,
+input[type="button"]:active,
+button:active {
+	box-shadow: 0 1px 3px 1px #ddd;
+}
+
+#element-description,
+#element-demonstration {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+li.inherit {
+	list-style-type: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  HOME PAGE                                 */
+/* -------------------------------------------------------------------------- */
+
+main#home section {
+	flex-direction: column;
+	max-width: 350px;
+	height: 500px;
+	display: flex;
+	margin: 20px;
+	min-width: 400px;
+}
+
+main#home section > ul {
+	overflow-y: scroll;
+}
+fieldset {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	height: 400px;
+	width: 400px;
+	margin: 20px;
+	height: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  HTML PAGE                                 */
+/* -------------------------------------------------------------------------- */
+#lists-demonstration,
+#buttons-demonstration {
+	display: flex;
+	flex-direction: column;
+}
+
+/* -------------------------------- HTML FORM ------------------------------- */
+
+main#form-page #form-query-details {
+	justify-content: space-evenly;
+}
+
+[id^="form-query-details_"] {
+	margin: 30px;
+}
+
+[id^="form-query-details_"] + [id^="form-query-details_"] {
+	margin-top: 50px;
+}
+
+[id^="form-query-details_"] code {
+	padding: 20px;
+}
+
+fieldset form {
+	width: 350px;
+	padding: 20px;
+}
+
+fieldset input {
+	float: right;
+}
+
+#form-buttons {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 30px;
+}
+
+form input[type="submit"],
+form input[type="submit"] {
+	margin: 0 20px;
+}
+
+[type="submit"] ~ [type="reset"] {
+	margin-right: 20px;
+}
+
+#image-demonstration img {
+	height: 200px;
+	width: auto;
+	object-fit: contain;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  CSS PAGE                                  */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------- BOX MODELS ------------------------------- */
+
+#box-models_container {
+	display: flex;
+}
+
+#box-models_demonstration {
+	margin: 0 20px;
+}
+
+.box-model {
+	height: auto;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+}
+
+.box-model:hover {
+	box-shadow: inset 0 0 6px 0 #777;
+	cursor: pointer;
+}
+
+.box-model.margin,
+.box-model.padding {
+	background: repeating-linear-gradient(65deg, #ddd, #ddd 2px, transparent 2px, transparent 5px);
+}
+
+.box-model span {
+	text-align: center;
+	color: #222;
+}
+
+.box-model.margin {
+	width: 200px;
+	padding: 0 20px 20px 20px;
+	background-color: orange;
+}
+
+.box-model.margin span {
+	margin-top: 0;
+}
+
+.box-model.border {
+	border: 20px solid #fd0;
+}
+
+.box-model.border > span {
+	position: absolute;
+	transform: translate(55px, -20px);
+}
+.box-model.padding {
+	padding: 0px 20px 20px 20px;
+	background-color: rgb(97, 204, 85);
+}
+
+.box-model.content {
+	height: auto;
+	background-color: white;
+}
+
+/* --------------------------------- FLEXBOX -------------------------------- */
+table#table_flexbox {
+	background-color: #fff;
+}
+
+#table_flexbox col:nth-child(2) {
+	min-width: 150px;
+}
+
+#table_flexbox td {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+/* Targets all properties cells values */
+#table_flexbox tbody tr td:nth-child(2) {
+	font-weight: bolder;
+}
+
+/* --------------------- FLEXBOX DEMONSTRATION BLOCK STYLE -------------------- */
+#flexbox_demonstration div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 20px;
+}
+
+/* Interactive example: flex-start and flex-end */
+#flexbox_demonstration div #demo-application {
+	display: flex;
+	height: 50px;
+	padding: 5px;
+	margin: 10px;
+	width: 200px;
+	background-color: var(--main);
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#demo-application > span {
+	align-self: flex-start;
+	content: " ";
+	transition: all 1s;
+}
+
+#demo-application > span:hover {
+	align-self: flex-end;
+}
+
+#demo-application > span:hover:after {
+	content: "🤣";
+}
+
+/* ----------------------- CSS HERITAGE DEMONSTRATION ----------------------- */
+#CSS-advanced_CSS3-heritage {
+	/* display: flex;
+    flex-direction: column; */
+	align-content: center;
+	/* min-width: max-content; */
+}
+
+#CSS3-heritage_demonstration {
+	background-color: #fff;
+	border-right: 3px dashed var(--main_darker);
+	/* max-width: max-content;
+	min-width: 350px; */
+
+	/** Combination properties: both bellow allows to resize an HTML element */
+	resize: horizontal;
+	overflow: auto;
+}
+
+#CSS3-heritage_demonstration > div {
+	display: block;
+	margin: 20px 30px 30px;
+}
+
+#CSS3-heritage_demonstration img {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+	margin: 5px;
+}
+
+#CSS3-heritage_demonstration img:hover {
+	transform: scale(1.2);
+	border-radius: 50%;
+	box-shadow: 0 2px 8px 0px #dee;
+}
+iframe {
+	min-width: min-content;
+	min-height: min-content;
+	margin: 20px;
+}
+iframe + iframe {
+	margin-top: 20px;
+}
+
+[id*="practices_"] > iframe {
+	width: 100%;
+}
+
+[id*="practices_iframe_robot"] {
+	background-color: #fff;
+	height: 30rem;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+#CSS-practices_iframe_pictures_gallery {
+	height: 400px;
+	overflow: hidden;
+}
+
+#CSS-practices_iframe_robot {
+	height: 25rem;
+	width: 100%;
+}
+/* ------------------------------- RESPONSIVE ------------------------------- */
+
+#responsive_container {
+	display: flex;
+	margin: 1rem;
+	display: flex;
+	justify-content: center;
+}
+#responsive-gradient {
+	width: 200px;
+	box-shadow: 0 0 10px 1px #eef;
+	border-radius: 4px;
+	padding: 2rem;
+	transition: background-color 1s ease;
+}
+
+#CSS-practices_iframe_responsive-layout-page {
+	height: 50vh;
+	margin: 30px 0;
+}
+
+/* ---------------------------------- GRID ---------------------------------- */
+
+table#table_grid {
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+#CSS-practices_iframe_animals-grid {
+	height: 26rem;
+	overflow: hidden;
+}
+
+/* --------------------- DOM MANIPULATION SHOPPING LIST --------------------- */
+#DOM-practices_iframe_shopping-list {
+    height: 400px;
+    overflow: hidden;
+}
+
+#DOM-practices_iframe_background-generator {
+    height: 700px;
+    overflow: hidden;
+}
+/* -------------------------------------------------------------------------- */
+/*                                 CSS HELPERS                                */
+/* -------------------------------------------------------------------------- */
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.full-width {
+	width: 95%;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.no-margin {
+	margin: unset;
+}
+
+.margin-2 {
+	margin: 2px;
+}
+
+.margin-5 {
+	margin: 5px;
+}
+
+
+.bordered {
+	border: 1px solid #DDD;
+}
+
+.padding-10 {
+	padding: 10px;
+}
+
+.radius-3 {
+	border-radius: 3px;
+}
+
+.radius-5 {
+	border-radius: 5px;
+}
+
+.inline {
+	display: inline;
+}
+/* -------------------------------------------------------------------------- */
+/*                        RESPONSIVE AND MEDIA QUERIES                        */
+/* -------------------------------------------------------------------------- */
+
+@media (width < 1250px) {
+	#responsive-gradient {
+		background-color: #ff4800;
+	}
+	.layout_content {
+		width: 100%;
+		translate: unset;
+	}
+	.layout_content_aside > #aside-content {
+		position: relative;
+	}
+	.layout_content_container {
+		width:  unset;
+		padding:  unset;
+	}
+	.layout_content_aside {
+		height: auto;
+	}
+
+	section,
+	details > div {
+		margin: 10px;
+		padding: unset;
+
+	}
+	.card {
+		padding: 1rem;
+		margin: unset;
+	}
+
+	table,tbody,td, col{
+		display: block;
+		margin: unset!important;
+		width: 100%!important;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     JS                                     */
+/* -------------------------------------------------------------------------- */
+iframe#DOM-manipulation_iframe_comparisons {
+	width: 100%;
+	height: 40vh;
+	margin: 30px 0 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            DEVELOPER ENVIRONMENT                           */
+/* -------------------------------------------------------------------------- */
+#typical-developer-workflow .card  ol {
+	flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+	align-content: center ;
+}
+
+
+#typical-developer-workflow .card  ol li {
+ margin: 10px;
+ width: 60%;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            DEVELOPER ENVIRONMENT                           */
+/* -------------------------------------------------------------------------- */
+#developer-environment_iframe_simple-portfolio {
+	width: 100%;
+	height: 40vh;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    REACT                                   */
+/* -------------------------------------------------------------------------- */
+#concept_one-way-data-binding > div {
+	margin: 30px;
+}
+
+/* example components buttons container */
+#concept_one-way-data-binding_example {
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px;
+	border: 1px solid #DDD;
+	padding: 10px;
+	text-align: center;
+	width: 50%;
+	margin: 40px auto;
+	padding: 10px;
+}
+
+/* example components buttons */
+#concept_one-way-data-binding_example > div {
+	display: inherit;
+	width: 100%;
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+#concept_one-way-data-binding_example > div {
+
+}
+
+#concept_one-way-data-binding_image {
+	width: 100%;
+	filter: contrast(1.08);
+}
+
+#concept_concept_preview-component-code_class-based,
+#concept_concept_preview-component-code_function-based {
+	width: 100%;
+	border-radius: 3px;
+	margin: 15px;
+}
+
+#react_iframe_personas-book {
+	width: 95%;
+	height: 40vh;
+}
+	
+
+@media only screen and (min-width: 500px) {
+	#responsive-gradient {
+		background-color: #ff7700;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	#responsive-gradient {
+		background-color: #ffa500;
+	}
+
+}
+
+@media only screen and (min-width: 1000px) {
+	#responsive-gradient {
+		background-color: #ffe100;
+	}
+}

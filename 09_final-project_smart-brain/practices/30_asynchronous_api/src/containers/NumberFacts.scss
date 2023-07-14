@@ -1,0 +1,54 @@
+#NumberFacts {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#InputSets {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 300px;
+	input[type=text], input[type=number]{
+		height: 25px;
+		margin: 10px 0;
+	}
+}
+
+button {
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	height: 40px;
+	border: 1px #EEE solid;
+	background-color: unset;
+	border-radius: 3px;
+	color: #EEE;
+	margin: 50px 0 0;
+	&.disabled {
+		color: #445;
+		border: 1px #445 solid;
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+}
+
+input:focus {
+	outline: none;
+}
+
+span {
+	text-align: start;
+}
+
+.response {
+	width: 300px;
+	height: 80px;
+	overflow: auto;
+	font-style: italic;
+}
+
+label {
+	opacity: .7;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./assets/styles/index.css">
+	<meta name="description" content="Course/Questioning along" />
+	<meta name="theme-color" content="#FFF"/>
+
+	<title>Project documenting</title>
+</head>
+
+<body>
+	<div id="layout_page">
+		<div id="background"></div>
+
+		<header id="layout_header">
+			<iframe	
+				title="navigation"
+				id="navigation"
+				title="navigation"
+				type="text/html" src="shared/navigation.html" style="border:none;" height="110px">
+			</iframe>		
+		</header>
+		<main class="layout_content_container_self">
+			<div class="layout_content">
+	
+				<h1>Project documenting</h1>
+				<p>This page will go through few questioning building this project and related to HTML,
+					<br>going through questions and the answers or solutions to it.
+				</p>
+			
+			
+				<ul>
+					<!-- 0. Modular concept architecture -->
+					<details id="project-organisation">
+						<summary><strong id="project-organisation_1">How to apply the component concept to an HTML project?</strong></summary>
+						<span>
+							Generally shared elements are within a <code>shared/</code> folder
+							<br>Those shared files should be imported using a nested browsing context HTML element (<code>iframe</code>, <del><code>embed</code></del>)
+							<br>in order to reuse the same code (one piece of code for all pages)
+							The current top navigation list is the same code but use in all pages using an <code>iframe</code> 
+						</span>
+						<ul>
+							<li>
+								<p>How to structure with a modular approach:</p>
+								<ol>
+									<li type="a">create a <code>shared</code> folder</li>
+									<li type="a">add whatever reusable html content that can be reused <i>(ex: the navigation)</i></li>
+									<li type="a">the shared file(s) should only contain the elements necessary*
+										<ul>
+											<li>(no need to add <code>!DOCTYPE html</code>, or <code>html</code>, or <code>head</code>, or <code>body</code> tags )</li>
+											<li>
+												if anchor links are part of the content:<br>
+												- in the attribute <code>src</code> use relative path(s) relative to your <code>shared</code> folder<br>
+												&nbsp; &nbsp;for each page to be able to redirect properly to the link<br>
+												- add <code>target</code> attribute to <code>_top</code> or <code>_self</code><br>
+											</li>
+			
+										</ul>
+									</li>
+									<li type="a">Use the <code>iframe</code> tag to display the HTML file</li>
+									<li type="a">Add to <code>iframe</code> tag the attribute <code>src</code> with relative path(s) of your source <i>(A shared file here)</i></li>
+								</ol>
+							</li>
+						</ul>
+					</details>
+			
+					<!-- 1. Nestable element in li ? -->
+					<details>
+						<summary><strong>Could we nest header tags within <code>li</code> tags?</strong></summary>
+						<p>Yes, list elements (<code>li</code>) can include headers tags along few other tags</p>
+					</details>
+			
+			
+					<!-- 2. Component concept implementation -->
+					<details >
+						<summary><strong><code>iframe</code> or <code>embed</code> tag?</strong></summary>
+						<p>
+							<code>iframe</code> or <code>embed</code> are element that allow to display files, media from other sources, contextualized in the element
+							The contextualization mentioned refers to being able to functionally interact with the content from the iframe contextualized in the current webpage
+							even if the source of the iframe or embed tag are external
+						</p>
+						
+						<p>Prefer using <code>iframe</code> as <code>embed</code> is deprecated.
+					</details>
+
+					<details >
+						<summary><strong><code>canvas</code> or <code>iframe</code> ?</strong></summary>
+						<p>
+							<code>canvas</code> is used to depict graphical element and the need to draw.
+							<br><code>iframe</code> is used to offer a preview with a context of a content, webpage and such.
+							<br>the iframe context is the ability to interact with the iframe content as if it was part of the
+							<br>current page.
+						</p>
+					</details>
+			
+					<!-- 2. Component concept implementation -->
+					<details >
+						<summary><strong>When to use <code>button</code> or <code>input</code> tags?</strong></summary>
+						<p>
+							<code>button</code> can accept child elements whereas <code>input</code> does not
+							<br> so if you need to customized a clickable element ( like adding an icon ) you may
+							<br> prefer using button instead of an input.
+							<br> However an input has more attached insights and events handling: if one want to have
+							<br> a maximum control over the input: better use the input instead
+						</p>
+						
+					</details>
+		
+					<details >
+						<summary><strong>In a <code>table</code> row: can we nest rows and/or columns?</strong></summary>
+						<p>
+							A <code>table</code> can nest another inner rows and columns.
+							<br>To do so, we have to nest a whole <code>table</code> within a <code>td</code> tag
+						</p>
+					</details>
+		
+					<details >
+						<summary><strong>In  <code>ul</code> or <code>ol</code>: is it possible add a text before the list items?</strong></summary>
+						<p>
+							Yes, using A <code>template</code> tags, you could also add  can nest another inner rows and columns.
+							See documentation: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul#technical_summary">here</a>
+						</p>
+					</details>
+		
+					<details >
+						<summary><strong>Is it mandatory to add lists elements in <code>nav</code> ?</strong></summary>
+						<p>
+							No, this is not mandatory.
+							<br>Both could be done.
+							<br>See few resources for those questioning questions:
+							<br> - <a href="https://css-tricks.com/wrapup-of-navigation-in-lists/">CSS Tricks - wrap-up of navigation lists</a>
+							<br> - <a href="https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/">CSS Tricks: navigation in list to be or not to be</a>
+							<br> - <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul#technical_summary">here</a>
+						</p>
+					</details>
+		
+					
+
+					<details >
+						<summary><strong>Is there &lt;img/&gt; pseudo elements?</strong></summary>
+						<p>
+							Pseudo element <code>::before</code>, <code>::after</code> can be used but using the property <code>content: url()</code>;
+							<br>other value for the content would not be applied;
+						</p>
+					</details>
+					
+				</ul>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

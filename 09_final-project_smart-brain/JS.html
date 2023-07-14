@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc JS Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>JS Basics</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					id="navigation"
+					title="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="JS" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>JS</h1>
+						<hr />
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                               JS BASICS                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="JS-basics">
+						<h2>JS Basics</h2>
+						<p>
+							Javascript is a programming language that works with HTML content but is also a scripting
+							language.
+							<br />
+							It is a dynamic typing high level language: Hight level programming language are easier to
+							<br />
+							read and write which allow js to recognize the value kind (type) on its own without having a
+							human
+							<br />
+							to explicitly specify
+						</p>
+
+						<div class="layout_content">
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                                VARIABLE                                 -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_variables">
+								<summary><h3>Variables</h3></summary>
+								<div class="details-content">
+									<p>
+										Variables is a way to store / save a value, an expression or an objects (object
+										literal or array) Storing values allows to save a value in order to re-use / rely on
+										them for later logic implementation or just to save the value.
+										<br />
+										<code>&lt;variable-keyword&gt; &lt;variable-name&gt; = &lt;value&gt;</code>
+									</p>
+									<p>There are 3 ways to implement them using different keywords</p>
+									<ul>
+										<li>
+											<code>var &lt;variable-name&gt;</code>
+											: old/regular way that can be overridden too easily which can leads to
+											unexpected behavior
+										</li>
+										<li>
+											<code>let &lt;variable-name&gt;</code>
+											: variable for anticipated cases where it is supposed to be overridden
+										</li>
+										<li>
+											<code>const &lt;variable-name&gt;</code>
+											: variable for primitives that would not change
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                             TYPE OF VALUES                             -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_9-types">
+								<summary><h3>9 Types of values</h3></summary>
+								<div class="details-content">
+									<p>
+										There are 8 types in Javascript: values ' type (example words with letter are
+										different from numbers).
+										<br />
+										The programming language needs to understand the instruction and to do so it
+										provides tools
+										<br />
+										for people writing the code, to use to communicate a specific instruction
+									</p>
+									<!-- <div class="card" style="padding: 0.5rem"> -->
+									<table>
+										<colgroup>
+											<col style="width:'10%'"/>
+											<col style="width:40%"/>
+											<col style="width:20%"/>
+											<col style="width:'30%'"/>
+										</colgroup>
+										<thead>
+											<tr>
+												<td>Type</td>
+												<td>Example</td>
+												<td>Is primitive or non-primitive</td>
+												<td>Note</td>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- ------------------------------- STRING ------------------------------- -->
+											<tr>
+												<td><code>string</code></td>
+												<td>
+													<code>"This is a string"</code>
+													<code>'This is a string'</code>
+													<code>`This is a string`</code>
+												</td>
+												<td>is primitive</td>
+												<td>
+													<ul>
+														<li>
+															Content with letters between quotes are typed as
+															<code>string</code>
+														</li>
+														<li>
+															Notice the wrapping quotes for the text
+															<ul>
+																<li>either a pair of single quotes</li>
+																<li>either a pair of double quotes</li>
+																<li>
+																	either a pair of single back stick (template literal
+																	outputting strings)
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- NUMBER -------------------------------- -->
+											<tr>
+												<td><code>number</code></td>
+												<td>
+													<code>3</code>
+													or
+													<code>-3</code>
+													- integer
+													<br />
+													<code>3.3</code>
+													- float
+													<br />
+													<code>NaN</code>
+													- Not A Number
+													<br />
+													<code>Infinity</code>
+													or
+													<code>- Infinity</code>
+													- max / min number reached
+												</td>
+												<td>is primitive</td>
+												<td>
+													<ul>
+														<li>
+															Numbers (without quotes) are typed as
+															<code>number</code>
+														</li>
+														<li>
+															Number can be
+															<ul>
+																<li>negative or positive</li>
+																<li>integers or floating numbers (with decimal)</li>
+																<li>
+																	<code>NaN</code>
+																	Is typed as
+																	<code>number</code>
+																	as it evaluates if a given input is a number.
+																	<code>
+																		console.log(typeof NaN)
+																		<span class="code-comment">//"number"</span>
+																	</code>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- BIGINT ------------------------------- -->
+											<tr>
+												<td><code>bigInt</code></td>
+												<td>
+													<code>1n</code>
+													or
+												</td>
+												<td>is primitive</td>
+												<td>
+													<ul>
+														<li>syntax: characterized by a "n" appended to a number</li>
+														<li>represents too large numeric values that a number cannot.</li>
+														<li>loosely equal a number but not strictly</li>
+														<ul>
+															<li>
+																<code>
+																	1n === 1
+																	<span class="code-comment">//false</span>
+																</code>
+															</li>
+															<li>
+																<code>
+																	1n == 1
+																	<span class="code-comment">//true</span>
+																</code>
+															</li>
+															<li>
+																<code>
+																	1n <= 1
+																	<span class="code-comment">//true</span>
+																</code>
+															</li>
+															<li>
+																<code>
+																	1n >= 1
+																	<span class="code-comment">//true</span>
+																</code>
+															</li>
+															<li>
+																<code>
+																	1n < 2
+																	<span class="code-comment">//true</span>
+																</code>
+															</li>
+														</ul>
+														<li>can not be used with `Math` library</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- BOOLEAN ------------------------------- -->
+											<tr>
+												<td><code>boolean</code></td>
+												<td>
+													<code>true</code>
+													<br />
+													<code>false</code>
+												</td>
+												<td>is primitive</td>
+												<td>
+													Booleans represents the values
+													<code>true</code>
+													or
+													<code>false</code>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- UNDEFINED ------------------------------- -->
+											<tr>
+												<td><code>undefined</code></td>
+												<td><code>undefined</code></td>
+												<td>is primitive</td>
+												<td>
+													This is both a value and a reserved keyword.
+													<ul>
+														<li>
+															<code>undefined</code>
+															as a value: represents a value never defined / assigned which JS
+															wil automatically compute or assign to undefined
+														</li>
+														<li>
+															<code>undefined</code>
+															as a **global read-only** word: meaning this word is already
+															used by JavaScript and is not writable/re-assignable. It's best
+															to not create any variable with this word.
+															<a
+																href="https://262.ecma-international.org/5.1/#sec-15.1"
+																alt="MDN reserved keywords"
+															>
+																See more details about global's read only objects
+															</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ---------------------------------- NULL --------------------------------- -->
+											<tr>
+												<td><code>null</code></td>
+												<td><code>null</code></td>
+												<td>is primitive</td>
+												<td>it expresses the absence of a value</td>
+											</tr>
+
+											<!-- -------------------------------- ARRAY -------------------------------- -->
+											<tr>
+												<td><code>array</code></td>
+												<td>
+													<code>[1, 2, 3]</code>
+													- array of numbers
+													<code>["hello"]</code>
+													- array of strings
+													<code>["hello" , 1]</code>
+													- array of numbers and strings
+												</td>
+												<td>is non-primitive</td>
+												<td>
+													it expresses a collection of values
+													<ul>
+														<li>
+															is characterized by wrapping squared brackets:
+															<code>[]</code>
+														</li>
+														<li>is an iterable object*</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- OBJECT -------------------------------- -->
+											<tr>
+												<td><code>object</code></td>
+												<td>
+													<code>{
+														<br>&nbsp;&nbsp;firstName: "Jane",
+														<br>&nbsp;&nbsp;lastName: "Doe",
+														<br>&nbsp;&nbsp;age: 30
+													<br>}</code>
+												</td>
+												<td>is non-primitive</td>
+												<td>
+													it expresses a dictionary of organized <b>properties</b> to access values
+													<ul>
+														<li>
+															is characterized by wrapping curly brackets:
+															<code>{}</code>
+														</li>
+														<li>is an iterable object*</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- SYMBOL -------------------------------- -->
+											<tr>
+												<td><code>Symbol</code></td>
+												<td><code>Symbol('hey')</code></td>
+												<td>
+													is a built-in function returning a
+													<b>primitive</b>
+												</td>
+												<td>
+													(advanced) creates a unique value from the input provided in parentheses
+													<a
+														href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
+														target="_blank"
+													>
+														<i>more info</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                               COMPARISONS                               -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_comparisons">
+								<summary><h3>Comparisons</h3></summary>
+								<div class="details-content">
+									<p>
+										Comparisons outputs
+										<code>boolean</code>
+										s. The comparisons operator are similar to the mathematical ones.
+										<br />
+										It applies to numbers in general, can be applied to strings also
+										<br />
+										but those are not incompatible with other primitives (types).
+									</p>
+									<div class="flex card">
+										<ul>
+											<li>
+												<code>==</code>
+												: double equality (with 2 following operators - to avoid as possible)
+											</li>
+											<li>
+												<code>===</code>
+												: triple equality (with 3 following operators - always prefer triple
+												equality over the double equality)
+											</li>
+											<li>
+												<code>!=</code>
+												is not equal (with 2 following operators - to avoid)
+											</li>
+											<li>
+												<code>!==</code>
+												is not equal (with 3 following operators - to always prefer)
+											</li>
+											<li>
+												<code><=</code>
+												: inferior or equal
+											</li>
+											<li>
+												<code>>=</code>
+												: superior or equal
+											</li>
+											<li>
+												<code><</code>
+												: inferior
+											</li>
+											<li>
+												<code>></code>
+												: superior
+											</li>
+										</ul>
+									</div>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              CONTROL FLOW                               -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_control-flow">
+								<summary><h3>Control Flow</h3></summary>
+								<div class="details-content">
+									<p>
+										A program can behaves based on conditions instead of just executing the code line by
+										line: this is control flow. The ability to control the code flow could be done in 3
+										ways but always evaluating a condition. A condition is made up of the following
+										concept:
+										<code>&lt;value&gt; &lt;comparison-operator&gt; &lt;value&gt;</code>
+										The result of that comparison will condition the code.
+									</p>
+
+									<p>Four ways to handle conditions</p>
+									<table>
+										<colgroup>
+											<col width="51%" />
+											<col />
+										</colgroup>
+										<thead>
+											<tr>
+												<td>Condition kind and Syntax</td>
+												<td>Note</td>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- ------------------------------- IF ELSE IF ELSE  -------------------------------- -->
+											<tr>
+												<td>
+													<p>if [ [else if] else ] condition</p>
+													<code>
+														if( &lt;condition&gt; ){
+														<span class="code-comment">/*...*/</span>
+														}
+													</code>
+													<br />
+													<code>
+														if( &lt;condition&gt; ) {
+														<span class="code-comment">/*...*/</span>
+														}
+														<br />
+														else {
+														<span class="code-comment">/* ... */</span>
+														}
+													</code>
+													<br />
+													<code>
+														if( &lt;condition&gt; ){
+														<span class="code-comment">/* ... */</span>
+														}
+														<br />
+														else if (&lt;condition&gt;) {
+														<span class="code-comment">/* ... */</span>
+														}
+														<br />
+														else {
+														<span class="code-comment">/* ... */</span>
+														}
+													</code>
+												</td>
+
+												<td>
+													<ul>
+														<li>efficient and flexible and common control flow</li>
+														<li>
+															can check by evaluating only one function with just a
+															<code>if</code>
+															condition statement
+														</li>
+														<li>
+															can check 2 to more conditions with
+															<code>if</code>
+															<code>else if</code>
+															statements
+														</li>
+														<li>
+															can check 2 and one default conditions with
+															<code>if</code>
+															<code>else if</code>
+															<code>else</code>
+															( else being considered as default) statements
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+
+											<!-- ------------------------------- SWITCH -------------------------------- -->
+											<tr>
+												<td>
+													<p>switch condition</p>
+													<code>
+														switch(&lt;value&gt;) {
+														<br />
+														&nbsp;&nbsp;case &lt;value-to-check&gt;:
+														<br />
+														&nbsp;&nbsp; &nbsp;
+														<span class="code-comment">/* ... */</span>
+														<br />
+														&nbsp;&nbsp;case &lt;value-to-check&gt;:
+														<br />
+														&nbsp;&nbsp; &nbsp;
+														<span class="code-comment">/* ... */</span>
+														<br />
+														&nbsp;&nbsp;default:
+														<br />
+														&nbsp;&nbsp; &nbsp;
+														<span class="code-comment">/* ... */</span>
+														<br />
+														}
+													</code>
+												</td>
+												<td>
+													<ul>
+														<li>
+															useful when one want to check the value equality and describe
+															different code case scenario
+														</li>
+													</ul>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- TERNARY ------------------------------- -->
+											<tr>
+												<td>
+													<p>ternary condition</p>
+													<code>
+														&lt;condition&gt;
+														<br />
+														&nbsp;? &lt;what-to-do-if-true&gt;
+														<br />
+														&nbsp;: &lt;what-to-do-if-false&gt;
+													</code>
+												</td>
+												<td>
+													<ul>
+														<li>handy for quick checks</li>
+														<li>handy to conditionally assign a value for instance</li>
+													</ul>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                            LOGICAL OPERATORS                            -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_logical-operators">
+								<summary><h3>Logical Operators</h3></summary>
+								<div class="details-content">
+									<p>
+										Logical operators are great to combined with condition and control flow: supporting,
+										but also for assigning a value to a variable either:
+									</p>
+									<ul>
+										<li>
+											possible values in one condition ("or" operator) - returning the
+											<b>first valid</b>
+											value
+										</li>
+										<li>
+											or one condition including multiple values to be checked ("and" operator)
+											returning the first truthy value - returning the
+											<b>left-side</b>
+											value
+										</li>
+										<li>
+											or one condition supporting
+											<code>null</code>
+											or
+											<code>undefined</code>
+											as a value to be assigned (nullish
+											<span
+												title='coalescing circumstance is where a value is compared to "null" or "undefined" '
+											>
+												coalescing
+											</span>
+											operator) - returning the
+											<b>non-null or defined</b>
+											value
+										</li>
+									</ul>
+	
+									<table>
+										<colgroup>
+											<col />
+											<col width="60%" />
+										</colgroup>
+										<thead>
+											<tr>
+												<td>Operator</td>
+												<td>Examples</td>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- ------------------------------- OBJECT -------------------------------- -->
+											<tr>
+												<td>
+													<p>
+														<code>||</code>
+														"or" operator
+													</p>
+												</td>
+												<td>
+													<code>&lt;value&gt; || &lt;value&gt;</code>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<code>&&</code>
+														"and" operator meant check if all the values are valid to compute a
+														boolean - asserting all values are valid ( = truthy )
+													</p>
+												</td>
+												<td>
+													<code>&lt;value&gt; && &lt;value&gt;</code>
+	
+													<hr width="150px" color="#DDD" style="margin: 10px auto" />
+													<p>To evaluate in a condition</p>
+													<code class="full-width">
+														if( true && true ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will be executed</span>
+														<br />
+														}
+													</code>
+													<code class="full-width">
+														if( 'hello' && 'world' ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will be executed</span>
+														<br />
+														}
+													</code>
+													<code class="full-width">
+														if( true && false ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will not be executed</span>
+														<br />
+														}
+													</code>
+													<code class="full-width">
+														if( 0 && 'hello' ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will not be executed</span>
+														<br />
+														}
+													</code>
+	
+													<code class="full-width">
+														if( null && 'hello' ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will not be executed</span>
+														<br />
+														}
+													</code>
+													<code class="full-width">
+														if( undefined && 'hello' ){
+														<br />
+														&nbsp;&nbsp;
+														<span class="code-comment">// code will not be executed</span>
+														<br />
+														}
+													</code>
+	
+													<hr width="150px" color="#DDD" style="margin: 10px auto" />
+													<p>Assigning a value to a variable</p>
+													<code class="full-width">
+														var name = true && false;
+														<span class="code-comment">// false</span>
+													</code>
+													<code class="full-width">
+														var name = true && true;
+														<span class="code-comment">// true</span>
+													</code>
+													<code class="full-width">
+														var name = false && false;
+														<span class="code-comment">// false</span>
+													</code>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<code>??</code>
+														nullish coalescing operator meant to output the the valid value not
+														being
+														<code>null</code>
+														or
+														<code>undefined</code>
+													</p>
+												</td>
+												<td>
+													<code>&lt;value&gt; ?? &lt;value&gt;</code>
+													<hr width="150px" color="#DDD" style="margin: 10px auto" />
+													<code class="full-width">
+														var name = null ?? "hey";
+														<span class="code-comment">// "hey"</span>
+													</code>
+													<code class="full-width">
+														var name = undefined ?? "hey";
+														<span class="code-comment">// "hey"</span>
+													</code>
+													<code class="full-width">
+														var name = "hey" ?? null;
+														<span class="code-comment">// "hey"</span>
+													</code>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                         JAVASCRIPT ON A WEBPAGE                         -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_javascript-on-a-webpage">
+								<summary><h3>JavaScript on a webpage</h3></summary>
+								<p>Integrating JavaScript in a webpage could be done with two ways</p>
+								<div class="details-content">
+									<ul>
+										<li>either writing JavaScript content script directly in the HTML</li>
+										<li>either writing a JavaScript file to import afterward in the HTML</li>
+										<ul>
+											<li>
+												packages/library/third part resources consumed on which the page rely,
+												should be within the
+												<code>head</code>
+												tag
+											</li>
+											<li>
+												script written for your own logic should be at the bottom, right above the
+												closing HTML
+												<code>body</code>
+												tag
+											</li>
+										</ul>
+									</ul>
+									<div class="card" style="padding: 1rem">
+										<ul>
+											<li>
+												Scripting in HTML
+												<br />
+												<code>&lt;script rel="text/javascript"&gt;...&lt;/script&gt;</code>
+											</li>
+											<li>
+												Script file to import
+												<br />
+												<code>&lt;script rel="text/javascript" src="">&gt;.../script&lt;</code>
+											</li>
+										</ul>
+										<ul></ul>
+									</div>
+								</div>
+
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                                FUNCTIONS                                -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_functions">
+								<summary><h3>Functions</h3></summary>
+								<div class="details-content">
+									<!-- --------------------- FUNCTIONS CONCEPT AND TYPES --------------------- -->
+									<div>
+										<h4>Functions concept and types</h4>
+										<p>
+											Functions allows to encapsulate a code block in order to be reused in another code
+											implementation.
+											<br>It is characterized by <code>()</code> either prepended by a name 
+											or by the <code>function</code> keyword,
+											<br>followed by curly braces <code>{}</code>
+											or <code>=></code>.
+										</p>
+										<ul>
+											<li>one can create a function - named or not named</li>
+											<li>one can execute a declared or imported function - will always be named</li>
+											<li>one can assign a function to a variable - named or not named/ will inherit the
+												name of the variable
+											</li>
+										</ul>
+		
+										<div class="card">
+											<h4>6 types of functions</h4>
+											<ul>
+												<!-- ------------------ FUNCTION DECLARATION / DEFINITION ------------------ -->
+												<li>
+													<u><b>function declaration / function definition:</b></u>
+													<br />Creates/defines a function with a set of instruction and programming it to 
+													<br />receive or not parameters or to return a value.
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem">
+														<b>function getName(name){return name || 'Stranger';}</b>
+													</code>
+												</li>
+												<br />
+												<br />
+												
+												<!-- ------------------------- FUNCTION EXPRESSION ------------------------- -->
+												<li>
+													<u><b>function expression:</b></u>
+													<br />Function declared with the <code>function</code> keyword and stored in a variable 
+													<br />- this will inherits the variable name.
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem">
+														<b>const getName =</b> function(name){return name || 'Stranger';}
+													</code>
+												</li>
+												<br />
+												<br />
+		
+												<!-- ------------------------- ANONYMOUS FUNCTION -------------------------- -->
+												<li>
+													<u><b>anonymous function:</b></u>
+													<br />Function declared without a name: generally to be used once.
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem">
+														<b>function()</b>{return 'Doing something';}
+													</code>
+												</li>
+												<br />
+												<br />
+		
+												<!-- -------------------------------- IIFE --------------------------------- -->
+												<li>
+													<u><b>IIFE or Immediate Invoked Function expression:</b></u>
+													<br />Encapsulating the function itself and executing itself.
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem;">
+														<b>(</b> function(){return 'Doing something';}<b> )()</b>
+													</code>
+												</li>
+												<br />
+												<br />
+		
+												<!-- ------------------------ FUNCTION CONSTRUCTOR ------------------------- -->
+												<li>
+													<u><b>function constructor:</b></u>
+													<br />Function created to return a new object - this should be executed with
+													<br />prepended <code>new</code> keyword as it creates a blueprint to
+													<br /> be used to create new objects.
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem;">
+														<span class="code-comment">// creating a function constructor</span>
+														<br /><b>function Person(</b>name, age<b>){</b>
+														<br />&nbsp;&nbsp;this.name = name;
+														<br />&nbsp;&nbsp;this.age = age;
+														<br />}
+		
+														<br /><span class="code-comment">// creating a new object</span>
+														<br />const person = <b>new Person(</b>'Merlin', 140<b>) </b>;
+													</code>
+												</li>
+												<br />
+												<br />
+		
+												<!-- --------------------------- ARROW FUNCTION ---------------------------- -->
+												<li>
+													<u><b>arrow function:</b></u>
+													<br />Anonymous function assigned to a variable represented by
+													<br />parentheses only followed by <code>=></code>
+													<br />
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem;">
+													<b>(</b> &lt;argument&gt; <b>) =></b> { <span class="code-comment">/* ... */</span>}
+													</code>
+												</li>
+												<br />
+												<br />
+											</ul>
+										</div>
+									</div>
+	
+									<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+									
+									<!-- ------------------- FUNCTION ARGUMENTS / PARAMETERS ------------------- -->
+									<div>
+										<h4>Function parameters / arguments</h4>
+										<p>
+											Like we've seen above, we can find sometimes passed element between parentheses:
+											<br />those are either <code>parameters</code> or <code>arguments</code>.
+											<br> Both are essentially doing the same - there are just called 
+											<br> differently based on their context of use.
+										</p>
+										<div class="card">
+											<h4>Parameters or Arguments</h4>
+											<p>Both are representing data or any values to pass to the function which
+												<br />will use them in the function body = code logic.
+											</p>
+											<ul>
+												<li>parameters: this is what you pass in a function definition 
+													<br>context (during the function creation)
+												</li>
+												<li>arguments: this is what you pass in a function execution 
+													<br>context (while calling the function)
+												</li>
+	
+											</ul>
+										</div>
+									</div>
+	
+									<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+	
+									<!-- ------------------- FUNCTION ARGUMENTS / PARAMETERS ------------------- -->
+									<div>
+										<h4>Function and returns</h4>
+										<p>
+											As mentioned, functions are encapsulating a block of code that are re-used
+											<br>wherever the function is used and can <b>return</b> something or not.
+											<ul>
+												<li>when returning nothing, the code is applied and will by default return <code>undefined</code></li>
+												<li>when returning something, the code is applied and output the result of the computation.</li>
+												<li><code>return</code> is designed to exit the function (the function computed could be interrupted if wanted)</li>
+											</ul>
+										</p>
+										<div class="card">
+											<h4>Function and returns</h4>
+												<p>To return a value from the function definition, you must use the special keyword <code>return</code>
+												<br>followed by what you want to return once the code did run.</p>
+											<ul>
+												<li>function not returning 
+													<br>
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem">
+														<span class="code-comment">/* Function not explicitly returning anything
+															<br>- by default returns `undefined`*/</span>
+														<br>
+														<br>function sayHi(){
+														<br>&nbsp;&nbsp;console.log("Hello, how are you?");
+														<br>}<span class="code-comment">// undefined</span>
+														<br>
+													</code>
+												</li>
+	
+												<br>
+	
+												<li>function returning 
+													<br>
+													<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem">
+														<span class="code-comment">/* Function returning the name */</span>
+														<br>
+														<br>function getSayHi(){
+														<br>&nbsp;&nbsp;<b>return</b> "Hello, how are you?";
+														<br>}<span class="code-comment">// "Hello, how are you?"</span>
+														<br>
+													</code>
+												</li>
+	
+											</ul>
+										</div>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                             DATA STRUCTURE                              -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_data-structure">
+								<summary><h3>Data Structure (arrays and objects)</h3></summary>
+								<div class="details-content">
+									<p>
+										DataStructure stores values in a useful way - Those corresponds to
+											<a href="#JS-basics_9-types"> <b>non-primitives</b></a>
+										<ul>
+											<li>array: can store a list of things in a kind of ordered way: ex searching for the first item</li>
+											<li>object: can help to retrieve a known element such as words in dictionaries to get the value</li>
+										</ul>
+									</p>
+									<p>
+										Both 2, open the doors to data structure by not only
+										<br> storing one array or object, but by expending the possibilities
+										<br>as we can nest those: example having an object within an object, or having an
+										<br>array within another array and this as much as needed.
+									</p>
+	
+									<!-- -------------------------------- ARRAY -------------------------------- -->
+									<div class="card">
+										<h4>Array</h4>
+										<p>
+											An array can be assimilated to a list of values;
+											<br>to each value it is attached a number that help accessing it
+											<br>(you could say you want the third item in the list).
+											<br>This is called a numeric index which does not start with <code>1</code> but with <code>0</code>
+										</p>
+									
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+	
+										<p>Arrays values can be accessed using the index of the item needed</p>
+										<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem;">
+											<br>const list = [
+											<br>&nbsp;&nbsp;"one", 
+											<br>&nbsp;&nbsp;"two", 
+											<br>&nbsp;&nbsp;"three", 
+											<br>&nbsp;&nbsp;"four", 
+											<br>&nbsp;&nbsp;"five"
+											<br>];
+											<br>
+											<br><span class="code-comment">// getting the first item using index</span>
+											<br>const first = list<b>[ 0 ]</b>;
+											<br>
+											<br>
+											<br><span class="code-comment">// getting the third item using index</span>
+											<br>const third = list<b>[ 2 ]</b>;
+											<br>
+											<br>
+											<br><span class="code-comment">// getting the third item using index</span>
+											<br>const fifth = list<b>[ 4 ]</b>;
+	
+										</code>
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+	
+										<p>
+											Modifying an array is possible: such as adding, modifying or delete an item from it.
+											<br>This can be done using the <code>Object</code> prototype methods ( functions belonging to the Array objects.)
+										</p>
+										🔗 <a
+											href="https://developer.mozilla.org/en-US/docs/Glossary/Array"
+											alt="Array documentation">
+											Learn more about <code>Array</code> and its methods
+										</a>
+									</li>
+	
+									</div>
+	
+									<!-- ------------------------------- OBJECT -------------------------------- -->
+									<div class="card">
+										<h4>Object</h4>
+										<p>
+											An object can be assimilated to a dictionary where one retrieves values by
+											<br>knowing the name as to each value is defined a name to access it.
+											<br>The name used to access a value is called a <code>property</code>
+										</p>
+										<p>Objects literals' values can be accessed</p>
+										<ul>
+											<li>dot notation</li>
+											<li>(squared) bracket notation and the name of the property holding the value</li>
+	
+										</ul>
+										<code class="full-width" style="margin-top: 0.5rem; padding: 0.8rem;">
+											<br>const person = {
+												<br>&nbsp;&nbsp;fullName: "Jane Doe",
+												<br>&nbsp;&nbsp;age: 0,
+												<br>&nbsp;&nbsp;profession: "unknown",
+											<br>};
+											<br>
+											<br><span class="code-comment">// getting the `fullName` dot notation</span>
+											<br>const name = person.fullName;
+											<br>
+											<br>
+											<br><span class="code-comment">// getting the `fullName` using squared bracket</span>
+											<br>const name = person[fullName];
+	
+										</code>
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+										<p>
+											Modifying an object is possible: such as adding, modifying or delete a property and/or its value.
+											<br>This can be done using the <code>Object</code> prototype methods ( functions belonging to the Array objects.)
+										</p>
+										🔗 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Object" alt="Object documentation">Learn more about<code>Object</code>  and its methods</a>
+									</div>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                          TERMINOLOGY REVIEW                             -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_terminology-review">
+								<summary><h3>Terminology review</h3></summary>
+								<div class="card">
+									<ul>
+										<li>
+											<u>assign:</u> affecting a value to something
+											<br><i>assigning to a variable the value of 5</i>
+											<br><code>var number = 5;</code>
+										</li>
+										<br>
+										<li>
+											<u>function declaration:</u> defining a function with the <code>function</code> keyword
+											<br><i>creates/declares/defines a function "sayHello"</i>
+											<br><code>function sayHello(){ <span class="code-comment">/* ... */</span>}</code>
+										</li>
+										<br>
+										<li>
+											<u>function expression:</u> defining a function assigned to a variable.
+											<br><i>The function can be named or anonymous</i>
+											<br><i>stores/assigns a function "sayHi" to a variable</i>
+											<br><code>var newFunction = function sayHi(){ <span class="code-comment">/* ... */</span>}</code>
+										</li>
+										<br>
+										<li>
+											<u>invoking or calling a function:</u> executing a function to run.
+											<br><i>Syntax: <code>&lt;function-name&gt;()</code></i>
+											<br><code>alert()</code>
+											<br><code>newFunction(x, y)</code>
+										</li>
+										<br>
+										<li>
+											<u>function and methods:</u>
+											<ul>
+												<li><i>function: a function by itself </i>
+													<br><code>newFunction(z,w)</code>
+												</li>
+												<li><i>method: a function or function expression stored in an object property </i>
+													<br><code>
+														var person = {
+															<br>&nbsp;&nbsp;name: 'John',
+															<br>&nbsp;&nbsp;speak: function(){ console.log('I am John')}
+														<br>}
+														<br>person.speak();<span class="code-comment">// "I am John"</span>
+													</code>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                                   LOOPS                                 -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_loops">
+								<summary><h3>Loops</h3></summary>
+								<p>Loops are a way to repeat a code/an action multiple times.
+									<br>4 types of loops are 
+								</p>
+								<div class="card" style="padding:1rem">
+									<ul>
+										<!-- ------------------------------ FOR LOOP ------------------------------- -->
+										<li>
+											<u>for loop:</u>
+											<br>allows to loop over a number of defined times or on <code>Array</code>s 
+											<br>useful to go over each item, or specific item, and do something with it
+											<br>It must instruct how to go through the loop in a statement between parentheses
+											<br><i>Syntax ex: <code><b>for (</b>var i = 0<b>;</b> i <b><</b> 5 <b>;</b> i++<b>){</b><span class="code-comment">/* ... */</span><b>}</b></code></i>
+											<br>
+											<br><i>Syntax ex: <code><b>for (</b>var i = 5<b>;</b> i <b>></b> 5 <b>;</b> i--<b>){</b><span class="code-comment">/* ... */</span><b>}</b></code></i>
+										</li>
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+
+
+										<!-- ----------------------------- FOR OF LOOP ----------------------------- -->
+										<li>
+											<u>for of loop:</u>
+											<br>allows to loop over an entire <code>Array</code>
+											<br>useful to go over each item, or specific item, and do something with it
+											<br>beside stating the variable and the array - not accessing the index
+											<br><i>Syntax: <code><b>for(</b> var item <b>of</b> list<b>){</b><span class="code-comment">/* ... */<b>}</b></span></code></i>
+										</li>
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+
+
+										<!-- ----------------------------- FOR IN LOOP ----------------------------- -->
+										<li>
+											<u>for in loop:</u>
+											<br>Allows to loop on <code>Object</code>s and <code>Arrays</code>.
+											<br>Useful to go over each property name of an <code>Object</code> or item of an <code>Array</code>.
+											<br><i>Syntax: <code><b>for(</b> var item <b>in</b> list<b>){</b><span class="code-comment">/* ... */<b>}</b></span></code></i>
+											<br>
+											<br>Example:
+											<br><code>
+												<br>var list = ["Banana", "Kiwi", "Mango"];
+												<br>var person = { firstName: "John", lastName: "Smith"};
+												<br>
+												<br><span class="code-comment">//looping over an `array`</span>
+												<br>for( var item in list ){ console.log( item )}; </b>
+												<br><span class="code-comment">//"Banana"</span>
+												<br><span class="code-comment">//"Kiwi"</span>
+												<br><span class="code-comment">//"Mango"</span>
+												<br>
+												<br><span class="code-comment">//looping over an `object`</span>
+												<br>for( var property in person ){ console.log( property )}; </b>
+												<br><span class="code-comment">//"firstName"</span>
+												<br><span class="code-comment">//"lastName"</span>
+											</code>
+										</li>
+										<hr style="margin: 3rem auto; width: 50%; background-color: #DDD;">
+
+
+										<!-- ----------------------------- WHILE LOOP ------------------------------ -->
+										<li>
+											<u>while loop:</u>
+											<br>Allows to loop (alternatively do something) continuously until a condition is met.
+											<br>Careful though, if the condition is never met, this can cause infinite loop.
+											<br><i>Syntax: <code><b>while(&lt;condition&gt;){</b><span class="code-comment">/* ... */</span><b>}</b></code></i>
+											<br>Example:
+											<br><code>
+												<br>var value = 0;
+												<br>while( value < 5 ){
+												<br>&nbsp;&nbsp;value++
+												<br>}
+												<br>console.log(value)<span class="code-comment">//5</span>
+											</code>
+										</li>
+
+										<!-- ---------------------------- DO WHILE LOOP ---------------------------- -->
+										<li>
+											<u>while loop:</u>
+											<br>Allows to apply some code right before and while a condition is met.
+											<br>Careful though, if the condition is never met, this can cause infinite loop.
+											<br><i>Syntax: <code><b>do {</b><span class="code-comment">/* ... */</span> <b>} while(&lt;condition&gt;);</b></code></i>
+											<br>Example:
+											<br><code>
+												<br>var count = 0;
+												<br>do {
+												<br>&nbsp;&nbsp;count++;
+												<br>} while( value < 5 );
+												<br><span class="code-comment">// the count incrementation will occurs before checking the condition</span>
+												<br>console.log(value)<span class="code-comment">//5</span>
+											</code>
+										</li>
+
+										<!-- ---------------------------- FOR EACH LOOP ---------------------------- -->
+										<li>
+											<u>forEach:</u>
+											<br>Allows to loop over an <code>Array</code>.
+											<br>Careful though, if the condition is never met, this can cause infinite loop.
+											<br><i>Syntax: <code><b>do {</b><span class="code-comment">/* ... */</span> <b>} while(&lt;condition&gt;);</b></code></i>
+											<br>Example:
+											<br><code>
+												<br>var list = ["Banana", "Kiwi", "Mango"];
+												<br>list.forEach(function( item, i, arr ){
+												<br>&nbsp;&nbsp;<span class="code-comment">/* ... */</span>
+												<br>});
+												<br>
+												<br>list.forEach(function( item, i, arr ){
+												<br>&nbsp;&nbsp;<span class="code-comment">/* ... */</span>
+												<br>});
+											</code>
+										</li>
+										<br>
+									</ul>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                                KEYWORDS                                 -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-basics_javascript-keywords">
+								<summary><h3>JavaScript keywords</h3></summary>
+								<p>JavaScript as reserved keywords, dedicated to help running its logic.
+									<br>This means that when naming variables, functions, etc... we should not
+									<br>the word if it is part of javascript language - we could name it differently.
+									<br>If a keyword is used, the code might break.
+								</p>
+								<div class="card">
+									<ul>
+										<li>await</li>
+										<li>break</li>
+										<li>case</li>
+										<li>catch</li>
+										<li>class</li>
+										<li>const</li>
+										<li>continue</li>
+										<li>debugger</li>
+										<li>default</li>
+										<li>delete</li>
+										<li>do</li>
+										<li>else</li>
+										<li>enum</li>
+										<li>export</li>
+										<li>extends</li>
+										<li>false</li>
+										<li>finally</li>
+										<li>for</li>
+										<li>function</li>
+										<li>if</li>
+										<li>implements</li>
+										<li>import</li>
+										<li>in</li>
+										<li>instanceof</li>
+										<li>interface</li>
+										<li>let</li>
+										<li>new</li>
+										<li>null</li>
+										<li>package</li>
+										<li>private</li>
+										<li>protected</li>
+										<li>public</li>
+										<li>return</li>
+										<li>super</li>
+										<li>switch</li>
+										<li>static</li>
+										<li>this</li>
+										<li>throw</li>
+										<li>try</li>
+										<li>True</li>
+										<li>typeof</li>
+										<li>var</li>
+										<li>void</li>
+										<li>while</li>
+										<li>with</li>
+										<li>yield</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</section>
+					<hr/>
+
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                           ADVANCED JAVASCRIPT                           -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="JS-advanced">
+						<h2>JS Advanced</h2>
+
+						<div class="layout_content">
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                          ADVANCED CONTROL FLOW                          -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_control-flow">
+								<summary><h3>Advanced control flow</h3></summary>
+								<a href="#JS-basics_9-types">🔗 See the syntax</a>
+								<div class="details-content">
+									<p>
+										Besides <code>if ... else</code>statements, there are other ways
+										to control the flow.
+									</p>
+									<ul>
+										<li>
+											<code><b>switch ... case</b></code>:
+											<br>defining a specific output or code process for a specific case
+										</li>
+										<li>
+											<b>ternary</b>:
+											<br>handy shorthand to use for small determinations such
+											<br>as inline condition which could also be used with template strings.
+										</li>
+									</ul>
+
+									<!-- ------------------- PRACTICE: CONTROL FLOW -------------------- -->
+									<div class="card">
+										<h3>Exercise</h3>
+										<p>Practice the advanced control flow</p>
+										<p class="no-margin">🔗 
+											<a href="./resources/15_resource_javascript-advanced_control-flow.zip"
+												alt="zipped folder - scopes and variables" 
+												download
+												>
+												Link to both the exercise and solutions
+											</a>
+										</p>
+										<iframe
+											title="Preview exercise on control flow"
+											id="javascript_advanced_iframe_control-flow"
+											type="text/javascript"
+											src="./resources/15_resource_javascript-advanced_control-flow.js"
+											style="border: none">
+										</iframe>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                                 SCOPES                                  -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_scopes">
+								<summary><h3>Scopes</h3></summary>
+								<div class="details-content">
+									<p>
+										Scopes is defining how variables, objects are accessed in JavaScript
+										programming
+									</p>
+									
+									<div class="card">
+										<h4>Different scopes</h4>
+
+										<!-- ----------------------------------------------------------------------- -->
+										<!--                      ROOT SCOPE / GLOBAL SCOPE                          -->
+										<!-- ----------------------------------------------------------------------- -->
+										<p>
+											<code><b>root-scope</b></code> or <code><b>global-scope</b></code>:
+											<br>Default and initial scope within a program.
+											<br>Defining an object at the <code>root-scope</code> level makes the object
+											<br>accessible in the <b>global object</b> <code>window</code>.
+										</p>
+										<br>
+										<code class = "full-width">
+											var a = 0;
+											<br>console.log(window.a) <span class="code-comment">// 0</span>
+										</code>
+										<hr color="#DDD" style="margin: 2rem auto" />
+
+										<!-- ----------------------------------------------------------------------- -->
+										<!--                           FUNCTION/CHILD SCOPE                          -->
+										<!-- ----------------------------------------------------------------------- -->
+										<p>
+											<code><b>function-scope</b></code> or <code><b>child-scope</b></code>:
+											<br>Variables or objects are <b>not accessible from outside
+											<br>the function</b> curly-braces level - Besides the function
+											<br>being defined at the root-scope, nothing else is accessible.
+											<br>The function scope can access root-scope objects.
+										</p>
+										<br>
+										<code class = "full-width">
+											var a = 0;
+											<br>function doSomething(){
+											<br>&nbsp;&nbsp;var b = 42;
+											<br>
+											<br>&nbsp;&nbsp;console.log(a) <span class="code-comment">// 0</span>
+											<br>&nbsp;&nbsp;<span class="code-comment">//✅  a: is at the `root-scope` level</span>
+											<br>
+											<br>&nbsp;&nbsp;console.log(b) <span class="code-comment">// 42</span>
+											<br>&nbsp;&nbsp;<span class="code-comment">//✅  b: is within this `child-scope`</span>
+											<br>}
+											<br>
+											<br>window.doSomething(); 
+											<br>
+											
+											<br>console.log(b)
+											<span class="code-error">
+												<br>// Uncaught ReferenceError: a is not defined anonymous>:1:1
+												<br>
+												<br><span class="code-comment">//❌  b: is not accessed from outside
+													<br>the `function-scope`
+											</span>
+											<br>
+										</code>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                           VARIABLES AND SCOPES                          -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_variables-and-scopes">
+								<summary><h3>Variables and scopes</h3></summary>
+								<div class="details-content">
+									<p>ES5 and next versions brought javascript solutions to the previous
+										javascript version: <i>Ex: variables and scope awareness</i>
+									</p>
+									<p>
+										In javascript: each object creation is assigned a unique `address`
+										in the memory location:
+									</p>
+									<ul>
+										<li>
+											when <b>re-assigning</b> a value to a variable: the variable address in memory would remain
+											the same but the value will be replaced.
+
+										</li>
+										<li>
+											when <b>modifying</b> a non-primitive value ( arrays, objects ):
+											this would correctly override the value
+										</li>
+										<li>
+											when <b>re-assigning</b> a non-primitive value ( arrays, objects ):
+											this would attempt to create an entire whole object and would 
+											raise an error as <code>const</code> does not allow it.
+										</li>
+									</ul>
+									<p>Note the difference between modifying ( = mutating ) and re-assigning terms.</p>
+									
+									<div class="card">
+										<!-- --------------------------------- VAR --------------------------------- -->
+										<div>
+											<p><code><b>var</b></code>:</p>
+											<p>JavaScript original way to create variables - back then it was the only ones.
+												Nowadays, it is preferable and recommended to use <code>let</code> or <code>const</code>
+												based on the usage you'll do and their purpose.
+											</p>
+											<ul>
+												<li>when one tries to assign a value to a never-declared variable,
+													JS will use the  <code>var</code> keyword under the hood
+													and assign a the value you try to create in a named variable.
+													<br><code class="full-width">a = 0</code><br><br>
+												</li>
+												<li>this keyword use would allows JS to override its value
+													from any scope level ( root scope or child scope ) - which
+													can be dangerous.
+												</li>
+											</ul>
+										</div>
+										<hr color="#DDD" style="margin: 2rem auto" />
+
+										<!-- --------------------------------- LET --------------------------------- -->
+										<div>
+											<p><code><b>let</b></code></p>
+											<p>Implemented feature with the version 6 of JS (ES6) allowing to create a variable at
+											<br>a specific place / point of the code and let it be redefined/overridden:
+											<ul>
+												<li>
+													If the code is trying to read the variable <b>before</b> it has been declared
+													in the code, this would not access any value and would return <code class="code-error">ReferenceError: aa is not defined</code>
+												</li>
+												<li>
+													If the code is reading the <b>root scope variable</b> declaration <b>from either the
+													root or child scope execution context</b>,it on the global scope, this would correctly
+													access the value.
+												</li>
+												<li>
+													If the code is reading the <b>child scope variable</b> declaration <b>from the root
+													cope execution context</b>: the value would not be accessed.
+												</li>
+											</ul>
+										</div>
+										<hr color="#DDD" style="margin: 2rem auto" />
+
+										<!-- -------------------------------- CONST -------------------------------- -->
+										<div>
+											<code>const</code>
+											<p>
+												Implemented feature with the version 6 of JS (ES6) allowing to create a variable at
+												a specific place / point of the code and prevents from redefining its value:
+											</p>
+											<ul>
+												<li>
+													If a code is trying to read the variable before the declaration, this would
+													result to <code>undefined</code></li>
+												<li>
+													If a code is reading the variable (from a child or root scope ) after the
+													declaring it on the global scope, this would correctly access the value.
+												</li>
+												<li>
+													If a code is reading a child scope variable declaration from the root scope:
+													the value would not be accessed
+												</li>
+											</ul>
+										</div>
+										<hr class="no-margin" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- ------------------- PRACTICE: VARIABLES AND SCOPES -------------------- -->
+										<div>
+											<h3>Exercise Preview</h3>
+											<p>Guess the outputs</p>
+											<p class="no-margin">🔗 
+												<a href="./resources/14_resource_javascript-advanced_scopes-and-variables.zip"
+													alt="zipped folder - scopes and variables" 
+													download
+													>
+													Link to both the exercise and solutions
+												</a>
+											</p>
+											<iframe
+												title="Preview exercise on scopes and variables"
+												id="javascript_advanced_iframe_scopes-and-variables"
+												type="text/javascript"
+												src="./resources/14_javascript-advanced_scope-and-variables.js"
+												style="border: none">
+											</iframe>
+										</div>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                             NEWEST FEATURES                             -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_newest-features">
+								<summary><h3>Newest features</h3></summary>
+								<p>Last few years did improved JS but those new features are not each browser's standard.
+									We could see the difference using the 
+									<a href="https://babeljs.io/repl/" target="_blank" >
+										<u>Babel Playground</u>
+									</a>
+									
+								</p>
+								<div class="details-content">
+									<div class="card">
+										<ul>
+											<!-- -------------- DYNAMIC PROPERTIES ASSIGNATION OR ACCESS --------------- -->
+											<li>
+												<a 
+													target="_blank"
+													href="https://www.freecodecamp.org/news/how-to-set-dynamic-object-properties-using-computed-property-names/">
+													<u>Dynamic properties in an object:</u>
+												</a>
+												<br>using the brackets notation in which a variable is given to provide the string value.
+												<br>
+												<br>
+											</li>
+
+											<!-- --------------------------- REST PARAMETERS --------------------------- -->
+											<li>
+												<a 
+													target="_blank"
+													href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters/">
+													<u>Rest parameters:</u>
+												</a>
+												<br>with three dots and a name representing the all the other parameters in a function.
+												<br>
+
+											</li>
+
+											<!-- ---------------------- SPREADING OPERATOR SYNTAX ---------------------- -->
+											<li>
+												<a 
+													target="_blank"
+													href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">
+													<u>Spread operator syntax:</u>
+												</a>
+												<br>with three dots <code>...</code>
+												<br>
+												<br>
+
+											</li>
+
+											<!-- ----------------------- SHORTHAND PROPERTY NAMES ---------------------- -->
+											<li>
+												<u>
+													<a 
+														target="_blank"
+														href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">
+														<u>Shorthand property names</u>
+													</a>
+												</u>
+												<br>
+												<br>
+											</li>
+
+											<!-- --------------------- DEFAULT FUNCTION PARAMETERS --------------------- -->
+											<li>
+												<a 
+													target="_blank"
+													href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">
+													<u>Default function parameters</u>
+												</a>
+												<br>within a function: receive the parameters if any but provides a default value
+												<code>
+													function getName(<b>name = "unknown"</b>){
+														<br>&nbsp;&nbsp;return `The name is ${name}.`;
+													<br>}
+													<br>
+													<br>console.log( getName() );
+													<br><span class="code-comment">// "The name is <b>unknown</b>."</span>
+													<br>
+													<br>console.log( getName(<b>"Smith"</b>) );
+													<br><span class="code-comment">// "The name is <b>Smith</b>."</span>
+												</code>
+												<br>
+												<br>
+											</li>
+											
+											<!-- ----------------------------- SYMBOL TYPE ----------------------------- -->
+											<li>
+												<a 
+													href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
+													target="_blank">
+													<u>Symbol type</u>
+												</a>
+												<br> meant to provide a unique type to a value even though the name of the object is the same
+												<br>
+												<br>
+											</li>
+
+											<!-- --------------------------- ARROW FUNCTIONS --------------------------- -->
+											<li>
+												<a 
+													href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+													target="_blank">
+													<u>Arrow function</u>
+												</a>
+												<br> shorthand syntax that helps defining a function expression
+												<br>
+												<br>
+											</li>
+										</ul>
+										<hr class="no-margin" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- ---------------------- PRACTICE: NEWEST FEATURES ---------------------- -->
+										<div>
+											<h3>Exercise Preview</h3>
+											<p>Use the newest features and syntax</p>
+											<p class="no-margin">🔗 
+												<a href="./resources/16_resource_javascript-advanced_newest-features.zip"
+													alt="zipped folder - scopes and variables" 
+													download
+													>
+													Link to both the exercise and solutions
+												</a>
+											</p>
+											<iframe
+												title="Preview exercise with newest features"
+												id="javascript_advanced_iframe_newest-features"
+												type="text/javascript"
+												src="./resources/16_resource_javascript-advanced_newest-features.js"
+												style="border: none">
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                           ADVANCED FUNCTIONS                            -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_functions">
+								<summary><h3>Advanced functions</h3></summary>
+
+									<p>
+										Being aware of functions expressions and scopes 
+										- we can state the following and talk about hoisting
+									</p>
+									<!-- --------------------- FUNCTIONS, SCOPES, HOISTING --------------------- -->
+									<div class="details-content">
+										<p>Functions, scopes, hoisting</p>
+										<div class="card">
+											<ul>
+												<li>
+													Declared functions expressions in a child-scope is being destroyed after use,
+													this means this is good for the memory as it his erased.
+													<br><br>
+												</li>
+												<li>
+													Declared functions expressions in a <code>const</code> or <code>let</code> variables
+													are not hoisted: this means once JavaScript is reading a javascript file.
+													<br><br>
+												</li>
+												<ul>
+													<li>
+														all variables declared with the <code>var</code> keyword are moved on top of the file to better understand the instructions of the file and initiated with `undefined`.
+														<br><br>
+													</li>
+													<li>
+														all functions definitions are also moved on top.
+														<br><br>
+													</li>
+												</ul>
+											</ul>
+										</div>
+									</div>
+
+									<!-- ------------------------- FUNCTIONS PATTERNS -------------------------- -->
+									<div class="details-content">
+										<p>Functions patterns are ways to use functions</p>
+										<div class="card">
+											<ul>
+												<!-- ------------------------------ CLOSURES ------------------------------- -->
+												<li>
+													<b>Closures</b>:
+													<br>child scoped function always have access to the parent scope and is stored as a function on its own, remembering the relationship between parent and child scope ( not being destroyed ).
+													<br><br>
+												</li>
+
+												<!-- -------------------------- CURRIED FUNCTION --------------------------- -->
+												<li>
+													<b>Currying</b>:
+													<br>a function accepting multiple parameters upon multiple consecutive calls,
+														each parameters is given at a different execution.
+														Which means: the function is returning a function that returns a value. This function is then executed with an argument.
+														<br><code>const count = (a) => (b) => a + b</code>
+														<br><code>count(a)(b)</code>
+													<br><br>
+												</li>
+
+												<!-- ------------------------ COMPOSITION FUNCTION ------------------------- -->
+												<li>
+													<b>Composed function</b>:
+													<br>two functions merged together to create a new function
+													<br><code>
+														const composeFn = (fn1, fn2) => (param1) => fn1(fn2(param));
+														<br>var sum = n => n + 1;
+														<br>var multiplyBy2 = n => n * 2;
+														<br>
+														<br>composeFunction(sum, multiplyBy2)(6)
+														<br><code class="code-comment">// 13</code>
+													</code>
+													<br><br>
+												</li>
+
+												<!-- ---------------------------- PURE FUNCTION ---------------------------- -->
+												<li>
+													<b>Avoiding side effect with pure function</b>:
+													<br>a side effect describe the function body executed affecting its outer scope ( like re-assigning a variable from the root scope )
+													<br>a function given the same parameters should always results with the same output: creating a deterministic function
+													<br><code>
+														&lt;inputs&gt; -> &lt;function-process&gt; -> &lt;same-output&gt; 
+													</code>
+													<br><br>
+												</li>
+
+											</ul>
+											<hr class="no-margin" color="#DDD" style="margin: 2rem auto" />
+											
+											<!-- ---------------------- PRACTICE: NEWEST FEATURES ---------------------- -->
+											<div>
+												<h3>Exercise Preview</h3>
+												<p>Solve the exercises</p>
+												<p class="no-margin">🔗 
+													<a href="./resources/17_resource_javascript-advanced_functions.zip"
+														alt="zipped folder - functions" 
+														download
+														>
+														Link to both the exercise and solutions
+													</a>
+												</p>
+												<iframe
+													title="Preview exercise on advanced functions concepts"
+													id="javascript_advanced_iframe_functions"
+													type="text/javascript"
+													src="./resources/17_resource_javascript-advanced_functions.js"
+													style="border: none">
+												</iframe>
+											</div>
+										</div>
+									</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                           ARRAY LOOPS METHODS                           -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_array-methods">
+								<summary><h3>Arrays methods</h3></summary>
+								<div class="details-content">
+									<p>Arrays have handy looping functions that came from ES6</p>
+									<span>
+										<a href="http://" target="_blank">
+											<u>Array ES6 methods</u>
+										</a>
+									</span>
+									<div class="card">
+										<ul>
+											<li>
+												<code><b>map</b></code>: loops over the array and returns a 
+												new array - changes are not applied to the original array.
+												<br>the map body function should return the item mutation.
+												<code class="full-width">
+													const arr = [1, 2, 3, 4, 5];
+													<br>const squaredArray = arr.map((n, idx, originalArr) => n * n);
+													<br>console.log(squaredArray);
+													<br><span class="code-comment">// [1, 4, 9, 16, 25]</span>
+												</code>
+												<br><br>
+											</li>
+											<li>
+												<code><b>filter</b></code>:
+												<br>loops over the array and returns a new array - changes are not applied
+												 to the original array.
+												 <br>the filter body function should return a condition checked for each item.
+												<code class="full-width">
+													const arr = [1 ,2, 3, 4, 5];
+													<br>const filteredArray = arr.map((n, idx, originalArr) => n % 2 === 0);
+													<br>console.log(filteredArray);
+													<br><span class="code-comment">// [2, 4]</span>
+												</code>
+												<br><br>
+											</li>
+											<li>
+												<code><b>reduce</b></code>:
+												<br>loops over the array and returns a value or a new objects (Object or Array)
+												- changes are not applied to the original array.
+												 <br>the reduce body function should return a new value to the accumulator
+												 ( returned value will be the next acc value in the next iteration ) based on the item.
+												<code class="full-width">
+													const arr = [1 ,2, 3, 4, 5];
+													<br>const reducedArray = arr.reduce((acc, item, idx, originalArr) => acc + item, 0);
+													<br>console.log(reducedArray);
+													<br><span class="code-comment">// 15</span>
+												</code>
+												<br><br>
+
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                            OBJECTS CONCEPTS                             -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_objects-concepts">
+								<summary><h3>Objects concepts</h3></summary>
+								<div class="details_content">
+									<p>Objects as Objects or Arrays</p>
+									<div class="card">
+										<ul>
+											<li>
+												<b>reference type</b>:
+												<br>Like mentioned in the previous section, objects 
+												are referenced typed: an address in the memory is 
+												allocated to that object (Object or Array). Even 
+												though 2 objects are defined with the very
+												same content, this would never be equal as the 
+												address reference in memory is unique for each created stored value.
+												<br>
+												<br>
+											</li>
+											<li>
+												<b>context - <code>this</code></b>:
+												<br>Context are often confused with scope: context tells you where we
+												are at the execution context.<code>this</code> keywords allows to refers
+												to the object in which <code>this</code> is executed. Important when doing
+												instantiation
+												<br><br>
+											</li>
+											<li>
+												<b>instantiation</b>:
+												<br>Is about copying and reusing the code - this is instantiating.
+												The object could be written with the ESNext syntax <code>class</code>
+												but could also be written the old fashion way
+												<br>
+												<br>
+												<b>Defining a class</b>
+												<code>
+													class Person(){
+														<br>&nbsp;&nbsp;<span class="code-comment">// this would set the parameter as member of this class</span>
+														<br>&nbsp;&nbsp;constructor(name, age){
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;this.age = age;
+														<br>&nbsp;&nbsp;}
+														<br>&nbsp;&nbsp;introduce(){
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hi, I am ${this.name}`)
+														<br>&nbsp;&nbsp;}
+													<br>}
+													<br><span class="code-comment">//all instance of Person will inherit name, age and introduce</span>
+
+												</code>
+
+												<br>
+												<br>
+												<br>
+												<b>Extending a class</b>
+												<code>
+													class Wizard extends Person {
+														<br>&nbsp;&nbsp;constructor(name, age){
+														<br>&nbsp;&nbsp;<span class="code-comment">// this update the initial class with received parameters form this extended class</span>
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;super(name, age);
+														<br>&nbsp;&nbsp;}
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;throwSpell(){
+														<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("SHAZAAMMMM");
+														<br>&nbsp;&nbsp;<span class="code-comment">//all instances of Wizard will have name, age, introduce and + throwSpell</span>
+													<br>&nbsp;&nbsp;}
+													<br>}
+
+												</code>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                   PASSING REFERENCE / PASSING VALUES                    -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_by-reference-or-by-value">
+								<summary><h3>Passing by reference or by value</h3></summary>
+								<div class="card">
+									<p>Passing by reference or by value concerns how the computer is
+										handling a variable type and how JavaScript will access it
+										- this can relate to the capacity of re-assigning, copy a value to a 
+										variable and the variable mutation capabilities </p>
+									<ul>
+										<li>
+											<b>By Value</b>:
+											<br>Passing by value concerns primitive values
+											that includes: <code>null</code>,<code>undefined</code>,
+											<code>number</code>, <code>boolean</code>, <code>symbol</code>
+										</li>
+										<ul>
+											<li>create <b>a value</b> to a unique address in memory</li>
+											<li>copy <b>a value</b> to a unique address in memory without relation</li>
+											<li>mutate <b>a value</b> to a unique address in memory without relation</li>
+										</ul>
+										<li>
+											<b>By Reference</b>:
+											<br>Passing by reference concerns <code>Objects</code>
+											that includes: <code>Objects</code>,<code>Arrays</code>,
+											<code>function</code> : basically all non-primitive values.
+										</li>
+										<ul>
+											<li>create <b>a reference</b> to a unique address in memory</li>
+											<li>
+												copy by re-assigning a variable an object, copies the 
+												<b>reference</b> - same address in memory is shared.
+											</li>
+											<li>
+												mutating any related object(s) - which are now bound to the same 
+												<b>reference</b> - will mutate all objects.
+											</li>
+										</ul>
+									</ul>
+									<br>
+									<hr class="no-margin" color="#DDD" style="margin: 2rem auto" />
+									<br>
+
+
+									<b>How to "copy" a referenced object then?</b>
+									<p>
+										This action is called <b>cloning</b>: clones the structure object to assign it to a new reference.
+										When the object needs to be copied and to be created at a new address reference
+										in memory, we need to explicity create a new object. 
+										
+										There are two types of cloning: shallow cloning and recursive cloning - commonly called deep cloning.
+										This could put you in a confusing position if you are not aware of of those different behavior and
+										different ways to clone.
+									</p>
+									<br>
+									<p><u><b>Shallow cloning</b></u>:
+										<br> is the fact to clone an object to a new address in memory ( creating a new reference );
+										 but the nested objects within are not cloned - they are still referenced to the other original
+										 object reference.
+										 <br>
+										 This can be done either using:
+										 <code>Object.assign({}, &lt;object-variable&gt;)</code> 
+										 <br>&nbsp;or using the <code>spread operator</code>:
+										 <br><code>const clonedObj = {...&lt;object-variable&gt;}</code>
+									</p>
+
+									<p><u><b>Deep cloning ( Circular cloning )</b></u>:
+										<br> is the fact to clone an object to a new address in memory ( creating a new reference ) including
+										the nested objects - All level of object will be addressed a new reference.
+										 <br>
+										 This can be done either using:
+										 <code>JSON.parse(JSON.stringify(&lt;object-variable&gt;))</code> 
+										 <br>which will parse a string representing the object, hence will not have any reference
+										 as the returned string is a passed by value
+										 <br>&nbsp;or using a recent JavaScript global function <code>structureClone()</code>:
+										 <br><code>const clonedObj = structureClone(&lt;object-variable&gt;, &lt;options&gt;)</code>
+									</p>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              TYPE COERCION                              -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_type-coercion">
+								<summary>
+									<h3>Type Coercion</h3>
+								</summary>
+								<p>Type coercion concerns how JavaScript will interpret the code.
+									Two values being compared but the type is diverging.
+									JavaScript being dynamically typed can handle those unexpected side effects
+									and will attempt to evaluate it for you.
+									It usually occurs when JavaScript attempts to evaluates values together.
+								</p>
+								<div class="card">
+									<p><b><u>Examples</u></b></p>
+									<ul>
+										<li>comparison coercion</li>
+										<ul>
+											<li><code>10 == '10'<span class="code-comment">// true - assuming the within "text" is equal</span>	</code></li>
+											<li><code>10 === '10'<span class="code-comment">// false - the type of each value is checked</span>	</code></li>
+										</ul>
+									</ul>
+									<li>boolean coercion</li>
+									<ul>
+										<li><code>1 == true<br><span class="code-comment">// true - assuming 1 referring to a binary value which means true</span>	</code></li>
+										<li><code>1 === true <br><span class="code-comment">// false - the type of each value is checked</span>	</code></li>
+										<li><code>0 == false<br><span class="code-comment">// true - assuming 1 referring to a binary value which means true</span>	</code></li>
+										<li><code>0 === false<br><span class="code-comment">// false - the type of each value is checked</span>	</code></li>
+
+
+									</ul>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              ES2016 - ES7                               -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_ES2016-ES7" open>
+								<summary>
+									<h3>ES2016 - ES7</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li><code>&lt;string&gt;<b>.includes</b>(&lt;string&gt;)</code>:
+											<br>Checks if a string includes a specified string
+										</li>
+										<li><code>&lt;array&gt;<b>.includes</b>(&lt;value&gt;)</code>:
+											<br>Checks if an array includes a specified value
+										</li>
+										<li><b>exponential operator <code><b>**</b></code>:</b>
+											<br>Squares a number by itself
+											<br><code>const number = 5 ** 2 <br><span class="code-comment">// 25 - using exponent operator</span></code>
+											<br><code>const number = 5 * 5 <br><span class="code-comment">// 25 - old way to do</span></code>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              ES2017 - ES8                               -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_ES2017-ES8" open>
+								<summary>
+									<h3>ES2017 - ES8</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<!-- ------------------------- PADSTART AND PADEND ------------------------- -->
+										<li>
+											<code>&lt;string&gt;<b>.padStart</b>(&lt;length-number&gt;, [&lt;value&gt;])</code>
+											<br><code>&lt;string&gt;<b>.padEnd</b>(&lt;length-number&gt;, [&lt;value&gt;])
+											</code>:
+											<br>Adds missing characters <i>(or spaces by default)</i> <b>before</b> or <b>after</b> the existing characters, to fit the <code>&lt;length-number&gt;</code>
+											<ul>
+												<li><code>&lt;<b>length-number</b>&gt;</code>: string length to fill ( including string );</li>
+												<li><code>&lt;<b>value</b>&gt;</code>:<i>(optional parameter)</i>, element to fill with;</li>
+											</ul>
+											<br>
+											<code class="full-width">
+												'hello'.padStart(10, '*'); <span class="code-comment">// *****hello</span>
+											</code>
+											<code class="full-width">
+												'hello'.padEnd(10, '*'); <span class="code-comment">// hello*****</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- --------------------------- OBJECT ENTRIES ---------------------------- -->
+										<li><code>Object<b>.entries</b>(&lt;object&gt;)</code>:
+											<br>From an object, gets an array of key property/values pairs arrays
+											<br>
+											<code class="full-width">const a = { one: 1 };
+												<br>console.log(Object.entries(a))
+												<br><span class="comment-code">// [['one', 1]]</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ----------------------------- OBJECT KEYS ----------------------------- -->
+										<li><code>Object<b>.keys</b>(&lt;object&gt;)</code>:
+											<br>From an object, gets an array of all the properties keys ( properties names )
+											<br>
+											<code class="full-width">const a = { one: 1 };
+												<br>console.log(Object.keys(a))
+												<br><span class="comment-code">// ['one']</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ---------------------------- OBJECT VALUES ---------------------------- -->
+										<li><code>Object<b>.values</b>(&lt;object&gt;)</code>:
+											<br>From an object, gets an array of all the properties' values
+											<br>
+											<code class="full-width">const a = { one: 1 };
+												<br>console.log(Object.values(a))
+												<br><span class="comment-code">// [1]</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ------------------------ EXPONENTIAL OPERATOR ------------------------- -->
+										<li><b>exponential operator <code>**</code>:</b>
+											<br>Squares a number by itself
+											<br><code class="full-width">const number = 5 ** 2 <br><span class="code-comment">// 25 - using exponent operator</span></code>
+											<br><code class="full-width">const number = 5 * 5 <br><span class="code-comment">// 25 - old way to do</span></code>
+										</li>
+										
+									</ul>
+								</div>
+							</details>
+
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              ES2018 - ES9                               -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_ES2018-ES9">
+								<summary>
+									<h3>ES2018 - ES9</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li><u>Async / Await</u> - WIP</li>
+									</ul>
+								</div>
+
+							</details>
+
+							<!-- ----------------------------------------------------------------------- -->
+							<!--                              ES2019 - ES10                              -->
+							<!-- ----------------------------------------------------------------------- -->
+							<details id="JS-advanced_ES2019-ES10">
+								<summary>
+									<h3>ES2019 - ES10</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<!-- -------------------------------- FLAT --------------------------------- -->
+										<li>
+											<code>&lt;Array&gt;<b>.flat([ &lt;depth-number&gt; ])</b></code>
+											<br /> Flat a multi dimensional array (an array with multiple depth level array nested);
+											<br>returns a new array;
+											<br>can clean an array with empty values
+											<code class="full-width">
+												<br><span class="code-comment">// multi-dimensional array</span>
+												<br> const arr = [1,[ 2, [ 3 ]]]; 
+												<br>
+												<br>console.log(arr.flat());
+												<br> <span class="code-comment">// [ 1, 2, [ 3 ]]</span>
+												<br>
+												<br>console.log(arr.flat(2));
+												<br> <span class="code-comment">// [ 1, 2, 3 ]</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ------------------------------ FLAT MAP ------------------------------- -->
+										<li>
+											<code>&lt;Array&gt;<b>.flatMap( &lt;callback-function&gt; )</b></code>
+											<br /> Flat a multi-dimensional array using a callback function for custom mapping implementation.
+											<br>('custom mapping implementation' can apply mutation such as <code>.map()</code> would do);
+											<br>returns a new array;
+
+											<code class="full-width">
+												<br> <span class="code-comment">// multi-dimensional array</span>
+												<br> const arr = [ 1, [2], 3 ]; 
+												<br>
+												<br>console.log(arr.flatMap( x => x ** 2));
+												<br> <span class="code-comment">// [ 1, 4, 9 ] - flatten the array and squares the values</span>
+												<br>
+												<br>
+											</code>
+											<br><br><br>
+
+										</li>
+										
+										<!-- ----------------------- TRIM START AND TRIM END ----------------------- -->
+										<li>
+											<code>&lt;String&gt;<b>.trimStart()</b></code>
+											<code>&lt;String&gt;<b>.trimEnd()</b></code>
+											<br />Remove empty character ( as <code>.trim()</code> does ) but either at the beginning 
+												or ending side of the string.
+
+											<code class="full-width">
+												<br> const emailValue1 = "                    john.doe@gmail.com"; 
+												<br> const emailValue2 = "john.doe_bis@gmail.com                     "; 
+												<br>
+												<br>console.log(emailValue1.trimStart());
+												<br> <span class="code-comment">// john.doe@gmail.com</span>
+												<br>console.log(emailValue1.trimEnd());
+												<br> <span class="code-comment">// john.doe_bis@gmail.com</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ---------------------------- FROM ENTRIES ----------------------------- -->
+										<li>
+											<code>Object<b>.fromEntries(&lt;array-of-a-pair-of-tuples&gt;)</b></code>
+											<br />Transform an array of tuples of 2 values, creates an object.
+
+											<code class="full-width">
+												<br> const arrOfTuples = [["one", 1], ["two", 2], ["three", 3]];
+												<br>
+												<br> const objCreated = Object.fromEntries( arrOfTuples );
+												<br>
+												<br>console.log(objCreated);
+												<br> <span class="code-comment">// { one: 1, two: 2, three: 3 }</span>
+											</code>
+											<br><br><br>
+										</li>
+
+										<!-- ---------------------------- TRY ... CATCH ---------------------------- -->
+										<li>
+											<code><b>try {} catch {}</b></code>
+											<br />Allows to try a code implementation and if any errors is found, the catch
+											takes place.
+
+											<code class="full-width">
+												<br>try {
+												<br>&nbsp;&nbsp; console.info('hey');
+												<br>} catch {
+												<br>&nbsp;&nbsp; console.error('error ocurred')
+												<br>}
+											</code>
+											<br><br><br>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------------- ES2020 -------------------------------- -->
+							<details id="JS-advanced_ES2020">
+								<summary>
+									<h3>ES2020</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li>
+											<b>BigInt type</b>
+											<br />Allows to refers or calculate to a big integers
+											<br>Syntax: <code>&lt;number&gt;<b>n</b></code> adding <code>n</code> at the end.
+											<code>
+												console.log(18n < 19) <span class="code-comment">// true</span>
+												<br>console.log(18n > 19) <span class="code-comment">// false</span>
+												<br>console.log(18n > 18) <span class="code-comment">// false</span>
+												<br>console.log(18n < 18) <span class="code-comment">// false</span>
+												<br>console.log(18n === 18) <span class="code-comment">// false</span>
+												<br>console.log(18n == 18) <span class="code-comment">// true</span>
+											</code>
+											<br><br><br>
+										</li>
+										<li>
+											<b>Optional chaining <code>?.</code></b>
+											<br>Allows to check and access a value if this does exits.
+											<br>UseCase: instead of verifying a value and then try to access a nested value.
+											<br>If the access is not possible it will return `undefined`.
+											<br>Is applicable to object and array
+											<br>Syntax with object: <code>&lt;object&gt;<b>?.&lt;property&gt;</b></code>
+											<br>Syntax with array: <code>&lt;array&gt;<b>?.[&lt;index&gt;]</b></code>
+											<br><br><br>
+										</li>
+										<li>
+											<b>Nullish coalescing <code>??</code></b>
+											<br>Allows to check for values even if there are falsy ( a contrario of the OR operator <code>||</code>)
+											<br>Checking a value if not null first
+											<br><code>console.log( '' ?? 1 )<span class="code-comment"> // ''</span></code>
+											<br>whereas
+											<br><code>console.log( '' || 1 )<span class="code-comment">// 1</span></code>
+											<br>
+											<br><code>console.log( false ?? 1 )<span class="code-comment">// false</span> </code>
+											<br>whereas
+											<br><code>console.log( false || 1 )<span class="code-comment"> // 1</span></code>
+											<br><br><br>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------------- ES2021 -------------------------------- -->
+							<details id="JS-advanced_ES2021">
+								<summary>
+									<h3>ES2021</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li>
+											<code>&lt;string&gt;<b>.replaceAll(&lt;target-value&gt;, &lt;new-value&gt;)</b></code>
+											<br>Allows to replace all matching occurrence by the new value;
+											<code>
+												const str = 'The worst of the worst';
+												<br>const result = str.replaceAll('worst', 'best');
+												<br>console.log(result);
+												<br><span class="code-comment">// "The best of the best"</span>
+											</code>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------------- ES2022 -------------------------------- -->
+							<details id="JS-advanced_ES2022">
+								<summary>
+									<h3>ES2022</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li>
+											<code>&lt;Iterable&gt;<b>.at(&lt;relative-index&gt;)</b></code>
+											<br>Get the "relative" item in iterable. (relative index could be a positive or negative one)
+											<code>
+												const str = 'The worst of the worst';
+												<br>console.log(str.at(-1));
+												<br><span class="code-comment">// "t"</span>
+												<br>
+												<br>const arr = ['The', 'worst of', 'the worst'];
+												<br>console.log(arr.at(-3));
+												<br><span class="code-comment">// "The"</span>
+												<br>
+											</code>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------------ DEBUGGING ------------------------------ -->
+							<details id="JS-advanced_debugging">
+								<summary>
+									<h3>Debugging strategies</h3>
+								</summary>
+								<div class="card">
+									<ol>
+										<li>read the code implementation (again) / even reformulate, re-organized, add comments</li>
+										<li>console log the expected output of the line starting the computation of the bug</li>
+										<li>for further debug, we could use <code>debugger;</code> instruction in the code:
+											<br>This will stop the running process until JavaScript hit the line <code>debugger;</code>
+												to analyze step by step what the code computation is doing - opening a screen in the browser
+												to allow one to navigate through the code's steps.
+											<br>- play: resume the paused execution to play it entirely
+											<br>- "step over": going to the next line
+										</li>
+									</ul>
+								</div>
+							</details>
+
+ 							<!-- ---------------------------- HOW JS WORKS ----------------------------- -->
+							<details id="JS-advanced_how-javascript-works">
+								<summary>
+									<h3>How JavaScript works</h3>
+								</summary>
+								<div class="card">
+									<ul>
+										<li>What is a program?</li>
+										<ul>
+											<li>has to allocate memory</li>
+											<li>has parse and execute the code/script</li>
+										</ul>
+										<li>JavaScript Engine</li>
+										<ul>
+											<li>each browser integrate (Chrome's engine is v8)</li>
+											<li>engines is constitute with a memory heap and call stack (enabling the driven event system)</li>
+										</ul>
+									</ul>
+									<hr width="300px" color="#DDD" style="margin: 2rem auto" />
+									<p>Links to explore call stack, event loops</p>
+									<ul>
+										<li><a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" alt="Loope's explanation and visualizer">Loope's explanation and visualizer</a></li>
+										<li><a href="https://www.jsv9000.app/" alt="">jsv9000 visualizer</a></li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------------- MODULES ------------------------------- -->
+							<details id="JS-advanced_modules">
+								<summary>
+									<h3>Modules</h3>
+								</summary>
+								<div class="card">
+									Here is how JS got to modules
+									<ul>
+										<!-- --------------------- INLINE SCRIPT TAGS AND CODE --------------------- -->
+										<li>Inline Scripts: <br>Script tag with JS in the body</li>
+										<ul>
+											<li>lack of code reusability: the script located within a page is not able to be shared between multiple HTML for instance except if it is copy pasted in each HTML file</li>
+											<li>pollutes the Global Namespace: variables and functions declared in the HTML file are exposed globally which led to not being able to use those variables or functions name's again</li>
+										</ul>
+
+										<!-- ----------------------------- SCRIPT TAGS ----------------------------- -->
+										<li>Script tags: <br>Script tags importing JS file using the <code>src</code> attribute. (Examples: CDNs can be imported as script tags)</li>
+										<ul>
+											<li>Still have to copy paste the script tags between HTML pages that uses them</li>
+											<li>Lacks of Dependency Resolution: Imported scripts sometimes need to be imported
+												in a specific order otherwise they may not work as expected (occurs when a
+												script needs to access code from another script imported but since it has
+												been loaded in an incorrect order: the code cannot be accessed)
+											</li>
+											<li>Still have Global NameScape pollution: namespaces are still exposed and could be used or overridden </li>
+										</ul>
+
+										<!-- -------------------------------- IIFE --------------------------------- -->
+										<li>IIFE: <br>Allowing to encapsulate the code to avoid polluting the Global NameSpace and expose it once</li>
+										<ul>
+											<li>Does not pollute the Global NameSpace as the previous way - each IIFE exposed uses less Global Name</li>
+											<li>Each IIFE has their own scope</li>
+											<li>Still exposed to the lack of Dependency Resolution problematic</li>
+										</ul>
+
+										<!-- ----------------------------- BROWSERIFY ------------------------------ -->
+										<li>Browserify with CommonJS:
+											<br>module bundler: running before the site is online and bundle all files modules into one file
+										</li>
+										<ul>
+											<li>enabling the syntax: <code>module.export</code> and <code>require(&lt;file-path-with-export&gt;)</code></li>
+											<ul>
+												<li>which reduces again the Global NameSpace</li>
+												<li>which improves the Dependency Resolution</li>
+											</ul>
+										</ul>
+
+										<!-- ------------------- ES6 and WebPack ( or bundlers ) ------------------- -->
+										<li>Bundler + ES6:</li>
+										<ul>
+											<li> ES6:
+												<br> <code>import</code> and <code>export</code> or <code>export default</code>
+												keywords allowing to do the same as common JS
+											</li>
+											<li> Bundler (WebPack)
+												<br>Bundler such as WebPack, Rollup, Parcel ... are doing the same as browserify
+												but they go through the code checking for ES6 import/export syntaxes
+											</li>
+										</ul>
+									</ul>
+
+									<hr width="300px" color="#DDD" style="margin: 2rem auto" />
+
+									<p>Links to explore call stack, event loops</p>
+									<ul>
+										<li><a href="https://medium.com/sungthecoder/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde">History of JavaScript Modules</a></li>
+										<li><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/" alt="">Lin Clark - ES modules: A cartoon deep-dive</a></li>
+									</ul>
+									
+								</div>
+							</details>
+						</div>
+					</section>
+
+					
+
+
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                PRACTICE                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="JS-practice">
+						<h2>JS Practices</h2>
+						<div class="layout_content">
+							<details id="JS-practice_guess-outputs_number-string-boolean-comparisons">
+								<summary><h3>Number, String, Boolean, Comparisons</h3></summary>
+								<div class="details-content">
+									<p>
+										Guess the outputs before running them to check your answers
+									</p>
+									<a href="./practices/05_JS-practice_guess-outputs_number-string-boolean-comparisons/index.html" title="JS  Number, String, Boolean, Comparisons" target="_blank">
+										Live Exercise result
+									</a>
+									<br>
+									<iframe
+										class="card"
+										title="Preview JS test - auto generated"
+										id="DOM-manipulation_iframe_comparisons"
+										src="./practices/05_JS-practice_guess-outputs_number-string-boolean-comparisons/index.html"
+										style="border: none">
+									</iframe>
+								</div>
+							</details>
+	
+							<!-- ----------------------------- CALCULATOR ------------------------------ -->
+							<details id="JS-practice_calculator">
+								<summary><h3>Calculator</h3></summary>
+								<div class="details-content">
+									<p>
+										Make a calculator that sums - Bonus make a calculator that sums (previously done),
+										subtracts, divides, multiplies
+									</p>
+		
+									<ul>
+										Using:
+										<li>variable declaration var</li>
+										<li>using prompt</li>
+										<li>using alert</li>
+										<li>if needed: to concatenate a string use the "+" operator to display the text</li>
+									</ul>
+									<a href="./practices/06_calculator/index.html" title="JS Calculator" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ----------------------------- KEYLESS CAR ----------------------------- -->
+							<details id="JS-practice_keyless-car">
+								<summary><h3>Keyless Car</h3></summary>
+								<div class="details-content">
+									<p>
+										Prompts the user to check the age in order to display specific messages about wether the
+										car will powering on or powering off.
+									</p>
+									<div>
+										<p>Using:</p>
+										<ul>
+											<li>variable declaration var</li>
+											<li>using prompt</li>
+											<li>using alert</li>
+											<li>using control flow</li>
+										</ul>
+									</div>
+									<a href="./practices/07_keyless-car/index.html" title="JS Keyless Car" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ------------------------------- ARRAYS -------------------------------- -->
+							<details id="JS-practice_arrays">
+								<summary><h3>Arrays</h3></summary>
+								<div class="details-content">
+									<p>Practicing array methods by following the instructions</p>
+									<a href="./practices/09_arrays/index.html" title="JS Keyless Car" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ------------------------------- OBJECTS ------------------------------- -->
+							<details id="JS-practice_datastructure-objects-and-arrays">
+								<summary><h3>Data Structure - Objects literal and Arrays</h3></summary>
+								<div class="details-content">
+									<p>
+										Practicing objects creation ( Object literal and Array and ) methods
+										<br> by following the instructions
+									</p>
+									<a 
+										href="./practices/10_datastructure-objects-and-arrays/index.html" 
+										title="Data structure with Objects and Arrays" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ------------------------- FACEBOOK -- SIGN IN ------------------------- -->
+							<details id="JS-practice_facebook--sign-in">
+								<summary><h3>Facebook conditioned by a sign-in</h3></summary>
+								<div class="details-content">
+									<p>Implementing an access to content for a user with prompt and function</p>
+									<a 
+										href="./practices/11_facebook--sign-in/index.html"
+										title="Facebook sign-in like" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ------------------ FACEBOOK -- SIGN IN - LOOP IMPROVED ---------------- -->
+							<details id="JS-practice_facebook--sign-in_loop-improved">
+								<summary><h3>Facebook sign-in - improved</h3></summary>
+								<div class="details-content">
+									<p>Implementing an access to content for a user with prompts, functions and Loops
+										<br>Checking amongst multiple users
+									</p>
+									<a 
+										href="./practices/12_facebook--sign-in_loop-improved/index.html"
+										title="Facebook sign-in like" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ------------------------------- OBJECTS ------------------------------- -->
+							<details id="JS-practice_datastructure-objects-and-arrays">
+								<summary><h3>Data Structure - Objects literal and Arrays</h3></summary>
+								<div class="details-content">
+									<p>
+										Practicing objects creation ( Object literal and Array and ) methods
+										<br> by following the instructions
+									</p>
+									<a 
+										href="./practices/10_datastructure-objects-and-arrays/index.html" 
+										title="Data structure with Objects and Arrays" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+
+	
+							<!-- ---------------------------- ES2016 - ES7 ----------------------------- -->
+							<details id="JS-practice_ES2016-ES7-features">
+								<summary><h3>ES2016 - ES7</h3></summary>
+								<div class="details-content">
+									<p>Practicing JavaScript ES2016 - ES7 features</p>
+									<a 
+										href="./practices/20_ES2016-ES7-features/index.html" 
+										title="Practice ES2016 - ES7 features" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+	
+							<!-- ---------------------------- ES2017 - ES8 ----------------------------- -->
+							<details id="JS-practice_ES2017-ES8-features">
+								<summary><h3>ES2017 - ES8</h3></summary>
+								<div class="details-content">
+									<p>Practicing JavaScript ES2017 - ES8 features</p>
+									<a 
+										href="./practices/21_ES2017-ES8-features/index.html" 
+										title="Practice ES2016 - ES7 features" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+
+							<!-- ---------------------------- ES2019 - ES10 ----------------------------- -->
+							<details id="JS-practice_ES2019-ES10-features">
+								<summary><h3>ES2019 - ES10</h3></summary>
+								<div class="details-content">
+									<p>Practicing JavaScript ES2019 - ES10 features</p>
+									<a 
+										href="./practices/22_ES2019-ES10-features/index.html" 
+										title="Practice ES2019 - ES10 features" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+
+							<!-- -------------------------- ADVANCED LOOPING --------------------------- -->
+							<details id="JS-practice_advanced-looping">
+								<summary><h3>Advanced Looping</h3></summary>
+								<div class="details-content">
+									<p>Practicing advanced looping <code>for ... of</code> and <code>for ... in</code></p>
+									<a 
+										href="./practices/23_advanced-looping/index.html" 
+										title="Practice Advanced Looping" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+
+							<!-- ------------------------------- ES2020 -------------------------------- -->
+							<details id="JS-practice_ES2020">
+								<summary><h3>ES2020</h3></summary>
+								<div class="details-content">
+									<p>Practicing ES2020 features</p>
+									<a 
+										href="./practices/24_ES2020-features/index.html" 
+										title="JavaScript Challenge" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+
+
+							<!-- --------------------- CHALLENGE JS (numbered #6) ---------------------- -->
+							<details id="JS-practice_JavaScript-Challenge">
+								<summary><h3>Challenge(6)</h3></summary>
+								<div class="details-content">
+									<p>JavaScript Challenge - solve the problems</p>
+									<a 
+										href="./practices/25_challenge6-javascript-logic/index.html" 
+										title="JavaScript Challenge" target="_blank">
+										Live Exercise result
+									</a>
+								</div>
+							</details>
+						</div>
+
+
+					</section>
+					<hr />
+				</div>
+			</main>
+		</div>
+		<footer id="layout_footer">
+			<div>
+				<a id="back-to-top" href="#layout_page" target="_top" title="Back to the top"></a>
+			</div>
+		</footer>
+		<script src="./assets/scripts/navigation.js"></script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+.InputSet {
+	display: flex;
+	flex-direction: row;
+	&-container {
+		display: inherit;
+		flex-direction: column;
+		margin: 5px;
+	}
+
+	&:has(input[type=radio]){
+		margin: 10px 15px 60px;
+	}
+
+
+	input[type=checkbox]{
+		margin: 0 10px
+	}
+
+	[disabled]{
+		cursor: not-allowed;
+	}
+}
+
+.dual-inline {
+	width: unset;
+}

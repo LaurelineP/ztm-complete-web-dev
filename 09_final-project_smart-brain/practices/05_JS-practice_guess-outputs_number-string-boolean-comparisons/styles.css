@@ -1,0 +1,188 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Avenir", sans-serif, Arial;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+	height: 100vh;
+}
+
+main {
+	margin: 100px 30px 30px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+code:not(:empty) {
+	background-color: #daeaf275;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: #333;
+	display: inline-block;
+	margin: 1px;
+}
+
+
+hr {
+	border-style: solid;
+	border: none;
+	height: 1px;
+	background-color: #999;
+}
+
+.card {
+	flex-direction: inherit;
+	background-color: #fff;
+	height: auto;
+	box-shadow: 0 1px 8px 2px #dde;
+	padding: 2rem 5rem;
+	border-radius: 3px;
+	margin: 1rem;
+	width: inherit;
+}
+
+form {
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	column-gap: 5rem;
+}
+
+.evaluation-container {
+	background-color: rgba(0, 200, 240, 0.156);
+	border-radius: 3px;
+	margin: 10px;
+	padding: 10px 30px;
+}
+
+.evaluation-container_inputs {
+	display: flex;
+	justify-content: space-between;
+	width: 30%;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 input text                                 */
+/* -------------------------------------------------------------------------- */
+input[type="text"] {
+	border: none;
+}
+input[type="text"]::after {
+	content: "";
+	width: 100%;
+	height: 2px;
+	background-color: #333;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                SUBMIT BUTTON                               */
+/* -------------------------------------------------------------------------- */
+input[type="button"],
+input[type="submit"] {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: all ease-in 200ms;
+	margin: 0 auto;
+	margin: 10px;
+	border: 1px solid #ccc
+}
+input[type="button"]:hover,
+input[type="submit"]:hover {
+	box-shadow:  0 2px 10px 0 #eee;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Modal                                   */
+/* -------------------------------------------------------------------------- */
+dialog {
+    width: 50%;
+    height: 25%;
+    border-radius: 3px;
+    border: none;
+	box-shadow: 0 0 200rem 2px #333;
+	padding: 60px;
+	bottom: 25vh;
+}
+
+dialog:focus {
+	outline: none;
+}
+
+#modal-main {
+	display: flow-root;
+	height: 85%;
+	align-items: center;
+	text-align: center;
+	overflow: auto;
+}
+#modal-footer {
+	display: flex;
+    justify-content: flex-end;
+	bottom: 20px;
+}
+
+input[type="button"] {
+	justify-content: flex-end;
+}
+
+iframe {
+	border: none;
+	margin-bottom: 40px;
+	border-radius: 3px;
+	width: 50vw;
+}
+
+span {
+	display: inline-block;
+}
+
+#errors-container {
+	width: 350px;
+    display: flex;
+    justify-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+	margin: 0 auto;
+}
+
+details:focus, summary:focus {
+	outline: unset;
+}
+
+#modal-main > p:first-of-type  {
+	background-color:lightblue;
+	padding: 15px 0;
+	border-radius: 3px;
+}
+
+hr {
+	margin-bottom: 20px;
+}
+
+#modal-main hr + p {
+	width: 50%;
+	text-align: center;
+	margin: auto;
+	text-align: justify;
+}
+
+@media (width < 1250px) {
+	body, main {
+		margin: 20px;
+		overflow-x: hidden;
+	}
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc JS Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>DOM Manipulation</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					id="navigation"
+					title="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="react-introduction" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>React</h1>
+						<hr />
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                            REACT INTRODUCTION                           -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="react-introduction">
+						<h2>React</h2>
+						<div class="card">
+							<p>
+								Before the introduction of tools such as React (Angular, Svelte, Remix...),
+								<br>all the websites interactions were handled using jquery or even 
+								<span title="native/pure JavaScript">*Vanilla JavaScript</span>
+								doing DOM Manipulation in large files to request.
+								Tools such as React allows to gain in productivity, scalability and performances.
+							</p>
+						</div>
+
+						<!-- ----------------------------------------------------------------------- -->
+						<!--                               CONCEPTS                                  -->
+						<!-- ----------------------------------------------------------------------- -->
+						<div class="layout_content">
+							<!-- ------------------------------ CONCEPTS ------------------------------- -->
+							<details id="concepts">
+								<summary><h3>Concepts</h3></summary>
+								<div class="details-content">
+									<p>Selectors are ways to access the HTML content such as the elements, ids, classes ...
+										<br>Those are the same syntax seen in CSS elements.
+									</p>
+									<ul>
+										<li>manages the <b>view</b> of a website (how the page is composed )</li>
+										<li>has <b>component</b>: little block component that often structure 
+											<br>a bigger one in the page ( alike legos )
+										</li>
+										<li>each component can be reusable and customized - which enforce UI/UX consistency</li>
+									</ul>
+									
+									<!-- ----------------------------- COMPONENTS ------------------------------ -->
+									
+									<div id="concept_components" class="card">
+										<h4>Components</h4>
+										<p>A visual and code block having one responsibility which can be re-used</p>
+										<a href="https://atomicdesign.bradfrost.com/table-of-contents/" target="_blank">
+											<img 
+												style="width: 100%;"
+												src="https://atomicdesign.bradfrost.com/images/content/instagram-atomic.png" 
+												alt="Atomic Design - Brad Frost" 
+												/>
+												<i>Brad Frost - Atomic Design</i>
+										</a>
+										<br>
+										<br>
+										<ul>
+											<li><u>Atoms:</u> small individual element</u></li>
+											<li><u>Molecules:</u> combination of multiple atoms</u></li>
+											<li><u>Organism:</u> a combination of multiple atoms and/or atoms together</u></li>
+											<li><u>Templates:</u> an organization of combined organisms together</u></li>
+											<li><u>Pages:</u> an page content with data and an organization of elements above</u></li>
+										</ul>
+										<hr/>
+										<p>Any of the above refers to a component: any "size" of component can be created.</p>
+										<div>
+											<hr />
+											<h4>Button Component concept example with</h4>
+											<ul>
+												<li><u>Specs in common</u></li>
+												<ul>
+													<li>have an angular box</li>
+													<li>a button text</li>
+													<li>a background color</li>
+													<li>an action to trigger based on event</li>
+												</ul>
+												<li><u>Different customizations</u></li>
+												<ul>
+													<li>one could be a login button with a white background and login function</li>
+													<li>another one could be a logout button with a red background and logout function</li>
+												</ul>
+											</ul>
+											<div id = "concept_one-way-data-binding_example">
+												<div>
+													<button class="margin-5" style="color: #6e6e6e;">login</button>
+													<button class="margin-5" style="background-color: tomato;color: #fff;">logout</button>
+												</div>
+												<span class="legend"><i>* The above is not using react but they share the same styles - great to make a component</i></span>
+											</div>
+										</div>
+									</div>
+
+									<!-- -------------------------- ONE WAY DATA FLOW -------------------------- -->
+									<div class="card" id="concept_one-way-data-binding">
+										<h4>One way data binding</h4>
+										<p>React is a whole ecosystem putting in relations components and data 
+											- being aware of the app state based on the user experience.</p>
+										<p>Like mentioned above, React connects components together acknowledging 
+											the relations between them, the user interactions and data.</p>
+										<p>This will allow to keep tracks on how component should be displayed 
+											- Component can be reused in different circumstances which 
+											customizes the component content.
+										</p>
+										<p>Data flows from top to bottom. Here on the bellow representation we can 
+											observe the color blue being propagated:
+											<br>this represents how changes affect the bellow children nodes.
+										</p>
+										<p>Any changes re-render the bellow connected nodes.</p>
+
+										<img
+											id="concept_one-way-data-binding_image"
+											src="./assets/visualizations/react_one-way-data-binding.GIF"
+											alt="One way data binding representation - credit: Laureline Paris">
+
+											<h4>The Virtual DOM</h4>
+											<p>The Virtual DOM is a representation of the existing rendered DOM as an object.</p>
+											<p>When a change occurred, the Virtual DOM allows to only affects the elements 
+												concerns ( = doing an optimized DOM manipulation for your ) , all the other elements
+												that do not need to be updated will not render; which increases performances.
+												This could also be represented by the above representation.
+											</p>
+									</div>
+
+
+									<div class="card" id="concept_preview-component-code">
+										<h4>Preview of a component code</h4>
+										<p>No worries about the code in the picture: this is only for previewing purposes 
+											on how a component written using react would look like.
+											More details will be covered afterwards
+										</p>
+
+										<img
+											id="concept_concept_preview-component-code_class-based"
+											src="./assets/visualizations/react_component-code-example_class-based.png"
+											alt="Class based component  - with react version < v16">
+
+										<img
+											id="concept_concept_preview-component-code_function-based"
+											src="./assets/visualizations/react_component-code-example_function-based.png"
+											alt="Function based component - with react version > v16">
+									</div>
+								</div>
+							</details>
+
+							<!-- ----------------------------- START REACT ----------------------------- -->
+							<details id="starting-with-react">
+								<summary><h3>Starting with react</h3></summary>
+								<div class="details-content">
+									<!-- -------------------------------- SETUP -------------------------------- -->
+									<div id="Setup" class="card">
+										<h4>Setup</h4>
+										<div class="details-content">
+											<ul>
+												<li><u>Resources</u></li>
+												<ul>
+													<li><a href="https://react.dev/">React documentation</a></li>
+													<li><a href="https://create-react-app.dev/">Create React App documentation</a></li>
+												</ul>
+												<li><u>React Installation recap</u></li>
+												<ul>
+													<li><code>npm install react</code>:<br>would be the way to manually config react - not covered</li>
+													<li><code>npx create-react-app &lt;app-name&gt;</code>:<br>would be the covered way</li>
+												</ul>
+												<li><u>Generated folder and files</u></li>
+												<ul>
+													<li>package.json: <br> a file listing all app config</li>
+													<ul>
+														<li><code>app</code>, <code>name</code>, <code>description</code>, <code>author</code>, <code>license</code> and <code>version</code></li>
+														<li><code>scripts</code>: to run the app</li>
+														<li><code>dependencies</code>: packages imported and necessary for the project</li>
+														<li><code>dev-dependencies</code> packages imported for the project and developers</li>
+													</ul>
+													<li><code>package-lock.json</code>:<br>ensuring the app will run anywhere with the resolves internal dependencies of each packages and their versions</li>
+													<li><code>README.md</code>:<br>file generally describing what is the project and how it works</li>
+													<li><code>.gitignore</code>:<br>listing all files and folders to not track in commits hence the repository</li>
+													<li><code>node_modules</code>:<br>all the packages that the app need ( includes all dependencies of all the packages installed in the project )</li>
+													<li><code>public</code> folder:<br>contains files that does not require to be in used in the code app</li>
+													<ul>
+														<li><code>favicon.ico</code>: icon on the browser tab</li>
+														<li><code>manifest.json</code>: file for your web app to be downloaded if requested to </li>
+														<li><code>index.html</code>:
+															<br>most important file as it is the receptor for your react app to run thanks to the div with the id "root" 
+														</li>
+													</ul>
+												</ul>
+											</ul>
+										</div>
+									</div>
+
+									<div id="API-in-use_component-based">
+										<h4>API in use</h4>
+										<div class="details-content">
+											<p>
+												<b><abbr title="JavaScript Syntax XML">JSX</abbr></b>
+												<br>JSX (JavaScript Syntax XML) is what correspond to the 
+												HTML alike syntax in the picture
+											</p>
+											<code class="full-width">
+												class App extends Component {
+													constructor(props){
+														return(
+															<span class="code-comment">{/* the bellow syntax is JSX */}</span>
+															<h1>Hello world</h1>
+														)
+													}
+												}
+											</code>
+										</div>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                PRACTICE                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="Practice">
+						<h2>Practices</h2>
+						<div class="layout_content">
+							<details id="robot-friends-book">
+								<summary><h3>Robot Friends Book</h3></summary>
+								<div class="details-content">
+									<p>Robot Friends Book was the original practice, 
+										a similar implementation is done using a different API.
+										Let's call it Personas book
+									</p>
+
+									<p>Resources</p>
+									<a href="https://personas-book.netlify.app/"
+										title="Robots friends Book" target="_blank">
+										Deployed version - netlify
+									</a>
+									<div id="react_robots-friends-book" class="card">
+										<iframe
+											title="Preview of the Personas Friends Book"
+											id="react_iframe_personas-book"
+											type="text/html"
+											src="https://personas-book.netlify.app/"
+											style="border: none">
+											
+										</iframe>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+				</div>
+			</main>
+		</div>
+		<footer id="layout_footer">
+			<div>
+				<a id="back-to-top" href="#layout_page" target="_top" title="Back to the top"></a>
+			</div>
+		</footer>
+		<script src="./assets/scripts/navigation.js"></script>
+	</body>
+</html>

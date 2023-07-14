@@ -1,0 +1,61 @@
+/* root elements display: removes unnecessary margin and set default font */
+html,
+body {
+	margin: 10px 0;
+	font-family: "Avenir", sans-serif, Arial;
+}
+
+main {
+	margin: 10px 20px;
+	width: auto;
+}
+
+#practice-animals-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) 2fr repeat(2, 1fr);
+}
+
+.card {
+	font-size: 5em;
+	text-align: center;
+	margin: 1px;
+	transition: all ease 200ms;
+}
+.card:hover {
+	cursor: pointer;
+	text-shadow: 3px 10px 1px #1d151553;
+	font-size: 5.01rem;
+	position: static;
+}
+
+[id^="container_practice"] span {
+	font-size: 12px;
+}
+
+.red {
+	background: linear-gradient(#f58989, #ff5454);
+}
+.red:hover {
+	box-shadow: inset 0 0 5px 0px #1d151553;
+}
+
+.green {
+	background: linear-gradient(#8f8, #7c8);
+}
+.green:hover {
+	box-shadow: inset 0 0 5px 0 #1d151553;
+}
+
+.blue {
+	background: linear-gradient(#0bc, #7cc);
+}
+.blue:hover {
+	box-shadow: inset 0 0 5px 0 #1d151553;
+}
+
+.yellow {
+	background: linear-gradient(#fa6, #fc1);
+}
+.yellow:hover {
+	box-shadow: inset 0 0 5px 0 #1d151553;
+}

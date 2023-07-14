@@ -1,0 +1,459 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap'); */
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0)
+    }
+    35% {
+        transform: translateX(-3px)
+    }
+    70% {
+        transform: translateX(3px)
+    }
+    100% {
+        transform: translateX(-5px)
+    }
+}
+
+@keyframes transitionLateral {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    60% {
+        transform: translateX(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeout {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0;
+        scale: 0
+    }
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Avenir', sans-serif;
+    font-size: 16px;
+}
+
+
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    z-index: -1;
+    transform: rotate(155deg) scale(1.1) translate(10px, -20px);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                             CARD AND CONTAINER                             */
+/* -------------------------------------------------------------------------- */
+main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    min-width: 450px;
+    height: 40vh;
+    min-width: 400px;
+    margin-bottom: 5%;
+}
+
+/* ------------------------- TRANSPARENT-ISH EFFECT ------------------------- */
+.card-container::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: 45%;
+    background: radial-gradient( #333, #777, #333);
+    opacity: .3;
+    mix-blend-mode: overlay;
+    z-index: -1;
+    scale: 1.1;
+}
+
+.card {
+    background-color: white;
+    width: 100%;
+    height: 40vh;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    column-gap: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px
+}
+
+#content {
+    display: flex;
+}
+
+h1 {
+    font-family: 'Unica One', cursive;
+    text-shadow: 0px 3px #fFF;
+    font-size: 3rem;
+    text-align: left;
+    margin: 0 20%;
+
+}
+
+#color-pickers-section {
+    margin: 50px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+/* ---------------------------- INPUTS CONTAINER ---------------------------- */
+
+
+
+#inputs-color-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.input-color-container {
+    display: flex;
+    align-items: start;
+    animation: transitionLateral 500ms ease-in-out;
+    transition: all 500ms ease;
+}
+
+/* remove original input style */
+.input-color, .input-color::-webkit-color-swatch {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.input-color {
+    height: 40px;
+    width: 100%;
+    padding: 2px;
+}
+
+.input-color:hover {
+    cursor: pointer;
+
+}
+
+.input-color-container:hover > span.icon {
+    opacity: 1;
+    scale: 1;
+    transition: opacity scale 200ms ease-in-out 200ms;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                CONFIGURATION                               */
+/* -------------------------------------------------------------------------- */
+#configuration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+    border: #DDD 1px solid;
+    border-radius: 3px;
+    height: 150px;
+}
+
+#configuration  #configuration_content > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+}
+
+#configuration select , #configuration input {
+    height: 20px;
+    width: 120px;
+    size: 20px;
+}
+
+#configuration_content { 
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+#configuration_footer {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#configuration_footer > * {
+    width: 100%;
+    padding: 8px;
+    border-top: 1px solid #DDD;
+    transition: all ease 300ms;
+}
+
+#configuration_footer > *:hover {
+    cursor: pointer;
+    background-color: rgba(240, 240, 240, .4);
+}
+
+
+#configuration_footer  > span:nth-child(2){
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+#gradients-number-container {
+    display: flex;
+    align-items: center;
+}
+
+#gradients-number-container > * {
+    margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    ICONS                                   */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ ICONS BUTTONS ----------------------------- */
+
+/* buttons in configurations */
+#gradients-type-container > i, 
+#gradients-number-container > i {
+    padding: 15px;
+    line-height: 0;
+    border-radius: 20px;
+    border: 1px solid #DDD;
+    font-size: 1.2rem;
+    transition: all ease 100ms;
+    color: #777;
+    font-weight: 500;
+    margin: 6px;
+}
+
+#gradients-type-container > i:hover,
+#gradients-number-container > i:hover
+{
+    cursor: pointer;
+    background-color: rgba(240, 240, 240, .4);
+
+}
+
+#gradients-number-container > i:active {
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #CCC;
+}
+
+
+#gradients-type-container > i:first-child {
+    transform: rotate(180deg);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+
+footer {
+    display: relative;
+    float: unset;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+footer span {
+    width: 50%;
+    font-size: 16px;
+    mix-blend-mode: soft-light;
+}
+
+
+
+/* common styles for all gradients controllers buttons */
+i[data-action]::before,
+i[data-action="increment"]::after,
+i[data-action="previous"]::after,
+i[data-action="next"]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 10px;
+    background-color: #555;
+    border-radius: 2px;
+}
+
+/* ----------------------- GRADIENT COUNT CONTROLLERS ----------------------- */
+
+i[data-action="decrement"]::before {
+    transform: translate(-5px, -1px);
+    height: 3px;
+}
+
+i[data-action="increment"]::before {
+    transform: rotate(90deg) translate(-1px, 5px);
+}
+
+i[data-action="increment"]::after {
+    transform: translate(-5px, -1px);
+    /* height: 3px; */
+
+}
+
+/* ------------------------ GRADIENT TYPE CONTROLLERS ----------------------- */
+
+i[data-action="previous"]::after,
+i[data-action="next"]::after {
+    rotate: 45deg;
+    transform: translateX(-6px) translateY(-1px);
+}
+
+
+i[data-action="previous"]::before,
+i[data-action="next"]::before {
+    rotate: -45deg;
+    transform: translateX(-4px) translateY(-2px);
+}
+
+
+
+/* --------------------------INPUT COLOR ICON ---------------------------------- */
+.icon {
+    display: inline-block;
+    background-color: #f46;
+    height: 13px;
+    min-width: 13px;
+    border-radius: 25px;
+    line-height: 0;
+    margin-left: -11px;
+    opacity: 0;
+    scale: 0;
+    transition: all ease 400ms;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.delete-icon::before, .delete-icon::after {
+    content: "";
+    height:10px;
+    width:2px;
+    display:block;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.delete-icon::before {
+    background-color: #fff;
+    transform: rotate(45deg) translateX(5px) translateY(-3px);
+}
+
+.delete-icon::after {
+    background-color: #fff;
+    transform: rotate(-45deg) translateX(3px) translateY(5px);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                PUNCTUAL CSS                                */
+/* -------------------------------------------------------------------------- */
+
+.validated::after {
+    content: "✔";
+    position: relative;
+    height: 15px;
+    width: 15px;
+    color: #444;
+    border-radius: 20px;
+    margin-left: 5px;
+    transition: all ease 300ms;
+}
+
+i.disabled {
+    background-color: rgba(240,240,240, .7);
+    pointer-events: none;
+}
+
+i:hover .disabled {
+    cursor: default;
+}
+i.disabled::before,i.disabled::after  {
+    background-color: #bbb;
+    cursor: default;
+    
+}
+i.disabled::before:hover,i.disabled::after:hover{
+    cursor: default;
+}
+
+.fadeout {
+    animation: fadeout 100ms ease-in;
+}
+
+
+
+@media only screen and (max-width: 1500px){
+    body { width: 100vw;  height: 100vh; overflow: hidden;}
+    h1 {
+        margin: 50px 50px 0px 50px;
+        text-align: center;
+        width: 80%;
+    }
+    .card {
+        display: flex;
+        grid-template-columns: none;
+        flex-wrap: wrap;
+        gap: unset;
+        height: 100%;
+    }
+}

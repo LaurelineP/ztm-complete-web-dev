@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc JS Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>Developer Environment</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					id="navigation"
+					title="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="developer-environment_main" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>Developer Environment</h1>
+						<hr />
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                          DEVELOPER ENVIRONMENT                          -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="developer-environment">
+						 <h2>Developer Environment</h2>
+						<p>
+							Developer environment is what a developer works with.
+							<br>Beside working on a computer, a developer will need tools
+							<br>to write code in a specific language, to share code or even navigate
+							within the compute.
+						</p>
+
+						<div class="layout_content">
+							<!-- ------------------------------ TERMINAL ------------------------------- -->
+							<details id="developer-environment_terminal">
+								<summary><h3>Terminal / Command Line</h3></summary>
+								<div class="details-content">
+									<p>Terminal ( or Command Line Interface - CLI) allows one 
+										to navigate through a system window using commands
+										( executing some commands ).
+									</p>
+									<table>
+										<colgroup>
+											<col>
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<td>Mac (Linux) - Terminal</td>
+												<td>Windows - cmd</td>
+												<td>Description</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><code>cd</code></td>
+												<td><code>cd</code></td>
+												<td>Enter the path</td>
+											</tr>
+											<tr>
+												<td><code>ls</code></td>
+												<td><code>dir</code></td>
+												<td>List folder</td>
+											</tr>
+											<tr>
+												<td><code>pwd</code></td>
+												<td><code>chdir</code></td>
+												<td>Check the current location path</td>
+											</tr>
+											<tr>
+												<td><code>touch</code></td>
+												<td><code>""</code></td>
+												<td>Create a new file</td>
+											</tr>
+											<tr>
+												<td><code>mkdir</code></td>
+												<td><code>md</code></td>
+												<td>Create a folder</td>
+											</tr>
+											<tr>
+												<td><code>rm -rf/rmdir</code></td>
+												<td><code>rmdir</code></td>
+												<td>Delete/Remove a folder</td>
+											</tr>
+											<tr>
+												<td><code>open</code></td>
+												<td><code>start</code></td>
+												<td>Launch the app name following</td>
+
+											</tr>
+										</tbody>
+									</table>
+									<ul>
+										<li>Alternatives and customizations</li>
+										<ul>
+											<li><a href="https://www.iterm2.com/index.html" target="_blank" rel="noopener noreferrer">Linux: iTerm2</a></li>
+											<li>
+												<a href="https://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/" target="_blank" rel="noopener noreferrer">
+													Linux: Terminal customization
+												</a>
+											</li>
+											<li>
+												<a href="https://sourabhbajaj.com/mac-setup/iTerm/README.html" target="_blank" rel="noopener noreferrer">
+													Linux: iTerm customization
+												</a>
+											</li>
+											<li>
+												<a href="https://ohmyz.sh/" target="_blank" rel="noopener noreferrer">
+													Linux: shell customization Oh My Zsh
+												</a>
+											</li>
+											<li>
+												<a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">
+													Linux: command package HomeBrew
+												</a>
+											</li>
+											<li>
+												<a href="https://fishshell.com/" target="_blank" rel="noopener noreferrer">
+												Linux: Terminal customization - 90's vibes - Fish
+												</a>
+											</li>
+											<li>
+												<a href="https://www.howtogeek.com/howto/16815/how-to-personalize-the-windows-command-prompt/" target="_blank" rel="noopener noreferrer">
+													Windows: How to customize the command prompt 1
+												</a>
+											</li>
+											<li>
+												<a href="https://lifehacker.com/5834755/how-can-i-make-the-windows-command-prompt-better" target="_blank" rel="noopener noreferrer">
+													Windows: How to customize the command prompt 2
+												</a>
+											</li>
+											<li>
+												<a href="https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/" target="_blank" rel="noopener noreferrer">
+													8 useful and interesting bash prompts
+												</a>
+											</li>
+										</ul>
+									</ul>
+								</div>
+							</details>
+
+							<!-- --------------------------- TEXT EDITOR IDE --------------------------- -->
+							<details id="IDE">
+								<summary><h3>IDE</h3></summary>
+								<div class="details-content">
+									<p>To write code an IDE is better than text editors as they are meant to
+										preview the code project, has plenty of productive tools whereas text editors
+										mainly meant to write.
+									</p>
+									<ul>
+										<li><a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">Visual Studio Code</a></li>
+										<ul>
+											<li><a href="https://github.com/viatsko/awesome-vscode" target="_blank" rel="noopener noreferrer">Awesome VSCode</a></li>
+											<li><a href="https://codeforgeek.com/best-visual-studio-code-extensions-web-development/" target="_blank" rel="noopener noreferrer">Best VSCode extension for web development</a></li>
+										</ul>
+										<li>Sublime Text</li>
+										<ul>
+											<li><a href="https://github.com/equinusocio/material-theme" target="_blank" rel="noopener noreferrer">Material Theme</a></li>
+											<li><a href="https://github.com/voronianski/oceanic-next-color-scheme" target="_blank" rel="noopener noreferrer">Organic Next Color Scheme</a></li>
+											<li><a href="https://packagecontrol.io/" target="_blank" rel="noopener noreferrer">Package Control</a></li>
+											<li>Packages recommendations</li>
+											<ul>
+												<li>Babel</li>
+												<li>SidebarEnhancements</li>
+												<li>A File Icon</li>
+												<li>GitGutter</li>
+												<li>BracketHighlighter</li>
+											</ul>
+										</ul>
+									</ul>
+								</div>
+							</details>
+
+							<!-- ------------------------- GIT & Git Solutions ------------------------- -->
+							<details id="Git-and-Source-control">
+								<summary><h3>Git and Git Solutions</h3></summary>
+								<div class="card">
+									<p>Git is a tool that allows developers to keeps tacks of their code 
+										<br>through times and also allows to efficiently collaborate as a team.
+										Thanks to Git any dev in a team is able to add her/his feature despite
+										and to be able to quickly identify if there are conflicts ( old codes
+										vs new codes, or colleagues code working on the same files than yourself).
+										This controls the version of the codebase for each team member
+									</p>
+
+									<!-- ----------------------- GIT AND SOURCE CONTROL ------------------------ -->
+									<h4>Git and Source Control introduction</h4>
+									<ul>
+										<li>
+											<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="noopener noreferrer">
+												Git Installation
+											</a>
+										</li>
+										<li>Git Solutions/Source Control:<br>all using git and propose their interface and features ( mostly similar to each other)</li>
+										<ul>
+											<li>
+												<a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a>
+											</li>
+											<li>
+												<a href="https://bitbucket.org/product" target="_blank" rel="noopener noreferrer">BitBucket</a>
+											</li>
+											<li>
+												<a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">Gitlab</a>
+											</li>
+										</ul>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</section>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                              GIT DEEP DIVE                              -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="Git-deep-dive">
+						<h2>Git Deep Dive</h2>
+
+						<div class="layout_content">
+							<!-- ------------------------------ GLOSSARY ------------------------------- -->
+							<details id="Git-glossary">
+								<summary><h3>Glossary</h3></summary>
+								<div class="card">
+									<ul>
+										<li><u>Git:</u><br>command line providing tools to keep track of any code changes<br><br></li>
+										<li><u>Source Control:</u><br> a provider hosting the codebase<br><br></li>
+										<li><u>Remote:</u><br> remote refers to the hosted code in a source control<br><br></li>
+										<li><u>Repository:</u><br>folder containing the code / the project<br><br></li>
+										<li><u>Branch:</u><br> is like a parallel version of the mutual code on which any changes could be done<br><br></li>
+										<li><u>Merge:</u><br> Fusing code together<br><br></li>
+										<li><u>Commit:</u><br> Save a stable code with a message to keep track<br><br></li>
+										<li><u>Conflict:</u><br> when a code lines are encountering other "new" line from maybe another branch
+											<br>This will highlights the conflicting lines in order to decide what to do ( add, remove, keep both code...)<br><br>
+										</li>
+										<li><u>Clone a repo:</u><br>Copy locally a repository <br><br></li>
+										<li><u>Fork a repo:</u><br>Copy a repo to your own repository <br><br></li>
+										<li><u>Merge Request:</u><br>Request the repo to add a feature and request for validation - term used for instance with Github<br><br></li>
+										<li><u>Pull Request:</u><br>Request the repo to add a feature and request for validation - term used for instance with Gitlab<br><br></li>
+										<li><u>Fork a repository:</u><br>Copy a repo to your own repository <br><br></li>
+									</ul>
+								</div>
+							</details>
+
+
+							<details id="Git-commands">
+								<summary><h3>Commands</h3></summary>
+								<p>
+									Those are the most used command that generally are sufficient to work with.
+									<br>Please keep in mind that the commands are case sensitive.
+									
+								</p>
+								<ul>
+									<li>Git commands start with <code>git &lt;command&gt;</code></li>
+									<li>Git commands have modifiers:<br>modifiers are like various case of the same command
+										<br> like commit being the command we can specify -m to add a message, or -a to adjust last commit
+									</li>
+									<li>Commands can be followed by one or multiple modifiers</li>
+								</ul>
+								<div class="card">
+									<ul>
+										<li><code>git clone &lt;repo-url&gt;</code></u><br>copies a repository from the source control ( github, bitbucket, gitlab )<br><br></li>
+										<li><code>git config</code>
+											<br>allows to configure your details as a git user<br><br>
+										</li>
+										<li><code>git status</code>
+											<br>allows to check what are the current changed file<br><br>
+										</li>
+										<li><code>git log</code>
+											<br>allows to see all prior commits<br><br>
+										</li>
+										<li><code>git fetch</code>
+											<br>gets all updates from branch<br><br>
+										</li>
+										<li><code>git branch</code>
+											<br>list all local branches<br><br>
+										</li>
+										<li><code>git branch -r</code> or <code>git branch --remote</code>
+											<br>list all local branches from the remote repository<br><br>
+										</li>
+										<li><code>git branch -d</code>
+											<br>delete the specified branch locally<br><br>
+										</li>
+										<li><code>git branch -D</code>
+											<br>delete the specified branch on the remote repository<br><br>
+										</li>
+										<li><code>git checkout -b</code> or <code>git checkout --branch</code>
+											<br>From current branch go to the stated one<br><br>
+										</li>
+										<li><code>git add</code>
+											<br>select following files and/or folders to a staged state in order to apply an action in a second steps upon<br><br>
+										</li>
+										<li><code>git stash</code>
+											<br>allows to preserve/save on the any changes from the selected files<br><br>
+										</li>
+										<li><code>git stash apply</code>
+											<br>apply last stashed changes<br><br>
+										</li>
+										<li><code>git stash pop</code>
+											<br>apply and remove last stashed changes<br><br>
+										</li>
+										<li><code>git stash drop</code>
+											<br>drop last changes stashed<br><br>
+										</li>
+										<li><code>git commit -m</code> or <code>git commit --message</code>
+											<br>followed by a string for the messages, save current staged file within that checkpoint.
+											This will highlights the conflicting lines in order to decide what to do 
+											( add, remove, keep both code...)<br><br>
+										</li>
+										<li><code>git commit -a</code> or <code>git commit --amend</code>
+											<br>Allows to edit last commit<br><br>
+										</li>
+										<li><code>git commit -a</code> or <code>git commit --amend</code>
+											<br>Allows to edit last commit<br><br>
+										</li>
+										<li><code>git push</code>
+											<br>Allows to share the locally saved changes to the remote repository<br><br>
+										</li>
+										<li><code>git remote -v</code>
+											<br>Checks the current remote repository<br><br>
+										</li>
+
+										
+									</ul>
+								</div>
+							</details>
+
+						</div>
+					</section>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                      CONTRIBUTIONS AND OPEN SOURCE                      -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="open-source-and-contributions">
+						<h2>Open Source and Contributions</h2>
+						<p>
+							Open Source are projects that are public (everyone can see the code) and 
+							opened to contributions.
+							Anyone can contribute if they want as long as they follow the project rules.
+						</p>
+						<details id="contributions-steps">
+							<summary><h3>Starting steps to contribute</h3></summary>
+							<div class="card">
+								<ol>
+									<li>Read the Readme</li>
+									<li>Check the issues's label an try to find one for "good as first ticket"</li>
+									<li>Fork the project you want to contribute to</li>
+									<li>Create a branch to add your code</li>
+									<li>Push the code</li>
+									<li>Review your code before doing a PR or MR</li>
+								</ol>
+							</div>
+						</details>
+					</section>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                            DEVELOPER WORKFLOW                           -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="typical-developer-workflow">
+						<h2>A Typical developer workflow</h2>
+						<p>
+							Those concept covered above are the one that you most likely end up using every working day
+							as a developer.Here will be described what is expected from a developer in a company.
+							The tasks to do are generally listed on a board, then developers takes the task and finish them.
+						</p>
+						<details id="fundamental-process">
+							<summary><h3>Fundamental process</h3></summary>
+							<div class="card">
+								<img src="./assets/illustrations//tickets-board_Laureline-Paris.png" alt="tickets board illustration" width="100%">
+								<ol>
+									<li><u>Tickets:</u><br> First thing to do is to check the ticket management system KanBan dashboard ( having columns for the process of a ticket ) and tickets that
+										need to be handled: as a developer you'll take a ticket from a `todo` columns
+										and pass it to 'in progress' - this will communicate the ticket status to colleagues
+									</li>
+									<li><u>Create a branch:</u> <br>When starting a new feature, you need to create a new branch to implement your solution</li>
+									<li><u>Update and communicate</u> <br>Once done, the ticket should pass through the next column which is most likely `review` and the code should be pushed</li>
+									<li><u>Then repeat</u></li>
+								</ol>
+								<h4 style="margin-bottom: 0;"><u>Tip for the entire career</u></h4>
+								<p>Keep staying in the loop: stay up to date with the industry and make it a habit ( every morning )</p>
+								<ul>
+									<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer">Hacker News</a></li>
+								</ul>
+								
+							</div>
+						</details>
+					</section>
+
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                PRACTICE                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="Practice">
+						<h2>Practices</h2>
+						<div class="layout_content">
+							<details id="simple-portfolio">
+								<summary><h3>Simple Portfolio</h3></summary>
+								<div class="details-content">
+									<a href="https://laurelineparis-simplefolio.netlify.app/" title="Simple Portfolio" target="_blank">
+										Deployed version - netlify
+									</a>
+									<div id="developer-environment_simple-portfolio" class="card">
+										<iframe
+											title="Preview simple portfolio"
+											id="developer-environment_iframe_simple-portfolio"
+											type="text/html"
+											src="https://laurelineparis-simplefolio.netlify.app/"
+											style="border: none">
+										</iframe>
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+				</div>
+			</main>
+		</div>
+		<footer id="layout_footer">
+			<div>
+				<a id="back-to-top" href="#layout_page" target="_top" title="Back to the top"></a>
+			</div>
+		</footer>
+		<script src="./assets/scripts/navigation.js"></script>
+	</body>
+</html>

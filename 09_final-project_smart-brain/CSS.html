@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc CSS Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>CSS Basics</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					title="navigation"
+					id="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="CSS" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>CSS</h1>
+						<hr />
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                               CSS BASICS                                -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="CSS-basics">
+						<h2>CSS basics</h2>
+						<p>
+							Here we will discuss about commonly
+							<abbr title="Cascading Style Sheet">CSS</abbr>
+							.
+							<br />
+							CSS is a bit like the skin on a body/character, it allows to display custom visual aspect
+							<br />
+							for the current backbone that here may be associated to HTML.
+						</p>
+						<div>
+							<p>CSS Syntax:</p>
+							<ul>
+								<li>
+									A CSS selector: CSS will need to target specific(s) element(s) in the DOM to be able
+									to apply some style
+								</li>
+								<li>
+									A CSS rule: is what is the entire code between curly braces - this defines how the
+									selector will be displayed
+								</li>
+								<li>
+									A CSS property and its value: is always bound to a value ( making a pair of
+									property/value ).
+									<br />
+									The property is within the curly braces always preceding by a colon followed by a
+									value
+									<br />
+									and semi colon to end the property definition;
+								</li>
+							</ul>
+							<code>
+								&lt;SELECTOR&gt; {
+								<br />
+								&nbsp;&nbsp;&lt;PROPERTY&gt;: &lt;VALUE&gt;;
+								<br />
+								&nbsp;&nbsp;&lt;PROPERTY&gt;: &lt;VALUE&gt;;
+								<br />
+								&nbsp;&nbsp;&lt;PROPERTY&gt;: &lt;VALUE&gt;;
+								<br />
+								} ...
+							</code>
+						</div>
+
+						<!-- Selectors and properties-->
+						<div class="layout_content">
+							<details id="CSS-basics_css-selectors-and-properties">
+								<summary>
+									<h3>CSS selectors and properties:</h3>
+								</summary>
+								<p>"Selectable" elements can be:</p>
+								<table id="table_css-selectors-and-properties" class="card">
+									<thead>
+										<tr>
+											<th>Description</th>
+											<th>CSS syntax</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>HTML tags elements:</td>
+											<td><code>&lt;TAG-NAME&gt;</code></td>
+										</tr>
+										<tr>
+											<td>
+												HTML
+												<code>id=""</code>
+												attribute in a tag ):
+											</td>
+											<td><code>#&lt;ID-NAME&gt;</code></td>
+										</tr>
+										<tr>
+											<td>
+												HTML
+												<code>class=""</code>
+												attribute in a tag ):
+											</td>
+											<td>
+												<code>.&lt;CLASS-NAME&gt;</code>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												HTML any attribute
+												<code>&lt;ATTRIBUTE&gt;="&lt;CLASS-NAME&gt;"</code>
+											</td>
+											<td>
+												<code>[&lt;ATTR&gt;="&lt;VALUE&gt;"]</code>
+												<br />
+												<code>[&lt;ATTR&gt;~="&lt;VALUE&gt;"]</code>
+												<br />
+												<code>[&lt;ATTR&gt;^="&lt;VALUE&gt;"]</code>
+												<br />
+												<code>[&lt;ATTR&gt;$="&lt;VALUE&gt;"]</code>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<p>
+									CSS properties are the key value pair within the curly braces,
+									<br />
+									that defines how the CSS rules is applied.
+								</p>
+							</details>
+						</div>
+					</section>
+
+					<hr size=1 />
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                              CSS ADVANCED                               -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="CSS-advanced">
+						<h2>CSS Advanced</h2>
+						<div>
+							<p>
+								Few others CSS aspect should be covered such as: critical render path, flexbox,
+								responsive.
+							</p>
+							<ul>
+								<li>
+									<u>Critical Render Paths</u>
+									: loading files in HTML process
+								</li>
+								<li>
+									<u>Box Models</u>
+									: loading files in HTML process
+								</li>
+								<li>
+									<u>Flexbox</u>
+									: layout property allowing to organize and order elements
+								</li>
+								<li>
+									<u>Animations:</u>
+									with
+									<code>transitions</code>
+									and
+									<code>transform</code>
+								</li>
+								<li>
+									<u>Responsiveness</u>
+									: how to handle different device screen and adapting its content
+								</li>
+							</ul>
+
+							<div class="layout_content">
+
+								<!-- Critical Render Path -->
+								<details id="CSS-advanced_critical-render-paths">
+									<summary>
+										<h3>Critical Render Paths:</h3>
+									</summary>
+									<p>
+										The "Critical Render Path" is the concept behind loading imported source of code.
+										<br />
+										Loading a file in HTML is a blocking process: meaning that each time the HTML
+										<br />
+										loads a content ( media, file, fonts, etc... )
+									</p>
+								</details>
+
+								<!-- Box models -->
+								<details id="CSS-advanced_box-models">
+									<summary><h3>Box Models</h3></summary>
+									<p>
+										Resource: Box models represent how each element's layout is organized in the
+										following order:
+										<br />
+										<i>
+											<a href="https://web.dev/learn/css/box-model/">Google: box models</a>
+										</i>
+									</p>
+									<div id="box-models_container">
+										<div id="box-models_description">
+											<ul>
+												<li>
+													<code>margin</code>
+													: pushes the element from the outside
+												</li>
+												<li>
+													<code>border</code>
+													: wrapping the box with a border
+												</li>
+												<li>
+													<code>padding</code>
+													: pushes elements within
+												</li>
+												<li>
+													<code>content</code>
+													: the element content itself
+												</li>
+											</ul>
+											<p>
+												Note: Box models can be hovered
+												<i>(CSS only)</i>
+											</p>
+										</div>
+										<div id="box-models_demonstration">
+											<div title="margin" class="box-model margin">
+												<span>margin</span>
+												<div title="border" class="box-model border">
+													<span>border</span>
+													<div title="padding" class="box-model padding">
+														<span>padding</span>
+														<div title="content" class="box-model content">
+															<span>content</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</details>
+
+								<!-- Flexbox CSS -->
+								<details id="CSS-advanced_flexbox">
+									<summary><h3>Flexbox CSS</h3></summary>
+									<p>
+										Flexbox CSS is a box module that allows you to also layout elements in a
+										<b>one dimensional</b>
+										<br />
+										way ( either in the x or y axis at a time); whereas
+										<code>Grid</code>
+										being a
+										<b>two dimensional</b>
+										organization
+										<br />
+										that can behave accordingly with the relative space around (space distribution).
+										<br />
+										<br />
+										Example:
+										<br />
+										A layout build with Flexbox in a full window width can display differently on a
+										window resized.
+										<br />
+										Once
+										<code>flexbox</code>
+										has been set, Flexbox have few properties to specify the layout arrangement
+										<br />
+										with the values offering various possibilities.
+										<br />
+										It works in combination with other values and need to be considered while setting
+										the next one.
+										<br />
+										<i>
+											<a
+												href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+											>
+												MDN flexbox link
+											</a>
+										</i>
+									</p>
+
+									<div id="flexbox_demonstration">
+										<div>
+											<div id="demo-application">
+												<span>Hover the text</span>
+											</div>
+											<div id="demo-details">
+												<ul>
+													<li>
+														<b>initial</b>
+														span position:
+														<code>flex-start</code>
+													</li>
+													<li>
+														<b>hovered</b>
+														span position:
+														<code>flex-end</code>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<table id="table_flexbox" class="card">
+										<colgroup>
+											<col style="width: 50%" />
+											<col style="width: 20%" />
+											<col style="width: 30%" />
+										</colgroup>
+										<!-- ---------------------------- TABLE HEADERS ---------------------------- -->
+										<thead>
+											<th colspan="0">Legend</th>
+											<th colspan="0">Properties</th>
+											<th colspan="0">Values</th>
+										</thead>
+										<!-- ---------------------------- TABLE VALUES ----------------------------- -->
+										<tbody>
+											<!-- Sets flexbox: display flex -->
+											<tr class="row-section">
+												<td>Set flexbox layout</td>
+												<td><code>display</code></td>
+												<td>
+													<code>flex</code>
+													<code>inline-flex</code>
+													<code>flexbox</code>
+												</td>
+											</tr>
+											<!-- -------------------------------- FLEX --------------------------------- -->
+											<!--  flex-direction: 
+													Sets flexbox display layout (the element itself) -->
+											<tr class="row-section">
+												<td>Sets the reference axis/direction</td>
+												<td><code>flex-direction</code></td>
+												<td>
+													<code>row</code>
+													<code>row-reverse</code>
+													<code>column</code>
+													<code>column-reverse</code>
+												</td>
+											</tr>
+
+											<!--  flex-wrap: 
+													Sets items organization based on the available layout space (the element itself) -->
+											<tr>
+												<td>Sets items organization based on the available layout space</td>
+												<td><code>flex-wrap</code></td>
+												<td>
+													<code>nowrap</code>
+													<code>wrap</code>
+													<code>wrap-reverse</code>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													Sets how items will behave( grow, shrink, initial base) based on the
+													available remaining space
+													<ul>
+														<li class="pipe">
+															&nbsp;&nbsp;
+															<code>flex-grow</code>
+															: Sets how items grow based on the available layout space
+														</li>
+														<li class="pipe">
+															&nbsp;&nbsp;
+															<code>flex-shrink</code>
+															: Sets how items shrink based on the available layout space
+														</li>
+														<li class="pipe">
+															&nbsp;&nbsp;
+															<code>flex-basis</code>
+															: Sets what items based size is, based on the available layout
+															space
+														</li>
+													</ul>
+												</td>
+
+												<td>
+													<!--  flex-grow: 
+															Sets how items grow based on the available layout space  -->
+													<code>flex</code>
+													<br />
+													&nbsp;&nbsp;|
+													<code>flex-grow</code>
+													<br />
+													&nbsp;&nbsp;|
+													<code>flex-shrink</code>
+													<br />
+													&nbsp;&nbsp;|
+													<code>flex-basis</code>
+												</td>
+												<td>
+													<br />
+													<code>&lt;number&gt;</code>
+													<br />
+													<code>&lt;number&gt;</code>
+													<br />
+													<code>auto</code>
+													<code>&lt;number&gt&lt;unit&gt;</code>
+													<code>content</code>
+												</td>
+											</tr>
+											<!-- --------------------------------- GAP --------------------------------- -->
+											<!--  gap, row-gap, column-gap: 
+												Sets the space between each items based on their organization -->
+											<tr class="row-section">
+												<td>Sets the space between each items based on their organization</td>
+												<td>
+													<code>gap</code>
+													<br />
+													&nbsp;&nbsp;|
+													<code>row-gap</code>
+													<br />
+													&nbsp;&nbsp;|
+													<code>column-gap</code>
+												</td>
+												<td>
+													<code>&lt;number&gt&lt;unit&gt;</code>
+												</td>
+											</tr>
+
+											<!-- ------------------------------- JUSTIFY ------------------------------- -->
+
+											<!--  justify-content:
+													Sets flexbox content(the container and its items) -->
+											<tr class="row-section">
+												<td>Sets flexbox content 1 (x by default flex direction otherwise y )</td>
+												<td>
+													<code>justify-content</code>
+												</td>
+												<td>
+													<code>space-around</code>
+													<code>space-between</code>
+													<code>space-evenly</code>
+												</td>
+											</tr>
+
+											<!--  justify-items:
+													Sets flexbox content items (the container items) -->
+											<tr>
+												<td>
+													Organizing flex's items 1 (x by default flex direction otherwise y )
+												</td>
+												<td><code>justify-items</code></td>
+												<td>
+													<code>flex-start</code>
+													<code>flex-end</code>
+													<code>center</code>
+													<code>space-around</code>
+													<code>space-between</code>
+												</td>
+											</tr>
+
+											<!--  justify-self: 
+													Sets flexbox content(the element itself) -->
+											<tr>
+												<td>
+													Organizing flex's item itself 1 (x by default flex direction otherwise y
+													)
+												</td>
+												<td><code>justify-self</code></td>
+												<td>
+													<code>space-around</code>
+													<code>space-between</code>
+													<code>space-evenly</code>
+												</td>
+											</tr>
+
+											<!-- -------------------------------- ALIGN -------------------------------- -->
+											<!--  align-content: 
+													Sets flexbox content(the element itself) -->
+											<tr class="row-section">
+												<td>
+													Organizing flex's content 2 (x by default flex direction otherwise y )
+												</td>
+												<td><code>align-content</code></td>
+												<td>
+													<code>flex-start</code>
+													<code>flex-end</code>
+													<code>center</code>
+													<code>space-around</code>
+													<code>space-between</code>
+													<code>space-evenly</code>
+													<code>align-content</code>
+													<code>stretch</code>
+												</td>
+											</tr>
+
+											<!--  align-items: 
+													Sets flexbox content items (the content items) -->
+											<tr>
+												<td>
+													Organizing flex's items 2 (x by default flex direction otherwise y )
+												</td>
+												<td><code>align-items</code></td>
+												<td>
+													<code>flex-start</code>
+													<code>flex-end</code>
+													<code>center</code>
+													<code>stretch</code>
+													<code>baseline</code>
+												</td>
+											</tr>
+
+											<!--  align-self: 
+													Sets flexbox content itself (the element itself) -->
+											<tr>
+												<td>
+													Organizing flex's item itself 2 (x by default flex direction otherwise y
+													)
+												</td>
+												<td><code>align-self</code></td>
+												<td>
+													<code>auto</code>
+													<code>flex-start</code>
+													<code>flex-end</code>
+													<code>center</code>
+													<code>stretch</code>
+													<code>baseline</code>
+												</td>
+											</tr>
+
+											<!-- Sets flexbox content(the element itself): flex-wrap -->
+											<tr class="row-section">
+												<td>Organizing flex's items on viewport's sizes changes</td>
+												<td><code>flex-wrap</code></td>
+												<td>
+													<code>nowrap</code>
+													<code>wrap</code>
+													<code>wrap-reverse</code>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</details>
+
+								<!-- CSS3 heritage -->
+								<details id="CSS-advanced_CSS3-heritage">
+									<summary><h3>CSS3 heritage</h3></summary>
+									<p>
+										CSS3 improved greatly the way we used to work with CSS and did add new features that
+										<br />
+										are nowadays common to use.
+										<br />
+										<br />
+										Before this was not that easy to handle few CSS rules especially when it came
+										<br />
+										to cross compatibilities between navigators but also the compatibility of one
+										<br />
+										property specification that could not be yet supported by default by all navigators.
+									</p>
+									<div id="CSS-advanced_CSS3-heritage_container">
+										<table class="card">
+											<colgroup>
+												<col style="width: 40%" />
+												<col style="width: 30%" />
+												<col style="width: 45%" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th>Legend</th>
+													<th>Properties</th>
+													<th>Values</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														Enables a movement continuation passing from one state to another
+														<ul>
+															<li class="pipe">
+																&nbsp;&nbsp;
+																<code>transition-property</code>
+																:
+																<br />
+																what property to apply the transition
+																<br />
+															</li>
+															<li class="pipe">
+																&nbsp;&nbsp;
+																<code>transition-duration</code>
+																:
+																<br />
+																How long the transition is applied for
+																<br />
+															</li>
+															<li class="pipe">
+																&nbsp;&nbsp;
+																<code>transition-delay</code>
+																:
+																<br />
+																When the transition should start after the state changed
+																<br />
+															</li>
+														</ul>
+													</td>
+													<td>
+														<code>transition</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>
+															<b>transition-property</b>
+														</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>
+															<b>transition-duration</b>
+														</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>
+															<b>transition-delay</b>
+														</code>
+													</td>
+													<td>
+														<code>
+															&lt;property&gt; &lt;duration&gt; &lt;timing-functions&gt;
+															&lt;delay&gt;
+														</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>&lt;css-property&gt;</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>&lt;time-milliseconds&gt;</code>
+														<br />
+														&nbsp;&nbsp;|
+														<code>&lt;time-milliseconds&gt;</code>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										<div id="CSS3-heritage_demonstration">
+											<ul>
+												<li>
+													<u>
+														<b>Transition and transform properties</b>
+													</u>
+													<br />
+													<i>
+														Hover on the pictures to checks how the pictures get
+														<b>transformed</b>
+														with applied
+														<b>transition</b>
+													</i>
+												</li>
+												<li>
+													<u>
+														<b>Flex-wrap property - responsiveness</b>
+													</u>
+													<br />
+													<i>
+														At the dashed vertical bottom line, resize vertically to see every
+														items adapt.
+													</i>
+												</li>
+											</ul>
+											<div>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_camel-what.jpg"
+													alt="camel"
+												/>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_cat-royal.jpg"
+													alt="cat with a crown"
+												/>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_cat-toast.jpg"
+													alt=" cat wearing a toast around its face"
+												/>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_dog-serious.jpg"
+													alt="doc wearing glasses next to an opened book"
+												/>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_dog-swag.jpg"
+													alt="dog wearing a bonnet"
+												/>
+												<img
+													height="auto"
+													width="auto"
+													src="./assets/pictures/pexels_monkey-smile.jpg"
+													alt="monkey wearing a grin smile"
+												/>
+											</div>
+										</div>
+
+										<h4>Cross navigators support</h4>
+									</div>
+								</details>
+
+								<!-- Responsive -->
+								<details id="CSS-advanced_responsive">
+									<summary><h3>Responsive</h3></summary>
+									<p>
+										"Responsive" defines how the website will be presented on multiple type of devices (
+										meaning screen size )
+										<br />
+										Everything feel right, no glitches, no unexpected behaviors in the UI or UX.
+										<br />
+										In your browser's inspector, there is a dedicated tool in order to verify how a
+										website will behave
+										<br />
+										on different screen size
+										<br />
+										<code>cmd + option + j</code>
+										or
+										<code>ctrl + shift + j</code>
+										: to open the inspector tool
+										<br />
+										device icon: to open the inspector with a specific device mode
+									</p>
+									<ul>
+										<li>
+											<u>step 1 - HTML:</u>
+											<br />
+											set
+											<code>meta</code>
+											tags viewport in your HTML
+											<br />
+											<code>
+												&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"
+												/&gt;
+											</code>
+										</li>
+										<li>
+											<u>step 2 - CSS and relative values:</u>
+											<br />
+											This could be handled using width and height values along with box models
+											property
+										</li>
+										<div class="flex card">
+											<ul>
+												<li>flexbox box model</li>
+												<li>grid box model</li>
+											</ul>
+											<ul>
+												<li>viewport values</li>
+												<li>percentage values</li>
+											</ul>
+										</div>
+									</ul>
+									<div id="responsive_container">
+										<div id="responsive_demonstration" class="flex flex-col">
+											<span>
+												<i>Changes color on window getting smaller</i>
+											</span>
+											<div id="responsive-gradient"></div>
+										</div>
+									</div>
+								</details>
+							</div>
+						</div>
+					</section>
+
+					<hr size=1 />
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                PRACTICE                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="CSS-practices">
+						<h2>Practices</h2>
+
+						<div class="layout_content">
+							
+							<!-- -------------------------- PRACTICE GALLERY --------------------------- -->
+							<details id="practice_pictures-gallery">
+								<summary><h3>Pictures Gallery</h3></summary>
+								<div id="CSS-practices_pictures_gallery" class="card">
+									<iframe
+										title="Preview pictures gallery"
+										id="CSS-practices_iframe_pictures_gallery"
+										type="text/html"
+										src="./practices/01_pictures-gallery/index.html"
+										style="border: none"
+									></iframe>
+								</div>
+							</details>
+
+							<!-- --------------------------- PRACTICE ROBOT ---------------------------- -->
+							<details id="CSS-practices_robot">
+								<summary><h3>Robot</h3></summary>
+								<div id="CSS-practices_robot" class="card">
+									<iframe
+										title="Preview Robot project"
+										id="CSS-practices_iframe_robot"
+										type="text/html"
+										src="./practices/02_robot/index.html"
+										style="border: none"
+									></iframe>
+								</div>
+							</details>
+
+							<!-- ---------------------------- PRACTICE GRID ---------------------------- -->
+							<details id="CSS-practices_animals-grid">
+								<summary><h3>Animals Grid</h3></summary>
+								<div id="grid_description">
+									<div id="grid_description_individal-item">
+										<h3>Grid - Individual Items</h3>
+										<p>
+											Each item can control how they display with
+											<br />
+											<code></code>
+										</p>
+										<table id="table_grid" class="card">
+											<colgroup width="100%">
+												<col width="30%" />
+												<col width="30%" />
+												<col width="40%" />
+											</colgroup>
+											<thead>
+												<tr>
+													<td>description</td>
+													<td>property</td>
+													<td>values</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Init a grid layout</td>
+													<td><code>display</code></td>
+													<td><code>grid</code></td>
+												</tr>
+												<tr>
+													<td>Control columns flow, the x axis items repartition</td>
+													<td>
+														<code>grid-template-columns</code>
+													</td>
+													<td>
+														<code>&lt;n&gt;fr</code>
+														|
+														<code>&lt;[ percent | pixel | fraction ]-value(s)&gt;</code>
+														|
+														<code>&lt;i-value&gt;</code>
+													</td>
+												</tr>
+
+												<tr>
+													<td>Control rows flow, the y axis items repartition</td>
+													<td>
+														<code>grid-template-rows</code>
+													</td>
+													<td>
+														<code>&lt;n&gt;fr</code>
+														|
+														<code>&lt;[ percent | pixel | fraction ]-value(s)&gt;</code>
+														|
+														<code>&lt;i-value&gt;</code>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div id="CSS-practices_animals-grid" class="card">
+									<iframe
+										title="preview pictures gallery"
+										id="CSS-practices_iframe_animals-grid"
+										type="text/html"
+										src="./practices/03_animal-grid/index.html"
+										style="border: none"
+									></iframe>
+								</div>
+							</details>
+
+							<!-- ------------------------- RESPONSIVE EXERCISE ------------------------- -->
+							<details id="CSS-practices_responsive-layout-page">
+								<summary><h3>Responsive Layout Page</h3></summary>
+								<div id="CSS-practices_responsive-layout-page" class="card">
+									<h1>Responsive Layout Page</h1>
+									<a href="./practices/04_responsive-layout-page/index.html">See on a full page</a>
+									<br />
+									<iframe
+										title="Responsive Layout Page"
+										id="CSS-practices_iframe_responsive-layout-page"
+										type="text/html"
+										src="./practices/04_responsive-layout-page/index.html"
+										style="border: none"
+									></iframe>
+								</div>
+							</details>
+							</div>
+
+
+
+
+					</section>
+				</div>
+			</main>
+		</div>
+		<script src="./assets/scripts/navigation.js"></script>
+	</body>
+</html>

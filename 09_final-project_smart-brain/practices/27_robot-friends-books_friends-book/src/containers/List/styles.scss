@@ -1,0 +1,24 @@
+.List {
+	display			: flex;
+	flex-wrap		: wrap;
+	margin			: 20px;
+	justify-items	: center;
+	justify-content	: center;
+
+	// contains visual within that range
+	width			: 650px!important;
+
+	&_container {
+		display			: flex;
+		flex-direction	: column;
+		transition		: all 1s ease-in-out;
+		width			: 100%;
+		margin			: 20%;
+
+	}
+	[id^=row-]{
+		display: flex;
+		justify-content: center;
+	}
+}
+

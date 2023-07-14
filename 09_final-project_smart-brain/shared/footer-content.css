@@ -1,0 +1,10 @@
+#back-to-top {
+	height: 1rem;
+	width: 1rem;
+	display: block;
+	transform: rotate(45deg);
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-top-left-radius: 3px;
+	margin-right: 20px;
+}

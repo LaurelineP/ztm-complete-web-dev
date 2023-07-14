@@ -1,0 +1,196 @@
+
+
+hr {
+	width: 80%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    HERO                                    */
+/* -------------------------------------------------------------------------- */
+#hero {
+	z-index: -1;
+  &:before {
+    content: url('assets/code.png');;
+			// Set position sticky so the jumbotron stays fixed while you scroll.
+		position: fixed;
+		z-index: -1;
+		height:90%;
+		filter: blur(3.5);
+		transform:rotate(-15deg)translateX(30%)translateY(-60%);
+		@include respond(tab-port) {
+			transform:rotate(-15deg)translateX(5%)translateY(-30%);
+		}
+  }
+  .hero {
+	background: url('./assets/code.png');
+	background-position: center;
+	background-size: cover;
+  }
+  .container {
+		backdrop-filter: blur(15px);
+		padding: 20px;
+		border: 1px solid #fff1;
+		border-radius: 3px;
+		backdrop-filter: blur(15px);
+		border: 1px solid #fff1;
+		border-radius: 3px;
+		padding: 10%;
+		height: 92%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 100%;
+		box-shadow: 0 0 100px 0 #0002;
+	}
+	@include respond(tab-port) {
+		padding: unset;
+	}
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    ABOUT                                   */
+/* -------------------------------------------------------------------------- */
+#about {
+	padding: 5rem;
+	&_profile-image,  .about-wrapper__image {
+		height: 300px;
+		width: 300px;
+		@include respond(tab-port) {
+			margin: auto;
+		}
+	}
+	#resume-links {
+		display: flex;
+		width: 100%;
+		justify-items: end;
+		a {
+			display: flex;
+			align-items: center;
+		}
+		span + span {
+			margin-left: 2rem
+		}
+	}
+	.about-wrapper__info {
+		@include respond(tab-port) {
+			margin: 2rem;
+		}
+	}
+}
+
+// About picture box
+.about-wrapper__image {
+	border-radius: 25px;
+	height: 300px;
+	border-radius: 50%;
+	background: #fff;
+	height: 300px!important;
+	width: 300px!important;
+	margin: 0 auto;
+
+	filter: drop-shadow(0 0 15px rgba(0,0,0, .4));
+	#about_profile-image {
+		height: 300px;
+		width: 300px;
+		scale: 0.8;
+		@include respond(tab-port) {
+			height: 250px!important;
+			width: 250px!important;
+		}
+	}
+	@include respond(tab-port) {
+		height: 250px!important;
+		width: 250px!important;
+		margin: 10px;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SECTION                                  */
+/* -------------------------------------------------------------------------- */
+section {
+	h1, h2, h3 {
+		font-family: 'Unica One', cursive;
+		text-transform: uppercase;
+	}
+	h1, h3 {
+		color:#8442ff;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  PROJECTS                                  */
+/* -------------------------------------------------------------------------- */
+#projects { 
+	background-color: #fff9;
+	clip-path: polygon(0% 5%, 100% 0%, 100% 95%,0% 99%);
+    backdrop-filter: blur(50px);
+	.project-wrapper {
+		.row {
+			display: inline-flex;
+			align-items: center; 
+		}
+	
+		:nth-child(odd){
+			flex-direction: row-reverse;
+			transform-origin: left;
+		}
+	
+		&__image {
+			filter: grayscale(1) contrast(1.3);
+			transition: all ease-in 200ms;
+			&:hover {
+				filter: unset;
+			}
+		}
+		
+		img { 
+			border-radius: 5px;
+	
+		}
+	}
+	#AvatarProfile {
+		img {
+			max-height: 400px;
+			filter: brightness(1.05);
+			padding: 10px;
+		}
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+footer {
+	padding: 0 0 20px 0!important;
+	margin: 2rem 0 0;
+	@include respond(tab-port) {
+		padding-bottom: 2rem;
+	}
+	.footer {
+		background-color: #111!important;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 SHARED CSS                                 */
+/* -------------------------------------------------------------------------- */
+#projects, footer {
+	@include respond(tab-port) {
+		clip-path: unset;
+		margin: 2rem 0 0!important;
+	}
+	.project-wrapper__image {
+		@include respond(tab-port) {
+			filter: unset;
+		}
+	}
+}
+
+
+
+
+
+
+

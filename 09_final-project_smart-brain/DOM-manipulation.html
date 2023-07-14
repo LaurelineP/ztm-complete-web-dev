@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc JS Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>DOM Manipulation</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					id="navigation"
+					title="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="DOM-Manipulation" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>DOM Manipulation</h1>
+						<hr />
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                      DOM MANIPULATION - SELECTORS                       -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="DOM-selectors">
+						<h2>DOM Manipulation </h2>
+						<p>
+							<abbr title = "Document Object Model" >DOM (Document Object Model) </abbr> is the ability
+							<br>to manipulate how what the page content is displaying while this one is already loaded
+							<br>and being used. This capacity require is due to both HTML content and JavaScript: 
+							<br>JavaScript is the one allowing to change element in the HTML instead of getting another HTML.
+							<br>This precede nowadays usage of javascript: before jquery, components and virtual DOM.
+						</p>
+
+						<!-- ----------------------------------------------------------------------- -->
+						<!--                            DOM SELECTORS                                -->
+						<!-- ----------------------------------------------------------------------- -->
+						<div class="layout_content">
+							<details id="DOM-manipulation_DOM-selectors">
+								<summary><h3>DOM Selectors and Changing Styles</h3></summary>
+								<div class="details-content">
+									<p>Selectors are ways to access the HTML content such as the elements, ids, classes ...
+										<br>Those are the same syntax seen in CSS elements.
+									</p>
+									<ul>
+										<li>
+											<code>class</code> are accessible with the name of the class prepended
+											by a dot: <code>.myClass</code>
+										</li>
+										<li>
+											<code>id</code> are accessible with the name of the id prepended
+											by a hash: <code>#myId</code>
+										</li>
+									</ul>
+
+									
+									<div class="card">
+										<h4>DOM Selectors</h4>
+
+										<!-- ----------------------------------------------------------------------- -->
+										<!--                            ELEMENT SELECTOR                             -->
+										<!-- ----------------------------------------------------------------------- -->
+										<p>
+											<code>document.getElementsByTagName(&lt;tag-element&gt;)</code>
+											<br>Allows to access all the specified tag in the page.
+										</p>
+										<hr width="300px" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- ----------------------------------------------------------------------- -->
+										<!--                         CLASS AND ID SELECTORS                          -->
+										<!-- ----------------------------------------------------------------------- -->
+										<p>
+											<code>document.getElementsByClassName(&lt;class-name&gt;)</code>
+											<br>Allows to access all the specified elements with the <code>class</code> in the page.
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+
+										<p>
+											<code>document.getElementsById(&lt;id-name&gt;)</code>
+											<br>Allows to access all the specified element with the <code>id</code> in the page.
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+										<p>
+											<code>document.querySelector(&lt;selector&gt;)</code>
+											<br>Allows to access the <b>first</b> element with the specified selector in the page.
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+										<p>
+											<code>document.querySelectorAll(&lt;selector&gt;)</code>
+											<br>Allows to access all the elements with the specified selector in the page.
+										</p>
+										<hr width="300px" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- ----------------------------------------------------------------------- -->
+										<!--                          ATTRIBUTES SELECTORS                           -->
+										<!-- ----------------------------------------------------------------------- -->
+										<p>
+											<code>&lt;element&gt;.getAttribute(&lt;attribute-name&gt;)</code>
+											<br>Allows to access the specified attribute(s) from to the bound element.
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+										<p>
+											<code>&lt;element&gt;.setAttribute(&lt;attribute-name&gt;)</code>
+											<br>Allows to set an attribute's value to the bound element.
+										</p>
+									</div>
+								</div>
+
+
+								<!-- ----------------------------------------------------------------------- -->
+								<!--                             STYLES CHANGES                              -->
+								<!-- ----------------------------------------------------------------------- -->
+								<div class="details-content">
+									<p>Once one element or more have been selected, it is possible to modify their styles
+										<br>using the element's following properties
+									</p>
+
+									
+									<div class="card">
+										<h4>Changing styles</h4>
+
+										<!-- ---------------------- ELEMENT'S STYLE PROPERTY ----------------------- -->
+										<p>
+											<code>&lt;element&gt;.style = &lt;style-in-string&gt;</code>
+											<br>Allows to replace or provide a style to the bound element
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- -------------------- ELEMENT'S CLASSNAME PROPERTY --------------------- -->
+										<p>
+											<code>&lt;element&gt;.class = &lt;class-name&gt;</code>
+											<br>Allows to replace or provide a class to the bound element,
+											<br>this will allow to define the matching CSS rule.
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+
+										<!-- -------------------- ELEMENT'S CLASSLIST SELECTOR --------------------- -->
+										<p>
+											<code>&lt;element&gt;.classList</code>
+											<br>Allows to get the list of all the classes the element has,
+											<br>this will allow to use the methods attached to it ( <i>add, remove, toggle, ... </i>).
+										</p>
+										<ul>
+											<li>
+												<code>&lt;element&gt;.classList.add( &lt;class-name&gt; )</code>
+												<br>Allows to add a class name to the existing empty or non-empty list of class.
+											</li>
+											<li>
+												<code>&lt;element&gt;.classList.remove( &lt;class-name&gt; )</code>
+												<br>Allows to remove a class name from the existing empty or non-empty list of class.
+											</li>
+											<li>
+												<code>&lt;element&gt;.classList.toggle( &lt;class-name&gt; )</code>
+												<br>Allows to add/remove ( toggling ) a class name from the existing empty or non-empty list of class.
+											</li>
+										</ul>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+									</div>
+
+
+									<!-- ----------------------------------------------------------------------- -->
+									<!--                   CHANGING HTML TEXT ELEMENT CONTENT                    -->
+									<!-- ----------------------------------------------------------------------- -->
+									<div class="card">
+										<h4>Changing HTML text element's content</h4>
+
+										<!-- -------------------- ELEMENT'S INNERHTML PROPERTY --------------------- -->
+										<p>
+											<code>&lt;element&gt;.innerHTML = &lt;text-or-tag-in-string&gt;</code>
+											<br>Allows to replace / override the text content within the text element / tag.
+											<br>DANGEROUS way of overriding the text. ( not recommended )
+										</p>
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+									</div>
+
+									<!-- ----------------------------------------------------------------------- -->
+									<!--          ACCESSING RELATIVE ELEMENTS TO A SELECTED ELEMENT              -->
+									<!-- ----------------------------------------------------------------------- -->
+									<div class="card">
+										<h4>Accessing relative element to a selected element</h4>
+
+										<!-- -------------------- ELEMENT'S INNERHTML PROPERTY --------------------- -->
+										<p>
+											<code>&lt;child-element&gt;.parentElement</code>
+											<br>Allows to access the parent element ( common above element ) to the selected element.
+										</p>
+
+										<p>
+											<code>&lt;parent-element&gt;.children</code>
+											<br>Allows to access to all elements within the parent's element,
+										<hr width="150px" color="#DDD" style="margin: 2rem auto" />
+									</div>
+								</div>
+							</details>
+						</div>
+					</section>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                        DOM MANIPULATION - EVENTS                        -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="DOM-events">
+						<h2>DOM Events </h2>
+						<p>DOM Events represents actions/interactions triggered by the user on a webpage.
+							<br>Those correspond to an element property key that accept a function as value.
+							<br>Those function value are referred to "handlers" or "function handlers":
+							<br>functions handling an event,
+						</p>
+						<p>Types of events</p>
+						<ul>
+							<li>with the mouse</li>
+							<li>with the keyboard</li>
+							<li>and more...</li>
+						</ul>
+
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">See DOM Events references documentation</a></p>
+
+
+						<!-- ----------------------- EVENT LISTENERS METHOD ------------------------ -->
+						<div class="layout_content">
+							<details id="DOM-events-listeners">
+								<summary><h3>Events Listeners</h3></summary>
+								<div class="details-content">
+									<p>All of the following methods are HTML element's methods that allow, in a declarative way,
+										<br>to attach a listener taking a function has parameter.
+										<br>
+										<br>A function passed to another function is called a <code>callback</code>.
+										<br>
+										<br>This very same callback in this event listener circumstances, could be called an  
+										<br>handler function: function handling the logic to process on an event fired/triggered.
+									</p>
+									<br>
+
+									<!-- <div class="card" style="padding: 2rem"> -->
+									<div class="card">
+											
+										<ul>
+											<li>
+												<code>&lt;element&gt;.<b>addEventListener</b>(&lt;event-name&gt;,&lt;function&gt;)</code>:
+												<br>adds/attaches a function to an element's event.
+											</li>
+											<li>
+												<code>&lt;element&gt;.<b>removeEventListener</b>(&lt;event-name&gt;&lt;function&gt;)</code>:
+												<br>removes a specific function from an element's event.
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+							</details>
+
+
+							<!-- ---------------------------- MOUSE EVENTS ----------------------------- -->
+							<details id="DOM-mouse-events">
+								<summary><h3>Mouse Events</h3></summary>
+								<div class="details-content">
+									<p>Mouse Events are events dispatched when a user interact with her/his mouse.
+										<br>Each event, identified by its name, has its own purpose
+									</p>
+									<!-- <div class="card" style="padding: 2rem"> -->
+									<div class="card">
+										<ul>
+											<li>
+												<code>click</code>:<br>event triggered on clicking on an element using the mouse.
+											</li>
+											<li>
+												<code>dblclick</code>:<br>event triggered on double clicking an element using the mouse.
+											</li>
+											<li>
+												<code>mouseover</code>:<br>event triggered on mouse is hovering an element.
+											</li>
+											<li>
+												<code>mouseenter</code>:<br>event triggered on the cursor is entering the element box-content.
+											</li>
+											<li>
+												<code>mousemove</code>:<br>event triggered on the cursor moving within the element box-content.
+											</li>
+											<li>
+												<code>mouseleave</code>:<br>event triggered on cursor leaving the element box-content.
+											</li>
+											<li>
+												<code>scroll</code>:<br>event triggered on cursor scrolling within an element box-content.
+											</li>
+										</ul>
+										
+									</div>
+								</div>
+							</details>
+							
+						
+						
+							<!-- --------------------------- KEYBOARD EVENTS --------------------------- -->
+							<details id="DOM-keyboard-events">
+								<summary><h3>Keyboard Events</h3></summary>
+								<div class="details-content">
+									<p>Keyboard Events are events dispatched when a user interact with her/his keyboard.
+										<br>Each event, identified by its name, has its own purpose
+									</p>
+									<!-- <div class="card" style="padding: 2rem"> -->
+									<div class="card">
+										<ul>
+											<li>
+												<code>change</code>:<br>event triggered when the element field value did change.
+											</li>
+											<li>
+												<code>input</code>:<br>event triggered when the input element value did change.
+											</li>
+											<li>
+												<code>submit</code>:<br>event triggered when the form element values did change.
+											</li>
+											<li>
+												<code>keypress</code>:<br>event triggered any key of the keyboard is pressed.
+											</li>
+										</ul>
+									</div>
+								</div>
+							</details>
+
+						</div>
+						
+					</section>
+
+					<hr/>
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                PRACTICE                                 -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="DOM-practice">
+						<h2>DOM Practices</h2>
+
+						<div class="layout_content">
+
+							<!-- ----------------------------- SHOPPING LIST ------------------------------ -->
+							<details id="DOM-practice_shopping-list">
+								<summary><h3>Shopping List</h3></summary>
+								<div class="details-content">
+									<p>Shopping list - code along</p>
+									<p>Anticipating the exercise</p>
+									<ul>
+										<li>add an input to let the user add more item</li>
+										<li>using DOM manipulation enable the following features</li>
+										<ul>
+											<li>can add a new item: get new item, append to the list and clear the input</li>
+											<li>can click on an item:</li>
+											<ul>
+												<li>clicking on an item should have a strikethrough the text</li>
+												<li>clicking on the same item should display back the text without strikethrough</li>
+											</ul>
+											<li>can delete an item</li>
+										</ul>
+									</ul>
+									<a href="./practices/13_shopping-list/index.html" title="JS Keyless Car" target="_blank">
+										Live Exercise result
+									</a>
+									<div id="DOM-manipulation-practices_shopping-list" class="card">
+										<iframe
+											title="Preview shopping list with dom manipulation js"
+											id="DOM-practices_iframe_shopping-list"
+											type="text/html"
+											src="./practices/13_shopping-list/index.html"
+											style="border: none">
+										</iframe>
+									</div>
+								</div>
+							</details>
+
+							<!-- ----------------------------- BACKGROUND GRADIENT GENERATOR ------------------------------ -->
+							<details id="DOM-practice_background-generator">
+								<summary><h3>Background generator</h3></summary>
+								<div class="details-content">
+									<p>Create a Background gradient generator</p>
+									<p>Provided instructions:</p>
+									<ul>
+										<li>create a gradient background color out of 2 inputs color</li>
+										<li>Bonus: add button that generate the two colors</li>
+									</ul>
+									<a href="./practices/14_background-generator/index.html" title="JS Keyless Car" target="_blank">
+										Live Exercise result
+									</a>
+									<div id="DOM-manipulation-practices_background-generator" class="card">
+										<iframe
+											title="Preview shopping list with dom manipulation js"
+											id="DOM-practices_iframe_background-generator"
+											type="text/html"
+											src="./practices/14_background-generator/index.html"
+											style="border: none">
+										</iframe>
+									</div>
+								</div>
+							</details>
+							</div>
+					</section>
+				</div>
+			</main>
+		</div>
+		<footer id="layout_footer">
+			<div>
+				<a id="back-to-top" href="#layout_page" target="_top" title="Back to the top"></a>
+			</div>
+		</footer>
+		<script src="./assets/scripts/navigation.js"></script>
+	</body>
+</html>

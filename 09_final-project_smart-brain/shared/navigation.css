@@ -1,0 +1,71 @@
+/* -------------------------------------------------------------------------- */
+/*                              NAVIGATION STYLE                              */
+/* -------------------------------------------------------------------------- */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100vw;
+	max-height: 100vh;
+	display: flex;
+	scroll-behavior: smooth;
+	font-family: "Avenir", sans-serif, Arial;
+	font-size: 14px;
+	color: #444;
+	overflow-x: hidden;
+}
+
+nav {
+	text-transform: uppercase;
+	font-weight: bold;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	justify-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+/* Nav layout: display all `li` in one row evenly spaced */
+nav ul {
+	display: flex;
+	justify-items: space-evenly;
+	padding: unset;
+}
+
+/* `li` display: without the bullets */
+nav li {
+	list-style: none;
+	margin: 0 10px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+/* `a` display: removed default link decoration */
+a,
+a:link,
+a:visited,
+a:active {
+	color: unset;
+	text-decoration: none;
+}
+
+a:focus {
+	color: #6cc;
+}
+
+/* `a` display: underlines links on hover */
+a:hover {
+	text-decoration: underline;
+}
+
+
+@media (width < 1250px) {
+	nav {
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+}

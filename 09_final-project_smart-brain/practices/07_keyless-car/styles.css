@@ -1,0 +1,32 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Avenir", sans-serif, Arial;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+	height: 100vh;
+}
+
+main {
+	margin: 100px 30px 30px 50px;
+}
+
+code:not(:empty) {
+	background-color: #daeaf275;
+	padding: 3px 8px;
+	border-radius: 3px;
+	color: #333;
+	display: inline-block;
+	margin: 1px;
+}
+
+iframe {
+	border: none;
+	margin-bottom: 40px;
+	border-radius: 3px;
+}

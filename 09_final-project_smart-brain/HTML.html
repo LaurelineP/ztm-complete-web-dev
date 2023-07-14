@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Course Doc HTML Section" />
+		<meta name="theme-color" content="#FFF" />
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/index.css" />
+		<title>HTML Basics</title>
+	</head>
+
+	<body>
+		<div id="layout_page">
+			<div id="background"></div>
+
+			<header id="layout_header">
+				<iframe
+					id="navigation"
+					title="navigation"
+					type="text/html"
+					src="shared/navigation.html"
+					style="border: none"
+					height="110px"
+				></iframe>
+			</header>
+
+			<main id="HTML" class="layout_content_container">
+				<aside class="layout_content_aside">
+					<div id="aside-content">
+						<h1>HTML</h1>
+						<hr/>
+					</div>
+				</aside>
+
+				<div class="layout_content">
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                               HTML BASICS                               -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="HTML-basics">
+						<h2>HTML Basics</h2>
+
+						<div class="layout_content">
+							<!-- Headers h1-h6 -->
+							<details id="HTML-basics_header-tags">
+								<summary><strong>Header tags:</strong></summary>
+								<p>
+									Header tags are text element allowing to organize the text by a hierarchy.
+									<br />
+									Headers represent the hierarchy of title and subtitles
+									<br />
+									They are are going from
+									<code>h1</code>
+									to
+									<code>h6</code>
+									going Generally
+									<br />
+									from the most important to the less important text title
+								</p>
+
+								<ul class="card flex-col">
+									<li>
+										<p>
+											<u>Syntax:</u>
+											<code>&lt;h1&gt;...&lt;/h1&gt;</code>
+										</p>
+									</li>
+									<li>
+										<p><u>Example:</u></p>
+										<samp>
+											<h1>
+												<code>h1</code>
+												Title
+											</h1>
+											<h2>
+												<code>h2</code>
+												Title
+											</h2>
+											<h3>
+												<code>h3</code>
+												Title
+											</h3>
+											<h4>
+												<code>h4</code>
+												Title
+											</h4>
+											<h5>
+												<code>h5</code>
+												Title
+											</h5>
+											<h6>
+												<code>h6</code>
+												Title
+											</h6>
+										</samp>
+									</li>
+								</ul>
+							</details>
+
+							<!-- Paragraph -->
+							<details id="HTML-basics_paragraph">
+								<summary>
+									<strong>Paragraph tag:</strong>
+								</summary>
+								<p>
+									Paragraph is a text element allowing to semantically add a text in a HTML document
+									file.
+									<br />
+									Indeed, text not wrapped by a text element will still display however this is not
+									<br />
+									a good practice as this will not help the
+									<abbr title="Search Engine Optimization">SEO</abbr>
+								</p>
+
+								<ul class="card">
+									<li>
+										<u>Syntax:</u>
+										<code>&lt;p&gt; ... &lt;/p&gt;</code>
+									</li>
+									<li>
+										<u>Example:</u>
+										<p>This is a paragraph text</p>
+									</li>
+								</ul>
+							</details>
+
+							<!-- Lists -->
+							<details id="HTML-basics_lists">
+								<summary><strong>Lists:</strong></summary>
+								<p>
+									There are to different kind of HTML list:
+									<strong>unordered list</strong>
+									(
+									<code>ul</code>
+									) and
+									<strong>ordered list</strong>
+									(
+									<code>ol</code>
+									).
+									<br />
+									Unordered list is a list that have bullets for list items while unordered list as
+									characters to enumerate each items.
+									<br />
+									Lists doe come with specific children elements being the
+									<strong>list item</strong>
+									<code>li</code>
+									<br />
+									The lists could be nested within another list item creating a listed tree
+								</p>
+
+								<div id="lists-demonstration">
+									<!-- Unordered list -->
+									<ul class="card">
+										<li>
+											<u>
+												Syntax for
+												<code>ul</code>
+											</u>
+											:
+											<code>
+												&lt;
+												<strong>ul</strong>
+												&gt; &lt;li&gt; .... &lt;li&gt; &lt;/
+												<strong>ul</strong>
+												&gt;
+											</code>
+											<p>
+												<u>Example</u>
+												: Unordered list
+											</p>
+											<ul>
+												<li class="inherit">list item 1</li>
+												<li class="inherit">list item 2</li>
+												<li class="inherit">list item 3</li>
+											</ul>
+											<i>
+												Note: the above are dotted list already nested
+												<br />
+												as it is used to explain this content
+												<br />
+												(this is why those are circles and not filled dot)
+											</i>
+										</li>
+									</ul>
+
+									<!-- Ordered list -->
+									<ul class="card">
+										<li>
+											<u>
+												Syntax for
+												<code>ol</code>
+											</u>
+											:
+											<code>
+												&lt;
+												<strong>ol</strong>
+												&gt; &lt;li&gt; .... &lt;li&gt; &lt;/
+												<strong>ol</strong>
+												&gt;
+											</code>
+										</li>
+										<li>
+											<u>Example:</u>
+											<p>Ordered list</p>
+											<ol>
+												<li class="inherit">list item 1</li>
+												<li class="inherit">list item 2</li>
+												<li class="inherit">list item 3</li>
+											</ol>
+										</li>
+									</ul>
+								</div>
+							</details>
+
+							<!-- Image -->
+							<details id="HTML-basics_images">
+								<summary><strong>Image:</strong></summary>
+								<p>
+									There is an HTML tag that allows to display images from various formats.
+									<br />
+									<i>
+										(
+										<code>.jpg</code>
+										,
+										<code>.jpeg</code>
+										,
+										<code>.gif</code>
+										,
+										<code>.png</code>
+										etc...)
+									</i>
+									<br />
+									This is a self enclosing tag: meaning one tag both and close itself,
+									<br />
+									without needing a closing pair tag like we've seen so far.
+								</p>
+
+								<div id="image-demonstration" class="card">
+									<ul>
+										<li>
+											<u>
+												Syntax for
+												<code>img</code>
+											</u>
+											:
+											<code>
+												&lt;
+												<strong>img src="any/paths" /</strong>
+												&gt;
+											</code>
+										</li>
+										<li><u>Example:</u></li>
+									</ul>
+									<img
+										width="869"
+										height="580"
+										src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+									/>
+								</div>
+							</details>
+
+							<!-- Buttons -->
+							<details id="HTML-basics_buttons">
+								<summary>
+									<strong>Buttons</strong>
+									:
+								</summary>
+								<p>
+									Buttons are interactive HTML elements that the user could trigger by
+									<br />
+									clicking on them.
+									<br />
+									There are today, two ways to create a button:
+								</p>
+								<ul>
+									<li>
+										using the
+										<code>button</code>
+										tags
+									</li>
+									<li>
+										using the
+										<code>input</code>
+										tag
+									</li>
+								</ul>
+
+								<!-- --------------------------- button element ---------------------------- -->
+								<div id="buttons-demonstration">
+									<div id="button-demonstration" class="card">
+										<ul>
+											<li>
+												<u>
+													Syntax for
+													<code>button</code>
+												</u>
+												:
+												<br />
+												<br />
+												<code>
+													&lt;
+													<strong>button</strong>
+													<br />
+													&nbsp;&nbsp;onclick="console.log('Hello world from button')"
+													<br />
+													&nbsp;&nbsp;&gt;
+													<br />
+													&nbsp;&nbsp; Click me as a button
+													<br />
+													&nbsp;&nbsp;&lt;
+													<strong>/button</strong>
+													&gt;
+												</code>
+												<p>
+													<u>Example</u>
+													:
+												</p>
+											</li>
+										</ul>
+										<pre>	<button type="button" type="button" onclick="console.log('Hello world from button!')">Click me as a button</button></pre>
+									</div>
+
+									<div id="input-button-demonstration" class="card">
+										<ul>
+											<li>
+												<u>
+													Syntax for
+													<code>input</code>
+												</u>
+												:
+												<br />
+												<br />
+												<code>
+													&lt;
+													<strong>input</strong>
+													<br />
+													&nbsp;&nbsp;type="button"
+													<br />
+													&nbsp;&nbsp;onclick="console.log('Hello world from input')""
+													<br />
+													&nbsp;&nbsp;value="Click me as an input"
+													<br />
+													<strong>/</strong>
+													&gt;
+												</code>
+												<p>
+													<u>Example</u>
+													:
+												</p>
+											</li>
+										</ul>
+										<pre><input type="button" onclick="console.log('Hello world from input!')" value="Click me as an input" /></pre>
+									</div>
+								</div>
+							</details>
+						</div>
+
+						<p>
+							After this last introductions regarding the input, it is time to focus more on it with
+							<a href="#HTML-form">forms</a>
+							.
+						</p>
+					</section>
+
+					<hr size=1 />
+
+					<!-- ----------------------------------------------------------------------- -->
+					<!--                                HTML FORM                                -->
+					<!-- ----------------------------------------------------------------------- -->
+					<section id="HTML-form">
+						<h2>HTML Form</h2>
+						<div>
+							<div id="element-explanation">
+								<p>
+									Here we will discuss about forms, those bunch of input that one may come across
+									filling
+									<br />
+									for instance a profile account, or to register to a site and many other use cases.
+									<br />
+									<code>form</code>
+									is an element that wrap multiple inputs of any kind to let the
+									<br />
+									user provide information
+									<br />
+									<code>input</code>
+									s are powerful and are polyvalent with the various type possibilities
+									<br />
+									HTML provides.
+									<br />
+									Form and input works together toward the same purpose: handling all data the user
+									provides
+									<br />
+									at once thanks to connected `attributes` ( name, for, value )
+								</p>
+
+							</div>
+
+							<!-- -------------------------------- FORM --------------------------------- -->
+
+								<!-- ----------------------- FORM DETAIL DESCRIPTION ----------------------- -->
+								<details id="HTML-basics_form">
+									<summary><strong>Form:</strong></summary>
+									<div class="card">
+										<p>
+											<u>Syntax form:</u>
+											<code>
+												&lt;
+												<strong>form action="" method=""</strong>
+												&gt; ... inputs ...&lt;
+												<strong>/form</strong>
+												&gt;
+											</code>
+										</p>
+										<p>
+											<u>Syntax input:</u>
+											<code>
+												&lt;
+												<strong>
+													input type="" onchange="" for="" name="" placeholder="" value=""
+												</strong>
+												&gt;
+											</code>
+										</p>
+										<ul>
+											<li>
+												<u>attribute type:</u>
+												allow to handle it type
+												<br />
+												(radio, checkbox, date, color, submit, reset ...)
+											</li>
+											<li>
+												<u>specific to form's inputs:</u>
+											</li>
+											<ul>
+												<li>
+													label tag: label tag is used to put an insight/description of the
+													input next to it
+												</li>
+												<li>for: allows to bind the value to the context</li>
+												<li>name: allows to bind the value to a for named element</li>
+												<li>value: the user value</li>
+											</ul>
+										</ul>
+										<hr  style="margin: 20px 0;">
+										<div id="element-demonstration">
+											<fieldset>
+												<legend>Form and its inputs</legend>
+												<form action="" method="">
+													<div>
+														<label for="inputText">Input type text:</label>
+														<input type="text" name="inputText" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputEmail">Input type email:</label>
+														<input type="email" name="inputEmail" value="hello@gmail.com" required />
+													</div>
+			
+													<br />
+			
+													<div>
+														<label for="inputPassword">Input type password:</label>
+														<input type="password" name="inputPassword" value="1234" required />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputTel">Input type telephone:</label>
+														<input type="tel" name="inputNumber" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputNumber">Input type number:</label>
+														<input type="number" name="inputNumber" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputDate">Input type date:</label>
+														<input type="date" name="inputDate" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputColor">Input type color:</label>
+														<input type="color" name="inputColor" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputRange">Input type number:</label>
+														<input type="number" min="0" max="6" value="2" name="inputNumber" />
+													</div>
+			
+													<br />
+													<div>
+														<label for="inputRange">Input type range:</label>
+														<input type="range" min="0" max="6" value="2" name="inputRange" />
+													</div>
+			
+													<br />
+													<div>
+														<div id="form-buttons">
+															<input type="submit" aria-label="Submit" />
+															<input type="reset" aria-label="Reset" />
+														</div>
+													</div>
+												</form>
+											</fieldset>
+			
+											<!-- ------------------------- FORM QUERY DETAILS -------------------------- -->
+											<div id="form-query-details">
+												<div id="form-query-details_raw">
+													<p>Form submission raw content</p>
+													<code
+														style="width: 300px; display: block; overflow-wrap: break-word"
+														id="formSubmissionContent_raw"
+													></code>
+												</div>
+			
+												<div id="form-query-details_formatted">
+													<p>Form submission processed content</p>
+													<code id="formSubmissionContent_processed"></code>
+												</div>
+											</div>
+										</div>
+									</div>
+								</details>
+						</div>
+					</section>
+				</div>
+			</main>
+		</div>
+		<footer id="layout_footer">
+			<div>
+				<a id="back-to-top" href="#layout_page" target="_top" title="Back to the top"></a>
+			</div>
+		</footer>
+		<script src="./assets/scripts/navigation.js"></script>
+		<script>
+			/* On page loaded: processes URL params query */
+			const urlContent = (() => window.location.search)();
+
+			// Gets query params
+			const queryParamsList = [...new URLSearchParams(urlContent)];
+			const queryParamsDisplay = queryParamsList
+				.map((paramTuple) => `${paramTuple[0]}="<b>${paramTuple[1]}</b>"<br>`)
+				.join("");
+
+			// Set in DOM query params values
+			document.getElementById("formSubmissionContent_raw").innerHTML = urlContent;
+			document.getElementById("formSubmissionContent_processed").innerHTML = queryParamsDisplay;
+			console.log("queryParamsDisplay:", queryParamsDisplay);
+
+			/* Rest handler */
+			document.addEventListener("reset", () => window.location.assign(window.location.pathname));
+		</script>
+	</body>
+</html>

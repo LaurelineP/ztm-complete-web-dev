@@ -1,0 +1,26 @@
+.SearchBar {
+	display: flex;
+	height: 100px;
+	position: fixed;
+	background-color: #fff;
+	box-shadow: 1px 0 10px #ddd;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+	input {
+		font-size: 1.2rem;
+		height: 50px;
+		width: 60%;
+		padding: 0 30px;
+		border:1px solid #ddd;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-color: #ddd;
+		border-radius: 3px;
+		&:focus {
+			outline: none;
+		}
+	}
+}

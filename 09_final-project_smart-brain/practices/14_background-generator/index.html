@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<head>
+		<title>Background Gradient Generator</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+		<meta name="description" content="Exercise - Shopping list" />
+		<meta name="theme-color" content="#FFF" />
+	</head>
+	<body>
+		<main>
+			<div class="card-container">
+				<div id="content">
+					<div class = "card">
+
+						<h1>Background Gradient Generator</h1>
+						<div id="color-pickers-section">
+							<div id="inputs-color-container"></div>
+							<div id="configuration">
+								<div id="configuration_content">
+									<div id="gradients-number-container">
+										<i data-action="decrement"></i>
+										<span id="gradients-count-value">
+											<b>
+												<span id ="gradients-count_number">0</span>
+											</b>
+											<span id="gradients-count_text">gradient</span>
+										</span>
+										<i data-action="increment"></i>
+									</div>
+
+									<div id="gradients-type-container">
+										<i data-action="previous"></i>
+										<span id="gradients-type-text">
+											<b>
+												<span id="gradients-type-value">linear</span>
+											</b>
+											<span>&nbsp;gradient type</span>
+										</span>
+										<i data-action="next"></i>
+		
+									</div>
+									
+								</div>
+
+								<div id="configuration_footer">
+									<span data-action="reset">reset</span>
+									<span data-action="reload">reload</span>
+									<span data-action="copy">copy</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<span>Made with ❤ and Fun</span>
+			<span>- Laureline Paris</span>
+		</footer>
+		<script type="text/javascript" src="./index.js"></script>
+	</body>
+</html>
