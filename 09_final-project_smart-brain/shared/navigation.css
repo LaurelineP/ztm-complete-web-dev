@@ -24,8 +24,6 @@ nav {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	justify-items: center;
-	height: 100%;
-	width: 100%;
 }
 
 /* Nav layout: display all `li` in one row evenly spaced */

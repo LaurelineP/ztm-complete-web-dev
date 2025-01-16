@@ -1,0 +1,13 @@
+.Dropdown {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(61, 123, 178);
+	height: 100px;
+	width: 200px;
+	margin: 0 100px 0 0 ;
+	position: absolute;
+}
+
+.Dropdown_option {
+
+}

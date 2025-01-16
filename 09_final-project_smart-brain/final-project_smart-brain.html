@@ -26,185 +26,68 @@
 				></iframe>
 			</header>
 
-			<main id="asynchronous" class="layout_content_container">
+			<main id="smart-brain-project" class="layout_content_container">
 				<aside class="layout_content_aside">
 					<div id="aside-content">
-						<h1>Asynchronous</h1>
+						<h1>Smart Brain Project</h1>
 						<hr />
 					</div>
 				</aside>
 
 				<div class="layout_content">
 					<!-- ----------------------------------------------------------------------- -->
-					<!--                               ASYNCHRONOUS                              -->
+					<!--                              FINAL PROJECT                              -->
 					<!-- ----------------------------------------------------------------------- -->
-					<section id="asynchronous_Fundamentals">
-						<h2>Asynchronous</h2>
-						<p>
-							JS is able to communicate with server to request data or share them.
-							The communication could take some times and JS should be able to do them
-							without having to wait for them in order to have a fluid navigation for users
-							and not to block its use and the code execution: this is asynchronous concept
-						</p>
-
-						<!-- ----------------------------------------------------------------------- -->
-						<!--                               HTTP/HTTPS                                -->
-						<!-- ----------------------------------------------------------------------- -->
-						<div class="layout_content">
-							<!-- ---------------------------- HTTP/HTTPS ------------------------------- -->
-							<details id="HTTP_HTTPS">
-								<summary><h3>HTTP/HTTPS</h3></summary>
-								<div class="details-content">
-									<p>HTTP and HTTPS are protocols that allows to communicate with 
-										<br>another machine: another server to transfer some payload or information.
-										<br>A payload is a a set of data that you want to get, modify or send.
-									</p>
-									
-									<!-- ----------------------------- METHODS ------------------------------ -->
-									
-									<div id="HTTP_HTTPS_methods" class="card">
-										<h4>HTTP/HTTPS Methods</h4>
-										<p>In order to instruct the protocol what to do, the developer needs to specify what kind of 
-											<br> "actions" the request is doing. The request presents a "request" and a "response".
-											The request is sent by the client ( browser website ) to the server and the response is sent by
-											the server.
-										</p>
-										<ul>
-											<li>GET: to get data from the server</li>
-											<li>POST: to send data to the server</li>
-											<li>PUT: to edit data in the server</li>
-											<li>DELETE: to delete data in the server</li>
-											<li>PATCH: to delete data in the server</li>
-										</ul>
-										<br>
-										<br>
-
-										<h4>Server's response</h4>
-										<p>The server respond with potentially 2 elements: a status code and may contain a payload of 
-											any kind ( data, files, etc... )
-										</p>
-										<ul>
-											<li><u>1xx:</u> information</u></li>
-											<li><u>2xx:</u> successful</u></li>
-											<li><u>3xx:</u> redirection</u></li>
-											<li><u>4xx:</u> client errors</u></li>
-											<li><u>5xx:</u> server error</u></li>
-										</ul>
-									</div>
-								</div>
-							</details>
-							<!-- ----------------------------------------------------------------------- -->
-							<!--                                  JSON                                   -->
-							<!-- ----------------------------------------------------------------------- -->
-							<details id="JSON">
-								<summary><h3>JSON</h3></summary>
-								<p>There are few ways of sending text data through requests and JSON 
-									nowadays standard way to do so.
-									A previous way to send data is XML ( which is more verbose and with "tag" way)
-								</p>
-								<div class="details-content">
+					<section id="Final-project-description">
+						<h2>Final Project</h2>
+							<p>
+								Building a web app having the feature of face detection in pictures
+								Includes: 
+							</p>
+							<div class = "flex full-width flex-row space-between">
+								<!-- -------------------------- STACK DESCRIPTION -------------------------- -->
+								<div>
+									<h3>Seen Concepts and Stack</h3>
 									<ul>
-										<li>JSON: JavaScript Object Notation</li>
-										<li>being a standard to store and exchanging data</li>
-										<li>being text written in key/value pair with fields being string </li>
+										<li class="tag">asynchronous</li>
+										<li class="tag">javascript</li>
+										<li><u>Front end</u></li>
+										<ul>
+											<li class="tag">react</li>
+											<li class="tag">API Clarifai</li>
+											<li class="tag">library particle</li>
+											<li class="tag">library tilt</li>
+										</ul>
+										<li><u>Back end</u></li>
+										<ul>
+											<li class="tag">node js</li>
+											<li class="tag">express</li>
+											<li class="tag">create API</li>
+											<li class="tag">authentication</li>
+										</ul>
 									</ul>
 								</div>
-
-								<h4>Handle JSON</h4>
-								<ul>
-									<li><code>JSON.stringify(&lt;object&gt;)</code>: from a JS Object, outputs the JSON version </li>
-									<li><code>JSON.parse(&lt;object&gt;)</code>: from a JSON value, outputs the JS Object from it</li>
-								</ul>
-							</details>
-
-							<!-- ----------------------------------------------------------------------- -->
-							<!--                                  AJAX                                   -->
-							<!-- ----------------------------------------------------------------------- -->
-							<details id="Ajax">
-								<summary><h3>Ajax</h3></summary>
-								<p>Ajax allows to update a part of web page instead of updating the whole content
-									each time an interaction occurred - it changes a part of a content dynamically.
-									The different ways to requests over times relies on ajax.
-								</p>
-								<div class="details-content">
+								<!-- ---------------------- LINKS & RESOURCES API ETC ---------------------- -->
+								<div>
+									<h3>Links</h3>
 									<ul>
-										<li>Ajax (JS API) - Uses an XHTMLRequest (XHR - old way to make request )</li>
-										<li>Jquery (third part library) - leaner syntax on ajax ( old way )</li>
-										<li>fetch ( JS Browser API -  using ajax under the hood nowadays old way ) </li>
+										<li><a target="_blank" href="https://www.npmjs.com/package/particles-bg">Particles library - visual effects</a></li>
+										<li><a target="_blank" href="https://www.npmjs.com/package/react-parallax-tilt">Tilt library - visual effects</a></li>
+										<li><a target="_blank" href="https://www.npmjs.com/package/react-parallax-tilt">Tilt library - visual effects</a></li>
+										<li><a target="_blank" href="https://www.clarifai.com"></a>Clarifai API</li>
+										<ul>
+											<li><a target="_blank" href="https://docs.clarifai.com/api-guide/predict/images">Documentation API</a></li>
+											<li><a target="_blank" href="https://clarifai.com/explore">Models choices explorer</a></li>
+											<li><a target="_blank" href="https://clarifai.com/clarifai/main/models/general-image-recognition">Models choice 1</a></li>
+											<li><a target="_blank" href="https://clarifai.com/clarifai/main/models/face-detection">Models choice 2</a></li>
+											<li><a target="_blank" href="https://clarifai.com/clarifai/main/models/color-recognition">Models choice 3</a></li>										
+											<li><a target="_blank" href="https://github.com/Clarifai/clarifai-javascript#basic-use">Clarifai with JS</a></li>										
+											<li><a target="_blank" href="https://github.com/aneagoie/face-recognition-brain">Correction of the project for the implementation</a></li>										
+										</ul>
 									</ul>
 								</div>
+							</div>
 
-								<h4>Handle JSON</h4>
-								<ul>
-									<li><code>JSON.stringify(&lt;object&gt;)</code>: from a JS Object, outputs the JSON version </li>
-									<li><code>JSON.parse(&lt;object&gt;)</code>: from a JSON value, outputs the JS Object from it</li>
-								</ul>
-							</details>
-
-
-							<!-- ----------------------------------------------------------------------- -->
-							<!--                                PROMISES                                 -->
-							<!-- ----------------------------------------------------------------------- -->
-							<details id="Promises">
-								<summary><h3>Promises</h3></summary>
-								<p>Promise is a new feature from ES6: ensuring you to do a request and always
-									get back to you ( later )  with some server response ( a resolved or a rejected response ).
-									It uses callback to resolve the response
-								</p>
-								<div class="details-content">
-									<div class="card">
-										<p>Example</p>
-										<code class="width-full">
-											<br>const promiseResult = new Promise(( resolve, reject) => {
-											<br>&nbsp;&nbsp;if( true ){ return resolve('promise successful')}
-											<br>&nbsp;&nbsp;return reject('promise error')
-											<br>})
-											<br>
-											<br>promiseResult
-											<br>&nbsp;&nbsp;.then( response => response )
-											<br>&nbsp;&nbsp;.then( response2 => {
-											<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log('response 2:', response2 )
-											<br>&nbsp;&nbsp;})
-											<br>&nbsp;&nbsp;.catch( error => console.error( {error} ))
-										</code>
-									</div>
-								</div>
-
-								<h4>Handle JSON</h4>
-								<ul>
-									<li><code>JSON.stringify(&lt;object&gt;)</code>: from a JS Object, outputs the JSON version </li>
-									<li><code>JSON.parse(&lt;object&gt;)</code>: from a JSON value, outputs the JS Object from it</li>
-								</ul>
-							</details>
-
-							<!-- ----------------------------------------------------------------------- -->
-							<!--                          PROMISES AND METHODS                           -->
-							<!-- ----------------------------------------------------------------------- -->
-							<details id="Promises-and-methods">
-								<summary><h3>Promises and Methods</h3></summary>
-								<p>ESNext allowed to make requests ( using XHTMLRequest ) in a cleaner way
-									(e.g.: XHTMLRequest > Ajax > promise with "then" and "catch"> async await )
-									But ESNext did also provide extra proposition to handle promises with new methods
-								</p>
-								<div class="details-content">
-									<div class="card">
-										<ul>
-											<li><code>Promise.all()</code>: allows to handle multiple promises to output one promise to process</li>
-											<ul>
-												<li>all promises must be successful in order for <code>promise.all</code> to resolve the async requests</li>
-												<li>if one is invalid, all the promise resolutions fail too</li>
-											</ul>
-											<li><code>Promise.allSettled()</code>: allows to handle multiple promises in one result</li>
-											<ul>
-												<li>some promise could fail, ".allSettled" will still be able to resolve the one that do not fail and process the one failing</li>
-											</ul>
-											<li><code>Promise.any()</code>: returns first fulfilled request</li>
-
-										</ul>
-									</div>
-								</div>
-							</details>
-						</div>
 					</section>
 
 					<!-- ----------------------------------------------------------------------- -->
@@ -213,7 +96,7 @@
 					<section id="Practice">
 						<h2>Practices</h2>
 						<div class="layout_content">
-							<details id="promises-practice">
+							<details open id="promises-practice">
 								<summary><h3>Promises Practice</h3></summary>
 								<div class="details-content">
 									<p>Practice promises</p>
@@ -232,47 +115,6 @@
 											style="border: none">
 											
 										</iframe>
-									</div>
-								</div>
-							</details>
-						</div>
-						<div class="layout_content">
-							<details id="promises-async-await">
-								<summary><h3>Async/Await Practice</h3></summary>
-								<div class="details-content">
-									<p>Practice async and await syntax</p>
-
-									<p>Resources</p>
-									<a href="./resources/27_resource_asyncAwait.zip"
-										title="files" target="_blank">
-										Files: Exercise and correction zip
-									</a>
-									<div id="react_robots-friends-book" class="card">
-										<iframe
-											title="Complete exercise promises"
-											id="react_iframe_personas-book"
-											type="text/html"
-											src="./practices/29_asyncAwait/exerciseAsyncAwait.js"
-											style="border: none">
-										</iframe>
-									</div>
-								</div>
-							</details>
-						</div>
-						<div class="layout_content">
-							<details id="asynchronous-&-API">
-								<summary><h3>API consummation</h3></summary>
-								<div class="details-content">
-									<p>Practice asynchronous consuming an API</p>
-									<ul>
-										<li>used Number API ( unfortunately a HTTP protocol blocked by HTTPS )</li>
-									</ul>
-									<div id="react_robots-friends-book" class="card">
-										<video
-											controls
-											src="./practices/30_asynchronous_api/public/exercise-api.mp4"
-											style="border: none; width: 100%;">
-										</vid>
 									</div>
 								</div>
 							</details>

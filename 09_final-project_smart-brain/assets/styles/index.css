@@ -1,3 +1,5 @@
+@import url('./lib.css');
+
 :root {
 	--main: #6cc;
 	--main_darker: #6aa;
@@ -72,6 +74,7 @@ details > div {
 /* Header with nav (iframe) */
 #layout_header {
 	margin: 0;
+	max-height: 130px;
 }
 
 /** LAYOUT: parent of 2 children */
@@ -284,7 +287,9 @@ tbody li.pipe {
 /* ---------------------------- IFRAME/NAV STYLE ---------------------------- */
 iframe#navigation {
 	width: 100%;
-	height: 80px;
+	background: salmon;
+	contain: strict;
+	overflow-x: scroll;
 }
 
 main > h1,
@@ -702,65 +707,7 @@ table#table_grid {
     height: 700px;
     overflow: hidden;
 }
-/* -------------------------------------------------------------------------- */
-/*                                 CSS HELPERS                                */
-/* -------------------------------------------------------------------------- */
-.flex {
-	display: flex;
-}
 
-.flex-col {
-	flex-direction: column;
-}
-
-.flex-row {
-	flex-direction: row;
-}
-
-.flex-wrap {
-	flex-wrap: wrap;
-}
-
-.full-width {
-	width: 95%;
-}
-
-.center {
-	margin: 0 auto;
-}
-
-.no-margin {
-	margin: unset;
-}
-
-.margin-2 {
-	margin: 2px;
-}
-
-.margin-5 {
-	margin: 5px;
-}
-
-
-.bordered {
-	border: 1px solid #DDD;
-}
-
-.padding-10 {
-	padding: 10px;
-}
-
-.radius-3 {
-	border-radius: 3px;
-}
-
-.radius-5 {
-	border-radius: 5px;
-}
-
-.inline {
-	display: inline;
-}
 /* -------------------------------------------------------------------------- */
 /*                        RESPONSIVE AND MEDIA QUERIES                        */
 /* -------------------------------------------------------------------------- */
@@ -866,9 +813,6 @@ iframe#DOM-manipulation_iframe_comparisons {
 	align-items: center;
 }
 
-#concept_one-way-data-binding_example > div {
-
-}
 
 #concept_one-way-data-binding_image {
 	width: 100%;
@@ -886,7 +830,29 @@ iframe#DOM-manipulation_iframe_comparisons {
 	width: 95%;
 	height: 40vh;
 }
-	
+
+
+/* -------------------------------------------------------------------------- */
+/*                                FINAL PROJECT                               */
+/* -------------------------------------------------------------------------- */
+
+section#final-project {
+	ul {
+		/* display: flex; */
+		li {
+		
+			@apply .tag
+		}
+	}
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                               RESPONSIVENESS                               */
+/* -------------------------------------------------------------------------- */
 
 @media only screen and (min-width: 500px) {
 	#responsive-gradient {

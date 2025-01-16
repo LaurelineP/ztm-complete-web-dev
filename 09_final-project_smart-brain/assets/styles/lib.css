@@ -1,0 +1,76 @@
+
+/* -------------------------------------------------------------------------- */
+/*                                 CSS HELPERS                                */
+/* -------------------------------------------------------------------------- */
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.justify-center {
+	justify-items: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.full-width {
+	width: 95%;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.no-margin {
+	margin: unset;
+}
+
+.margin-2 {
+	margin: 2px;
+}
+
+.margin-5 {
+	margin: 5px;
+}
+
+
+.bordered {
+	border: 1px solid #DDD;
+}
+
+.padding-10 {
+	padding: 10px;
+}
+
+.radius-3 {
+	border-radius: 3px;
+}
+
+.radius-5 {
+	border-radius: 5px;
+}
+
+.inline {
+	display: inline;
+}
+
+.tag {
+	background-color: #b0f6ff3c;
+	border-radius: 25px;
+	padding: 0 15px;
+	width: fit-content;
+	margin: 2px;
+}

@@ -1,0 +1,16 @@
+.LinkSearch {
+	width: 40vw;
+	background-color: aqua;
+	margin: 20px;
+}
+
+.LinkSearch_input {
+	border: none;
+	height: 40px;
+	width: 85%;
+}
+
+.LinkSearch_button {
+	height: 40px;
+	width: 40px;
+}

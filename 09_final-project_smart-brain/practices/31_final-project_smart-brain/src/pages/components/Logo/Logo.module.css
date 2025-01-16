@@ -1,0 +1,9 @@
+.Logo {
+	height: 50px;
+	width: 50px;
+	color: #333;
+}
+
+.Logo:hover {
+	cursor: pointer;
+}
