@@ -1,4 +1,4 @@
-import { getClarifaiConfig } from '../../services/client-clarifai'
+import { getClarifaiConfig } from '../../services/clarifai.services'
 
 // filepath: /Users/laurelineparis/Desktop/CODE/ztm/ztm-complete-web-developer/09_final-project_smart-brain/pages/api/clarifai.js
 // import fetch from 'node-fetch';

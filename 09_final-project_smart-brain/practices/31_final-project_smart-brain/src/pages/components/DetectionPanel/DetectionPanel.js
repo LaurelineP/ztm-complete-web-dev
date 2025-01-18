@@ -3,10 +3,11 @@ import styles from './DetectionPanel.module.css'
 
 export class DetectionPanel extends Component {
 	render(){
-		console.log('details', this.props.details)
 		return(
 			<div className={styles.DetectionPanel}>
-				{this.props.children}
+				<div className={styles.DetectionPanel_container}>
+					{this.props.children}
+				</div>
 			</div>
 		)
 	}

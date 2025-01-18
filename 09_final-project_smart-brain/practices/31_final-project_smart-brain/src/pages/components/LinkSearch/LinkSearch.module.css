@@ -1,16 +1,43 @@
 .LinkSearch {
-	width: 40vw;
+	width: 50vw;
 	background-color: aqua;
 	margin: 20px;
+	display: inline;
+	box-shadow: 0 2px 50px 3px #bbd;
+	border-radius: 2px;
+	z-index: 0;
 }
 
 .LinkSearch_input {
 	border: none;
 	height: 40px;
-	width: 85%;
+	width: 75%;
+	border-radius: inherit;
+	padding:  0 10px ;
+
+}
+.LinkSearch_input::placeholder {
+	color: #999;
+}
+
+.LinkSearch_input:focus {
+	outline: none;
 }
 
 .LinkSearch_button {
 	height: 40px;
-	width: 40px;
+	width: calc(25% - 20px);
+	border-radius: inherit;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background-color: #bce;
+	opacity: .8;
+	cursor: pointer;
+	color: #1b1446
+}
+
+
+.LinkSearch_button:hover {
+	transform: rotateZ('20deg')
 }

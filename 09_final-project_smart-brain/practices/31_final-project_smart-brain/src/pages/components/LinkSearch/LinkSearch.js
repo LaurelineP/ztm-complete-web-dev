@@ -12,7 +12,6 @@ export class LinkSearch extends Component {
 	onSubmitValue(e){
 		const URL = this.inputRef.current.value
 		if(e.type === 'keydown' && e.key !== 'Enter' || !URL ) return;
-		console.log('eh', this.inputRef.current.value )
 		this.props.onSubmit(e, URL)
 	}
 
@@ -24,7 +23,7 @@ export class LinkSearch extends Component {
 					ref={this.inputRef}
 					type="text"
 					onKeyDown={this.onSubmitValue}
-					placeholder={this.props.placeholder}
+					placeholder={this.props.placeholder || 'Add a picture link'}
 				/>
 				<button
 					onClick={this.onSubmitValue}

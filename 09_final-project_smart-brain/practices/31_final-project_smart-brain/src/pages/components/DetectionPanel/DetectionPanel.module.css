@@ -1,11 +1,13 @@
 .DetectionPanel {
-	height: 300px;
+	min-height: 300px;
 	width: 500px;
 	backdrop-filter: blur(8px);
 	box-shadow: 0 0 20px 3px #DEF;
-	padding: 3rem;
 	border-radius: 3px;
 	display: grid;
 	grid-template-columns: 70% 25%;
 	column-gap: 30px;
 }
+	.DetectionPanel_container {
+		position: relative;
+	}
