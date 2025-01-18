@@ -12,7 +12,10 @@ export class LinkSearch extends Component {
 	onSubmitValue(e){
 		const URL = this.inputRef.current.value
 		if(e.type === 'keydown' && e.key !== 'Enter' || !URL ) return;
-		this.props.onSubmit(e, URL)
+		if( /\.jpe?g|\.png|\.tiff/gi.test(URL)){	
+			this.props.onSubmit(e, URL)
+			this.inputRef.current.value = ''
+		}
 	}
 
 	render(){
@@ -23,6 +26,9 @@ export class LinkSearch extends Component {
 					ref={this.inputRef}
 					type="text"
 					onKeyDown={this.onSubmitValue}
+					pattern='[\.jpg|\.png|\.jpeg|\.tiff]'
+					title='Must be a valid picture link'
+					required
 					placeholder={this.props.placeholder || 'Add a picture link'}
 				/>
 				<button

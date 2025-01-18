@@ -1,0 +1,23 @@
+.DetectionBoxes {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.hide {
+	/* animation: hide 1s ease-in-out; */
+	content-visibility: hidden;
+}
+
+.show {
+	animation: show .5s ease-in-out;
+}
+
+@keyframes hide {
+	from { opacity: 1 }
+	to { opacity: 0 }
+}
+@keyframes show {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}

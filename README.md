@@ -57,6 +57,20 @@ Questioning it may answer: How to organize efficiently an HTML based project?
     updating the page content, logically build HTML content using JS
 
 
+	### 0...
+	### 0...
+	### 0...
+	### 0...
+	### 0...
+
+
+	### 09 SmartBrain Project
+	- (Component Based) Frontend React, Tachyon -> Next 13
+	- Clarifai API
+	- Node -> Next 13?
+	- 
+
+
 
 <br>
 
@@ -73,3 +87,8 @@ covered and how this Documenting project looks like
 - [DOM Manipulation](https://laurelinep.github.io/ztm-complete-web-dev_doc-along/04_DOM-manipulation)
 - [JS Advanced](https://laurelinep.github.io/ztm-complete-web-dev_doc-along/05_advanced-javascript)
 - [Developer Environment](https://laurelinep.github.io/ztm-complete-web-dev_doc-along/06_developer-environment)
+
+## Node
+### Resources
+- https://blog.logrocket.com/fetch-api-node-js/
+- http://johnny-five.io/
