@@ -2,9 +2,9 @@ import { PureComponent } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-import styles from './ParticlesContainer.module.css'
+import styles from './ParticlesBackground.module.css'
 
-export class ParticlesContainer extends PureComponent {
+export class ParticlesBackground extends PureComponent {
   // this customizes the component tsParticles installation
   async customInit(engine) {
     // this adds the bundle to tsParticles
@@ -15,7 +15,7 @@ export class ParticlesContainer extends PureComponent {
 	return (
 		<Particles
             id="tsparticles"
-            className={styles.ParticlesContainer}
+            className={styles.ParticlesBackground}
             init={this.customInit} 
             options={{
                 preset: 'triangles',

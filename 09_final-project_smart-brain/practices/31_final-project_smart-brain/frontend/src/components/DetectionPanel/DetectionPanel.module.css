@@ -1,6 +1,7 @@
 .DetectionPanel {
 	min-height: 300px;
-	width: 500px;
+	height: 30vh;
+	width: 50vw;
 	backdrop-filter: blur(8px);
 	box-shadow: 0 0 20px 3px #DEF;
 	border-radius: 3px;

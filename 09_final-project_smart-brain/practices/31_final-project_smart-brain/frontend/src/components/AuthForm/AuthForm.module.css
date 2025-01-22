@@ -1,0 +1,108 @@
+.AuthForm {
+	outline				: solid #FFF 1px;
+	padding				: 50px 20px;
+	border-radius		: 2px;
+	backdrop-filter		: blur(4px);
+	background-color	: #FFFFFF50;
+	display				: flex;
+	flex-direction		: column;
+	max-width			: 400px;
+	width				: 90%;
+	height				: 500px;
+	box-shadow			: 0 2px 10px 8px #33446510;
+	color				: #444;
+	justify-content		: center;
+	align-items			: center;
+	margin-bottom		: 15vh;
+}
+
+.AuthForm h1 {
+	text-transform		: uppercase;
+	margin				: 25px;
+	color				: #8362ca;
+	font-weight			: 200;
+}
+
+/* --------------------- Container for inputs and buttons ------------------- */
+.AuthForm_container {
+	height				: 100%;
+	width				: 70%;
+	display				: flex;
+	flex-direction		: column	;
+	justify-content		: space-around;
+}
+
+/* ------------------------------ Inputs block ------------------------------ */
+.AuthForm_inputs {
+	display				: flex;
+	flex-direction		: column;
+	gap					: 10px;
+}
+.AuthForm_label-input {
+	display				: flex;
+	flex-direction		: column;
+	justify-content		: space-between;
+	color				: var(--primary-color);
+}
+.AuthForm_inputs label { 
+	text-transform		: uppercase;
+	font-style			: italic;
+	font-size			: 13px;
+}
+.AuthForm_inputs input {
+	padding				: 10px 5px;
+	border				: none;
+	border-radius		: 3px;
+	border-bottom		: 2px solid var(--primary-color);
+	max-width			: 250px;
+}
+
+.AuthForm_inputs input:focus,
+.AuthForm_inputs input:active {
+	outline: none;
+}
+
+
+/* ------------------------------ Buttons block ----------------------------- */
+.AuthForm_buttons {
+	display				: flex;
+	justify-content		: center;
+	flex-wrap			: wrap;
+	gap					: 5px;
+}
+
+.AuthForm_buttons button {
+	width				: 120px;
+}
+
+
+.AuthForm_buttons button a {
+	text-decoration		: none;
+	color				: inherit;
+}
+
+
+.button-primary {
+	background-color	: var(--primary-color);
+	color				: #fff;
+}
+
+.button-secondary {
+	background-color	: #fff;
+	border				: 1.8px solid var(--primary-color);
+	color				: var(--primary-color);
+}
+
+
+@media (max-width: 600px) {
+    .AuthForm {
+        width			: 90%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .AuthForm {
+        width			: 400px;
+    }
+}

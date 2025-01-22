@@ -1,0 +1,24 @@
+.NavigationBar	{
+	display				: flex;
+	background-color	: #FFF;
+	justify-content		: space-between;
+	height				: 80px;
+	align-items			: center;
+	width				: 100%;
+	box-shadow			: 0 0 50px 3px #DEF;
+	position			: relative;
+	justify-content		: end;
+	background-color	: transparent;
+}
+
+.NavigationBar ul {
+	padding: 0 50px;
+}
+
+.NavigationBar a {
+	color				: #eee;
+	color				: #8362ca;
+	text-decoration		: none;
+	text-transform		: uppercase;
+	margin				: 10px;
+}
